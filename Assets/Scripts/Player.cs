@@ -8,7 +8,7 @@ namespace SpaceShip
     {
         [SerializeField] private int m_NumLives;
         [SerializeField] private Ship m_Ship;
-        [SerializeField] private GameObject m_PlayerShipPrefab;
+        //[SerializeField] private GameObject m_PlayerShipPrefab;
         [HideInInspector] public Ship ActiveShip => m_Ship;
 
         //[SerializeField] private CameraController m_CameraController;
@@ -24,7 +24,7 @@ namespace SpaceShip
             }
         }
 
-        private void Start()
+        /*private void Start()
         {
             m_Ship.EventOnDeath.AddListener(OnShipDeath);
 
@@ -53,7 +53,7 @@ namespace SpaceShip
                 //m_MovementController.SetTargetShip(m_Ship);
                 m_Ship.EventOnDeath.AddListener(OnShipDeath);
             }
-        }
+        }*/
 
         #region Score
         public int Score { get; private set; }

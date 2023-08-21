@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7836464553667484731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7612505959223740440}
+  - component: {fileID: 8633367459291520290}
+  m_Layer: 0
+  m_Name: PointPatrol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7612505959223740440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836464553667484731}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.295158, y: 1.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8633367459291520290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836464553667484731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177c02b832749fc4b8fba6388157c08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Radius: 0
+  m_SpecifiedPositions:
+  - {x: 0.13, y: 2.97, z: 0}
+  - {x: 0.01, y: 1.15, z: 0}
+  - {x: -1.05, y: 0.31, z: 0}
+  - {x: -2.65, y: -0.16, z: 0}
+  - {x: -3.8, y: -0.79, z: 0}
+  - {x: -3.57, y: -2.08, z: 0}
+  - {x: -2.59, y: -2.86, z: 0}
+  - {x: -1.23, y: -3.16, z: 0}
+  - {x: 4.16, y: -3.14, z: 0}
+  - {x: 5.72, y: -1.26, z: 0}
+  - {x: 7.11, y: -1.02, z: 0}
+  m_PatrolPointAccuracy: 0.1

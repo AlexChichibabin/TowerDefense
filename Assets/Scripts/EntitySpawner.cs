@@ -18,6 +18,8 @@ namespace SpaceShip
         [SerializeField] private int m_NumSpawns;
         [SerializeField] private float m_RespawnTime;
 
+        [SerializeField] private AIPointPatrol m_PatrolPoint;
+
         private float m_Timer;
 
         private void Start()
@@ -54,6 +56,11 @@ namespace SpaceShip
                     GameObject e = Instantiate(m_EntityPrefabs[index].gameObject);
 
                     e.transform.position = m_Area.GetRandomInsideZone();
+
+                    if (e.TryGetComponent<AIController>(out var ai))
+                    {
+                        ai.SetPointPatrolBehaviour(m_PatrolPoint);
+                    }
                 }
             }
 

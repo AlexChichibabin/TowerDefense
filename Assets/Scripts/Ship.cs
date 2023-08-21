@@ -112,6 +112,18 @@ namespace SpaceShip
         {
             return true;
         }
+
+        /// <summary>
+        /// TODO: Расписать метод-заглушку стрельбы
+        /// Использует AIController
+        /// </summary>
+        /// <param name="mode"></param>
+        public void Fire(TurretMode mode)
+        {
+            return;
+        }
+
+
         //Offensive methods
         /* public void Fire(TurretMode mode)
         {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3645903099837392289}
   - component: {fileID: 3592574305072140508}
   - component: {fileID: 2488009822580297455}
+  - component: {fileID: 7016610738160068805}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -46,10 +47,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -82,12 +83,36 @@ MonoBehaviour:
       m_Calls: []
   m_TeamId: 1
   m_ScoreValue: 0
-  m_Mass: 0
-  m_Thrust: 0
-  m_Mobility: 0
-  m_MaxLinearVelocity: 0
-  m_MaxAngularVelocity: 0
+  m_Mass: 0.1
+  m_Thrust: 18.36
+  m_Mobility: 1000
+  m_MaxLinearVelocity: 1
+  m_MaxAngularVelocity: 1000
   m_PrefabExplosion: {fileID: 0}
+--- !u!114 &7016610738160068805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852577580199256207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83974cfa2931bae4bbde79e447314608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AIBehaviour: 2
+  m_PatrolPoint: {fileID: 8633367459291520290, guid: 66a19fd1cd853eb44ae099cf0c9e8eaa, type: 3}
+  m_NavigationLinear: 1
+  m_NavigationAngular: 1
+  m_RandomSelectMovePointTime: 1
+  m_FindNewTargetTime: 1
+  m_EvadeCollisionTime: 1
+  m_ShootDelay: 1
+  m_EvadeRadius: 1
+  m_ShootDistance: 1
+  m_EnemyDetectDistance: 1
+  m_StartTime: 1
 --- !u!1 &7154268460694899735
 GameObject:
   m_ObjectHideFlags: 0
