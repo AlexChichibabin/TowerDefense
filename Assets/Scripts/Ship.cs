@@ -37,7 +37,7 @@ namespace SpaceShip
         /// saved link for rigid
         /// </summary>
         private Rigidbody2D m_Rigid;
-        [SerializeField] private GameObject m_PrefabExplosion;
+        //[SerializeField] private GameObject m_PrefabExplosion; //Ссылка на префаб импакта взрыва
 
         //[SerializeField] private float m_Inertia;
 
@@ -195,7 +195,7 @@ namespace SpaceShip
         protected override void OnDeath()
         {
             base.OnDeath();
-            Instantiate(m_PrefabExplosion, LastPosition, Quaternion.identity);
+            //Instantiate(m_PrefabExplosion, LastPosition, Quaternion.identity); // Создание импакта взрыва
         }
         //Offensive
         /*

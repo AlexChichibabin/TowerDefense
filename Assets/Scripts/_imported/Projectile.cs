@@ -36,16 +36,16 @@ namespace SpaceShip
                 {
                     if (m_ImpactExplosionPrefab == null)
                     {
-                        if (m_Parent != null)
-                        {
+                        //if (m_Parent == null) return;
+
                             dest.ApplyDamage(m_Damage);
 
-                            if (m_Parent == Player.Instance.ActiveShip)
+                            /*if (m_Parent == Player.Instance.ActiveShip) // Если родитель - игрок
                             {
-                                Player.Instance.AddScore(dest.ScoreValue);
-                                if (dest.CurrentHitPoints <= 0 && dest.TeamId != 0 && dest != Player.Instance.ActiveShip) Player.Instance.AddKill();
-                            }
-                        }
+                                Player.Instance.AddScore(dest.ScoreValue); // Добавить очки за попадание
+                                if (dest.CurrentHitPoints <= 0 && dest.TeamId != 0 && dest != Player.Instance.ActiveShip) Player.Instance.AddKill(); // Добавить убийства
+                            }*/
+                        
                     }
                 }
                 OnProjectileLifeEnd(hit.collider, hit.point);
