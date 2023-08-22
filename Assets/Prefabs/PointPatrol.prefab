@@ -57,4 +57,5 @@ MonoBehaviour:
   - {x: 4.16, y: -3.14, z: 0}
   - {x: 5.72, y: -1.26, z: 0}
   - {x: 7.11, y: -1.02, z: 0}
+  m_GizmoColor: {r: 0.12148453, g: 0.6603774, b: 0.5049276, a: 1}
   m_PatrolPointAccuracy: 0.1

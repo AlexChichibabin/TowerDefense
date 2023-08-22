@@ -10,12 +10,16 @@ namespace SpaceShip
         [SerializeField] private float m_LifeTime;
         [SerializeField] private int m_Damage;
         public int Damage => m_Damage;
+
+        [Header("RocketAndSelfdirection")]
         [SerializeField] private ImpactExplosion m_ImpactExplosionPrefab;
         [SerializeField] private bool IsSelfDirected;
         [SerializeField] private float m_DirSensity;
-        private GameObject m_RocketTarget;
+
         [SerializeField] private CircleArea m_Area;
         [SerializeField] private bool isPlayer;
+
+        private Destructible m_Target; // Для самонаводящихся снарядов
 
 
 
@@ -81,30 +85,36 @@ namespace SpaceShip
         {
             if (IsSelfDirected == true)
             {
-                if (m_RocketTarget == null)
+                if (m_Target == null)
                 {
                     GetTarget();
                 }
-                if (m_RocketTarget != null)
+                if (m_Target != null)
                 {
                     CorrectDirection();
                 }
             }
         }
 
-        private void GetTarget()
+        private void GetTarget() // Выбор цели в радиусе вокруг снаряда
         {
                 Collider2D targetHit = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), m_Area.Radius);
-                if (targetHit != null && targetHit.transform.root.GetComponent<Destructible>() != m_Parent)
+                Destructible dest = targetHit.transform.root.GetComponent<Destructible>();
+                if (targetHit != null && dest != m_Parent)
                 {
-                    m_RocketTarget = targetHit.transform.gameObject;
+                    m_Target = dest;
                 }
-                if (m_RocketTarget == null) return;
+                if (m_Target == null) return;
         }
-        private void CorrectDirection()
+        private void CorrectDirection() // Смена курса по направлению к цели
         {
-                Vector3 dir = (m_RocketTarget.transform.position - transform.position).normalized;
+                Vector3 dir = (m_Target.transform.position - transform.position).normalized;
                 transform.up = Vector3.Slerp(transform.up, dir, Time.deltaTime * m_DirSensity);
+        }
+
+        public void SetTarget(Destructible target) // Для самонаводящихся снарядов
+        {
+            m_Target = target;
         }
 
     }

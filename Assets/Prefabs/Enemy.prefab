@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 3645903099837392289}
   - component: {fileID: 3592574305072140508}
   - component: {fileID: 2488009822580297455}
-  - component: {fileID: 7016610738160068805}
+  - component: {fileID: 8813016426191551466}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -101,7 +101,7 @@ Transform:
   - {fileID: 2177435579463100913}
   - {fileID: 760994727781045499}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3592574305072140508
 Rigidbody2D:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Nickname: Enemy
   m_Indestructible: 0
-  m_HitPoints: 20
+  m_HitPoints: 92
   m_HitPointRegenPerSecond: 0
   m_EventOnDeath:
     m_PersistentCalls:
@@ -152,11 +152,11 @@ MonoBehaviour:
   m_TeamId: 1
   m_ScoreValue: 0
   m_Mass: 0.1
-  m_Thrust: 18.36
+  m_Thrust: 475.9
   m_Mobility: 1000
   m_MaxLinearVelocity: 1
   m_MaxAngularVelocity: 1000
---- !u!114 &7016610738160068805
+--- !u!114 &8813016426191551466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,21 +165,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 852577580199256207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83974cfa2931bae4bbde79e447314608, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c87f74aef14e734b870225d2498a3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AIBehaviour: 2
-  m_PatrolPoint: {fileID: 8633367459291520290, guid: 66a19fd1cd853eb44ae099cf0c9e8eaa, type: 3}
+  m_AIBehaviour: 3
+  m_PatrolPoint: {fileID: 0}
   m_NavigationLinear: 1
   m_NavigationAngular: 1
-  m_RandomSelectMovePointTime: 1
-  m_FindNewTargetTime: 1
-  m_EvadeCollisionTime: 1
-  m_ShootDelay: 1
-  m_EvadeRadius: 1
-  m_ShootDistance: 1
-  m_EnemyDetectDistance: 1
-  m_StartTime: 1
+  m_RandomSelectMovePointTime: 0
+  m_FindNewTargetTime: 0
+  m_EvadeCollisionTime: 0
+  m_ShootDelay: 0
+  m_EvadeRadius: 0
+  m_ShootDistance: 0
+  m_EnemyDetectDistance: 0
+  m_StartTime: 0
 --- !u!1 &7154268460694899735
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 2177435579463100913}
   - component: {fileID: 4737210576287440637}
   - component: {fileID: 2777500823106423598}
+  - component: {fileID: 6598756840420018384}
   m_Layer: 0
   m_Name: VisualModel
   m_TagString: Untagged
@@ -286,3 +287,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6598756840420018384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154268460694899735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8ed91bd8c7a26449732ffd8bf1873f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

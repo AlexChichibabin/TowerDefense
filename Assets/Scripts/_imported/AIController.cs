@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+//using System.IO;
+using TowerDefense;
 
 namespace SpaceShip
 {
@@ -12,7 +14,8 @@ namespace SpaceShip
         {
             Null,
             Patrol,
-            PointPatrol
+            PointsOnScriptPatrol,
+            PointsOnPathObjectPatrol
         }
 
         [SerializeField] private AIBehaviour m_AIBehaviour;
@@ -66,7 +69,10 @@ namespace SpaceShip
 
             InitTimers();
 
-            InitPatrolPoint();
+            if (m_AIBehaviour == AIBehaviour.PointsOnScriptPatrol)
+            {
+                InitPatrolPoint();
+            }
 
             //m_AIBehaviour = AIBehaviour.Null;
         }
@@ -82,7 +88,7 @@ namespace SpaceShip
         {
             if (m_AIBehaviour == AIBehaviour.Null)
             {
-                if (m_StartTimer.IsFinished == true) m_AIBehaviour = AIBehaviour.Patrol;
+                //if (m_StartTimer.IsFinished == true) m_AIBehaviour = AIBehaviour.Patrol;
             }
 
             if (m_AIBehaviour == AIBehaviour.Patrol)
@@ -90,7 +96,12 @@ namespace SpaceShip
                 UpdateBehaviourPatrol();
             }
 
-            if (m_AIBehaviour == AIBehaviour.PointPatrol)
+            if (m_AIBehaviour == AIBehaviour.PointsOnScriptPatrol)
+            {
+                UpdateBehaviourPatrol();
+            }
+
+            if (m_AIBehaviour == AIBehaviour.PointsOnPathObjectPatrol)
             {
                 UpdateBehaviourPatrol();
             }
@@ -100,7 +111,7 @@ namespace SpaceShip
         {
             ActionFindNewMovePosition();
             ActionControlShip();
-            ActionFindNewAttackTarget();
+            //ActionFindNewAttackTarget();
             ActionFire();
             //ActionEvadeCollision();
         }
@@ -115,7 +126,7 @@ namespace SpaceShip
 
         private void ActionFindNewMovePosition()
         {
-            if (m_AIBehaviour == AIBehaviour.PointPatrol)
+            if (m_AIBehaviour == AIBehaviour.PointsOnScriptPatrol)
             {
                 if (m_SelectedTarget != null) // Если есть цель атаки
                 {
@@ -123,7 +134,6 @@ namespace SpaceShip
                 }
                 else // Если нет цели атаки
                 {
-                    //Debug.Log("SelectedTarget" + m_SelectedTarget);
                     {
                         if ((m_Ship.transform.position - m_MovePosition).magnitude < m_PatrolPoint.PatrolPointAccuracy) // Если корабль достаточно близок к точке, чтобы выбрать следующую
                         {
@@ -132,7 +142,6 @@ namespace SpaceShip
                                 m_PatrolPointNumber++;
                                 if (m_PatrolPointNumber == m_PatrolPoint.SpecifiedPositions.Length) m_PatrolPointNumber = 0;
                                 m_MovePosition = m_PatrolPoint.SpecifiedPositions[m_PatrolPointNumber];
-                                //Debug.Log("MovePosition" + m_MovePosition);
                             }
                         }
                         if (m_EvadeCollisionTimer.IsFinished == true && m_MovePosition != m_PatrolPoint.SpecifiedPositions[m_PatrolPointNumber]) // Если таймер прошел, а корабль движется не к нужной точке патрулирования
@@ -144,21 +153,42 @@ namespace SpaceShip
                 }
             }
 
+
+            if (m_AIBehaviour == AIBehaviour.PointsOnPathObjectPatrol) // Мб не нужно
+            {
+                /*if ((m_Ship.transform.position - m_MovePosition).magnitude < m_PatrolPoint.PatrolPointAccuracy) // Если корабль достаточно близок к точке, чтобы выбрать следующую
+                {
+                    GetNewPoint();
+                    m_MovePosition = m_PatrolPoint.transform.position;
+                }*/
+
+                if (m_PatrolPoint != null)
+                {
+                    bool isInsidePatrolZone = (m_PatrolPoint.transform.position - m_Ship.transform.position).sqrMagnitude < m_PatrolPoint.Radius * m_PatrolPoint.Radius;
+
+                    if (isInsidePatrolZone == true)
+                    {
+                        GetNewPoint();
+                    }
+                    else
+                    {
+                        m_MovePosition = m_PatrolPoint.transform.position;
+                    }
+                }
+            } 
+
+
             if (m_AIBehaviour == AIBehaviour.Patrol)
             {
                 if (m_SelectedTarget != null) // Если есть цель атаки
                 {
                     m_MovePosition = m_SelectedTarget.transform.position;
-                    //Debug.Log("SelectedTarget" + m_SelectedTarget);
                 }
                 else // Если нет цели атаки
                 {
                     if (m_PatrolPoint != null)
                     {
                         bool isInsidePatrolZone = (m_PatrolPoint.transform.position - m_Ship.transform.position).sqrMagnitude < m_PatrolPoint.Radius * m_PatrolPoint.Radius;
-
-                        //Debug.Log("PatrolZone" + isInsidePatrolZone);
-                        
 
                         if (isInsidePatrolZone == true)
                         {
@@ -177,6 +207,19 @@ namespace SpaceShip
                         }
                     }
                 }
+            }
+
+
+        }
+        protected virtual void GetNewPoint()
+        {
+            if (m_RandomizeDirectionTimer.IsFinished == true)
+            {
+                Vector2 newPoint = UnityEngine.Random.onUnitSphere * m_PatrolPoint.Radius + m_PatrolPoint.transform.position;
+
+                m_MovePosition = newPoint;
+
+                m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
             }
         }
 
@@ -315,9 +358,14 @@ namespace SpaceShip
             m_AIBehaviour = AIBehaviour.Patrol;
             m_PatrolPoint = point;
         }
-        public void SetPointPatrolBehaviour(AIPointPatrol point)
+        public void SetPointsOnScriptPatrolBehaviour(AIPointPatrol point)
         {
-            m_AIBehaviour = AIBehaviour.PointPatrol;
+            m_AIBehaviour = AIBehaviour.PointsOnScriptPatrol;
+            m_PatrolPoint = point;
+        }
+        public void SetPointsOnPathObjectPatrolBehaviour(AIPointPatrol point)
+        {
+            m_AIBehaviour = AIBehaviour.PointsOnPathObjectPatrol;
             m_PatrolPoint = point;
         }
 

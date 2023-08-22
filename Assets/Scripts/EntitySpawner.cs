@@ -1,7 +1,9 @@
 //using System;
 using System.Collections;
 using System.Collections.Generic;
+//using System.IO;
 using UnityEngine;
+using TowerDefense;
 
 namespace SpaceShip
 {
@@ -18,7 +20,7 @@ namespace SpaceShip
         [SerializeField] private int m_NumSpawns;
         [SerializeField] private float m_RespawnTime;
 
-        [SerializeField] private AIPointPatrol m_PatrolPoint;
+        [SerializeField] private Path m_Path;
 
         private float m_Timer;
 
@@ -57,9 +59,9 @@ namespace SpaceShip
 
                     e.transform.position = m_Area.GetRandomInsideZone();
 
-                    if (e.TryGetComponent<AIController>(out var ai))
+                    if (e.TryGetComponent<TDPatrolController>(out var ai))
                     {
-                        ai.SetPointPatrolBehaviour(m_PatrolPoint);
+                        ai.SetPath(m_Path);
                     }
                 }
             }

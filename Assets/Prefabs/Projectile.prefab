@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Velocity: 0.88
+  m_Velocity: 15.4
   m_LifeTime: 25.48
   m_Damage: 38
   m_ImpactExplosionPrefab: {fileID: 0}

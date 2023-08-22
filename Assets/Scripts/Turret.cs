@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace SpaceShip
 {
@@ -19,6 +20,9 @@ namespace SpaceShip
         [SerializeField] private GameObject m_ImpactSoundPrimary;
 
         [SerializeField] private GameObject m_ImpactSoundSecondary;
+
+        private Destructible m_Target;
+        public Destructible Target => m_Target;
 
         private float m_RefireTimer;
 
@@ -85,6 +89,10 @@ namespace SpaceShip
             m_TurretProperties = props;
         }
 
+        public void SetTarget(Destructible target) // Для самонаводящихся снарядов
+        {
+            m_Target = target;
+        }
         #endregion
     }
 }
