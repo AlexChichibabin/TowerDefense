@@ -7,7 +7,8 @@ namespace SpaceShip
     public enum TurretMode
     {
         Primary,
-        Secondary
+        Secondary,
+        Auto
     }
 
     [CreateAssetMenu]
