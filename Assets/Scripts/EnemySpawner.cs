@@ -7,21 +7,22 @@ using TowerDefense;
 
 namespace TowerDefense
 {
-    public class EntitySpawner : Spawner
+    public class EnemySpawner : Spawner
     {
         /// <summary>
         /// —сылки на то, что спавнить
         /// </summary>
-        [SerializeField] private GameObject[] m_EntityPrefabs;
+        [SerializeField] private Enemy m_EnemyPrefab;
+        [SerializeField] private EnemyAsset[] m_EnemyAssets;
         [SerializeField] private Path m_Path;
 
-        /// <summary>
-        /// ѕереопредел€ет сущность, которую надо спавнить
-        /// </summary>
-        /// <returns></returns>
         protected override GameObject GenerateSpawnedEntity()
         {
-            return Instantiate(m_EntityPrefabs[Random.Range(0, m_EntityPrefabs.Length)]);
+            var e = Instantiate(m_EnemyPrefab);
+            e.Use(m_EnemyAssets[Random.Range(0, m_EnemyAssets.Length)]);
+            e.GetComponent<TDPatrolController>().SetPath(m_Path);
+
+            return e.gameObject;
         }
     }
 }
