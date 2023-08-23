@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TowerDefense;
 using UnityEngine;
 using UnityEngine.XR;
 using static UnityEngine.EventSystems.EventTrigger;
@@ -80,6 +82,8 @@ namespace SpaceShip
             m_Rigid.AddTorque( TorqueControl * m_Mobility * Time.fixedDeltaTime, ForceMode2D.Force );
 
             m_Rigid.AddTorque( -m_Rigid.angularVelocity * ( m_Mobility / m_MaxAngularVelocity ) * Time.fixedDeltaTime, ForceMode2D.Force );
+
+            //print(m_Rigid.totalForce);
         }
 
         #region Public API
@@ -197,6 +201,7 @@ namespace SpaceShip
             base.OnDeath();
             //Instantiate(m_PrefabExplosion, LastPosition, Quaternion.identity); // Создание импакта взрыва
         }
+
         //Offensive
         /*
         #region EnergyAmmoWeapons
@@ -268,6 +273,11 @@ namespace SpaceShip
             }
         }
         #endregion*/
+        public void Use(EnemyAsset asset)
+        {
+            m_MaxLinearVelocity = asset.moveSpeed;
+            base.Use(asset);
+        }
     }
 }
 

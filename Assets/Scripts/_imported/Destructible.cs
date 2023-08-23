@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TowerDefense;
 
 
 namespace SpaceShip
@@ -108,7 +109,6 @@ namespace SpaceShip
         [SerializeField] private UnityEvent m_EventOnDeath;
         public UnityEvent EventOnDeath => m_EventOnDeath;
 
-
         private static HashSet<Destructible> m_AllDestructibles;
 
         public static IReadOnlyCollection<Destructible> AllDestructibles => m_AllDestructibles;
@@ -135,5 +135,11 @@ namespace SpaceShip
         [SerializeField] private int m_ScoreValue;
         public int ScoreValue => m_ScoreValue;
         #endregion
+
+        protected void Use(EnemyAsset asset)
+        {
+            m_HitPoints = asset.hp;
+            m_ScoreValue = asset.score;
+        }
     }
 }

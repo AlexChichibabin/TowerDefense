@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_RespawnTime: 2
   m_EnemyPrefab: {fileID: 7393219461105556184, guid: 894bfd37868119b499c0eb9c0482f9b0, type: 3}
   m_EnemyAssets:
-  - {fileID: 11400000, guid: b3792fd1dfb90bf40b6f5c4abfcabf5d, type: 2}
+  - {fileID: 11400000, guid: b6ed744af60c2834fb9c6c9ff1cd4a3c, type: 2}
   m_Path: {fileID: 1797367175}
 --- !u!114 &893071552
 MonoBehaviour:
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_RespawnTime: 2
   m_EnemyPrefab: {fileID: 7393219461105556184, guid: 894bfd37868119b499c0eb9c0482f9b0, type: 3}
   m_EnemyAssets:
-  - {fileID: 11400000, guid: b6ed744af60c2834fb9c6c9ff1cd4a3c, type: 2}
+  - {fileID: 11400000, guid: b3792fd1dfb90bf40b6f5c4abfcabf5d, type: 2}
   m_Path: {fileID: 98140797}
 --- !u!1 &913631885
 GameObject:

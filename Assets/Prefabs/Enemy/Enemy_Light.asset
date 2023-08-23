@@ -10,6 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9636371cf8d0ad40aec26149e9ab42d, type: 3}
-  m_Name: Enemy_Blue
+  m_Name: Enemy_Light
   m_EditorClassIdentifier: 
-  color: {r: 0.2696244, g: 0.52026564, b: 0.7830189, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  spriteScale: {x: 3, y: 3}
+  animations: {fileID: 9100000, guid: 03adf86239d2c994abf1b4f0c5a296ee, type: 2}
+  moveSpeed: 4
+  hp: 1
+  score: 1
+  radius: 0.26
