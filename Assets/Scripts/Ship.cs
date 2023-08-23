@@ -273,7 +273,7 @@ namespace SpaceShip
             }
         }
         #endregion*/
-        public void Use(EnemyAsset asset)
+        public new void Use(EnemyAsset asset)
         {
             m_MaxLinearVelocity = asset.moveSpeed;
             base.Use(asset);

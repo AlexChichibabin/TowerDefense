@@ -10,6 +10,7 @@ namespace TowerDefense
         [Header("Внешний вид")]
         public Color color = Color.white;
         public Vector2 spriteScale = new Vector2(3, 3);
+        public Sprite sprite;
         public RuntimeAnimatorController animations;
 
         [Header("Игровые параметры")]

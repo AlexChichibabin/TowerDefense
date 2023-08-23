@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9636371cf8d0ad40aec26149e9ab42d, type: 3}
-  m_Name: Enemy_Light
+  m_Name: Enemy_01
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteScale: {x: 3, y: 3}
-  animations: {fileID: 9100000, guid: 03adf86239d2c994abf1b4f0c5a296ee, type: 2}
-  moveSpeed: 2
+  sprite: {fileID: 2020421254, guid: e44eb569838d528488ad6f3dd1eed728, type: 3}
+  animations: {fileID: 9100000, guid: eb8e7c874239fe44580079e0fbfc1494, type: 2}
+  moveSpeed: 1
   hp: 1
   score: 1
   radius: 0.26

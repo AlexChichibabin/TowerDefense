@@ -66,7 +66,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.26
+  m_Radius: 0.17
 --- !u!1 &852577580199256207
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,17 +145,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Nickname: Enemy
   m_Indestructible: 0
-  m_HitPoints: 92
+  m_HitPoints: 1
   m_HitPointRegenPerSecond: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
   m_TeamId: 1
-  m_ScoreValue: 0
+  m_ScoreValue: 1
   m_Mass: 0.1
-  m_Thrust: 301.4
+  m_Thrust: 410.6
   m_Mobility: 1000
-  m_MaxLinearVelocity: 1
+  m_MaxLinearVelocity: 2
   m_MaxAngularVelocity: 1000
 --- !u!114 &8813016426191551466
 MonoBehaviour:
@@ -221,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 7154268460694899735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3645903099837392289}
@@ -289,7 +289,7 @@ Animator:
   m_GameObject: {fileID: 7154268460694899735}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 03adf86239d2c994abf1b4f0c5a296ee, type: 2}
+  m_Controller: {fileID: 9100000, guid: cfcb07922e4630d4f8ea9f8463f164ea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

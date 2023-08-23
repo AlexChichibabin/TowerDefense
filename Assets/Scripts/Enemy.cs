@@ -13,7 +13,9 @@ namespace TowerDefense
             var sr = transform.Find("VisualModel").GetComponent<SpriteRenderer>();
             sr.color = asset.color;
             sr.transform.localScale = asset.spriteScale;
+            sr.sprite = asset.sprite;
             sr.GetComponent<Animator>().runtimeAnimatorController = asset.animations;
+            
 
             GetComponent<Ship>().Use(asset);
 
@@ -22,6 +24,7 @@ namespace TowerDefense
         }
     }
 
+    [CustomEditor(typeof(Enemy))]
     public class EnemyInspector : Editor
     {
         public override void OnInspectorGUI()
