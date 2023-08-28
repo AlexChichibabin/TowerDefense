@@ -43,12 +43,13 @@ namespace SpaceShip
         public void FinishCurrentLevel(bool success)
         {
             LastLevelResult = success;
-            CalculateLevelStatistic();
-            CalculateMainStatistic();
-            MainStatistics.SaveMainStatistic();
-            PlayerPrefs.Save();
+            //CalculateLevelStatistic();
+            //CalculateMainStatistic();
+            //MainStatistics.SaveMainStatistic();
+            //PlayerPrefs.Save();
 
-            ResultPanelController.Instance.ShowResults(LevelStatistics, success);
+            //ResultPanelController.Instance.ShowResults(LevelStatistics, success);
+            print(LastLevelResult);
         }
 
         public void AdvanceLevel()

@@ -1,13 +1,20 @@
 using UnityEngine;
 using SpaceShip;
 using UnityEditor;
-using UnityEngine.UIElements;
+using UnityEditor.Events;
 
 namespace TowerDefense
 {
     [RequireComponent(typeof(TDPatrolController))]
     public class Enemy : MonoBehaviour
     {
+        private int m_Damage;
+        private int m_Gold;
+
+        /*private void Start()
+        {
+            transform.GetComponent<TDPatrolController>().EndPath.AddListener(OnEndPath);
+        }*/
         public void Use(EnemyAsset asset)
         {
             var sr = transform.Find("VisualModel").GetComponent<SpriteRenderer>();
@@ -21,6 +28,17 @@ namespace TowerDefense
 
             var collider = GetComponentInChildren<CircleCollider2D>();
             collider.radius = asset.radius;
+
+            m_Damage = asset.damage;
+            m_Gold = asset.gold;
+        }
+        public void OnEndPath()
+        {
+            Player.Instance.ApplyDamage(m_Damage);
+        }
+        public void OnEnemyDeath()
+        {
+            (Player.Instance as TDPlayer).ChangeGold(m_Gold);
         }
     }
 

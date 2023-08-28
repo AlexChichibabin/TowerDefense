@@ -1,8 +1,6 @@
 using SpaceShip;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TowerDefense
 {
@@ -10,6 +8,8 @@ namespace TowerDefense
     {
         private Path m_Path;
         private int pathIndex;
+
+        [SerializeField] private UnityEvent EndPath;
 
         public void SetPath(Path newPath)
         {
@@ -27,6 +27,7 @@ namespace TowerDefense
             }
             else
             {
+                EndPath.Invoke();
                 Destroy(gameObject);
             }
 

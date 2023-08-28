@@ -199,6 +199,9 @@ namespace SpaceShip
         protected override void OnDeath()
         {
             base.OnDeath();
+
+
+
             //Instantiate(m_PrefabExplosion, LastPosition, Quaternion.identity); // Создание импакта взрыва
         }
 

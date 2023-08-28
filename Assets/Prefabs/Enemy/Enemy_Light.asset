@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteScale: {x: 3, y: 3}
+  sprite: {fileID: 0}
   animations: {fileID: 9100000, guid: 03adf86239d2c994abf1b4f0c5a296ee, type: 2}
   moveSpeed: 2
   hp: 1
   score: 1
   radius: 0.26
+  damage: 1
+  gold: 2

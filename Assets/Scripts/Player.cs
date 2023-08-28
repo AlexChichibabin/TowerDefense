@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,24 +25,39 @@ namespace SpaceShip
             }
         }
 
-        /*private void Start()
+        private void Start()
         {
-            m_Ship.EventOnDeath.AddListener(OnShipDeath);
+            /*if (m_Ship != null)
+            {
+                m_Ship.EventOnDeath.AddListener(OnShipDeath);
+            }*/
 
-            Respawn();
+
+            //Respawn();
         }
-
+        
         private void OnShipDeath()
         {
             m_NumLives--;
 
             if (m_NumLives > 0)
             {
-                Respawn();
+                //Respawn();
             }
             else LevelSequenceController.Instance.FinishCurrentLevel(false);
         }
 
+        public void ApplyDamage(int damage)
+        {
+            m_NumLives -= damage;
+            if (m_NumLives <= 0)
+            {
+                LevelSequenceController.Instance.FinishCurrentLevel(false);
+            }
+        }
+
+
+        /*
         private void Respawn()
         {
             if (LevelSequenceController.PlayerShip != null)
@@ -54,6 +70,7 @@ namespace SpaceShip
                 m_Ship.EventOnDeath.AddListener(OnShipDeath);
             }
         }*/
+
 
         #region Score
         public int Score { get; private set; }
