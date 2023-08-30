@@ -34,11 +34,11 @@ namespace TowerDefense
         }
         public void OnEndPath()
         {
-            Player.Instance.ApplyDamage(m_Damage);
+            TDPlayer.Instance.ReduceLife(m_Damage);
         }
         public void OnEnemyDeath()
         {
-            (Player.Instance as TDPlayer).ChangeGold(m_Gold);
+            TDPlayer.Instance.ChangeGold(m_Gold);
         }
     }
 

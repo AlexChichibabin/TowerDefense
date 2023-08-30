@@ -8,6 +8,12 @@ namespace TowerDefense
 {
     public class TDPlayer : Player
     {
+        public static new TDPlayer Instance { get 
+            { 
+                return Player.Instance as TDPlayer; 
+            } 
+        }
+        
         public static event Action<int> OnGoldUpdate;
         public static event Action<int> OnLifeUpdate;
 
@@ -16,13 +22,20 @@ namespace TowerDefense
         private void Start()
         {
             OnGoldUpdate(m_NumGold);
-            OnLifeUpdate(m_NumGold);
+            OnLifeUpdate(NumLives);
         }
         public void ChangeGold(int gold)
         {
             m_NumGold += gold;
             OnGoldUpdate(m_NumGold);
-            print(m_NumGold);
+
+        }
+
+        public void ReduceLife(int lives)
+        {
+            ApplyDamage(lives);
+            OnLifeUpdate(NumLives);
+
         }
     }
 }

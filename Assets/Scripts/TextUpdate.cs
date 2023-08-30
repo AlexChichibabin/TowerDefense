@@ -9,20 +9,31 @@ namespace TowerDefense
     {
         public enum UpdateSourse
         {
-
+            Gold,
+            Life
         }
 
         private Text m_Text;
+        public UpdateSourse m_Sourse = UpdateSourse.Gold;
 
-        private void Start()
+        private void Awake()
         {
             m_Text = GetComponent<Text>();
-            TDPlayer.OnLifeUpdate += UpdateText;
+
+            switch (m_Sourse) 
+            {
+                case UpdateSourse.Gold:
+                    TDPlayer.OnGoldUpdate += UpdateText;
+                    break;
+                case UpdateSourse.Life:
+                    TDPlayer.OnLifeUpdate += UpdateText;
+                    break;
+            }
         }
 
-        private void UpdateText(int gold)
+        private void UpdateText(int amount)
         {
-            m_Text.text = gold.ToString();
+            m_Text.text = amount.ToString();
         }
     }
 }

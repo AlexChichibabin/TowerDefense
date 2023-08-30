@@ -8,9 +8,12 @@ namespace SpaceShip
     public class Player : SingletonBase<Player>
     {
         [SerializeField] private int m_NumLives;
+        public int NumLives { get { return m_NumLives; } }
         [SerializeField] private Ship m_Ship;
         //[SerializeField] private GameObject m_PlayerShipPrefab;
         [HideInInspector] public Ship ActiveShip => m_Ship;
+
+        //public static event Action<int> OnLifeUpdate;
 
         //[SerializeField] private CameraController m_CameraController;
         //[SerializeField] private MovementController m_MovementController;
@@ -47,9 +50,10 @@ namespace SpaceShip
             else LevelSequenceController.Instance.FinishCurrentLevel(false);
         }
 
-        public void ApplyDamage(int damage)
+        protected void ApplyDamage(int damage)
         {
             m_NumLives -= damage;
+            
             if (m_NumLives <= 0)
             {
                 LevelSequenceController.Instance.FinishCurrentLevel(false);
