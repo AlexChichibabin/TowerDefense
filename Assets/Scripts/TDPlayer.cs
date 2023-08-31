@@ -14,16 +14,22 @@ namespace TowerDefense
             } 
         }
         
-        public static event Action<int> OnGoldUpdate;
-        public static event Action<int> OnLifeUpdate;
+        private static event Action<int> OnGoldUpdate;
+        public static void GoldUpdateSubscribe(Action<int> act)
+        {
+            OnGoldUpdate += act;
+            act(Instance.m_NumGold);
+        }
+        private static event Action<int> OnLifeUpdate;
+        public static void LifeUpdateSubscribe(Action<int> act)
+        {
+            OnLifeUpdate += act;
+            act(Instance.NumLives);
+        }
 
         [SerializeField] private int m_NumGold;
+        [SerializeField] private Tower towerPrefab;
 
-        private void Start()
-        {
-            OnGoldUpdate(m_NumGold);
-            OnLifeUpdate(NumLives);
-        }
         public void ChangeGold(int gold)
         {
             m_NumGold += gold;
@@ -35,6 +41,18 @@ namespace TowerDefense
         {
             ApplyDamage(lives);
             OnLifeUpdate(NumLives);
+        }
+
+        // TODO: Верим, что золота на постройку достаточно
+        public void TryBuild(TowerAsset towerAsset, Transform buildSite)
+        {
+            /*if (m_NumGold >= m_TowerAsset.goldCost)
+            {
+            }*/
+            ChangeGold(-towerAsset.goldCost);
+            var tower = Instantiate(towerPrefab, buildSite.position, Quaternion.identity);
+            tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.towerSprite;
+            Destroy(buildSite.gameObject); // Не работает
 
         }
     }
