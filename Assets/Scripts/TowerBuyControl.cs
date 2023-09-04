@@ -1,6 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +9,6 @@ namespace TowerDefense
         [SerializeField] private Text m_Text;
         [SerializeField] private Button m_Button;
         [SerializeField] private Transform buildSite;
-        public Transform BuildSite { set { buildSite = value; } }
 
         private void Awake()
         {
@@ -30,6 +26,10 @@ namespace TowerDefense
             }
         }
 
+        public void SetBuildSite(Transform value)
+        {
+            buildSite = value;
+        }
         private void GoldStatusCheck(int gold)
         {
             if (m_TowerAsset)
@@ -41,12 +41,12 @@ namespace TowerDefense
                 }
             }
         }
-
         public void Buy()
         {
             if (m_TowerAsset && buildSite)
             {
                 TDPlayer.Instance.TryBuild(m_TowerAsset, buildSite);
+                BuildSite.HideControls();
             }
         }
     }

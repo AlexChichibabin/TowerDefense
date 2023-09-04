@@ -56,7 +56,8 @@ namespace SpaceShip
             
             if (m_NumLives <= 0)
             {
-                LevelSequenceController.Instance.FinishCurrentLevel(false);
+                //LevelSequenceController.Instance.FinishCurrentLevel(false);
+                LevelSequenceController.Instance.RestartLevel();
             }
         }
 

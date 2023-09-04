@@ -8,7 +8,7 @@ namespace TowerDefense
     {
         public static event Action<Transform> OnClickEvent;
 
-        protected void InvokeNullEvent()
+        public static void HideControls()
         {
             OnClickEvent(null);
         }

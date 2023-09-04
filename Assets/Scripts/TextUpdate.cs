@@ -20,7 +20,7 @@ namespace TowerDefense
         {
             m_Text = GetComponent<Text>();
 
-            switch (m_Sourse) 
+            switch (m_Sourse)
             {
                 case UpdateSourse.Gold:
                     TDPlayer.GoldUpdateSubscribe(UpdateText);
@@ -33,7 +33,10 @@ namespace TowerDefense
 
         private void UpdateText(int amount)
         {
-            m_Text.text = amount.ToString();
+            if (m_Text)
+            {
+                m_Text.text = amount.ToString();
+            }
         }
     }
 }

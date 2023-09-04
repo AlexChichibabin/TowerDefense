@@ -8,15 +8,15 @@ namespace TowerDefense
         private void Awake()
         {
             t = GetComponent<RectTransform>();
-            BuildSite.OnClickEvent += MoveToTransform;
+            BuildSite.OnClickEvent += MoveToBuildSite;
             gameObject.SetActive(false);
         }
 
-        private void MoveToTransform(Transform target)
+        private void MoveToBuildSite(Transform builtSite)
         {
-            if (target)
+            if (builtSite)
             {
-                var position = Camera.main.WorldToScreenPoint(target.position);
+                var position = Camera.main.WorldToScreenPoint(builtSite.position);
                 t.anchoredPosition = position;
                 gameObject.SetActive(true);
             }
@@ -24,6 +24,12 @@ namespace TowerDefense
             {
                 gameObject.SetActive(false);
             }
+
+            foreach (var tbc in GetComponentsInChildren<TowerBuyControl>()) 
+            {
+                tbc.SetBuildSite(builtSite);
+            }
+
         }
     }
 }
