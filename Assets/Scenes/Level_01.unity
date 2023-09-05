@@ -1855,7 +1855,7 @@ MonoBehaviour:
   m_DoNotDestroyOnLoad: 0
   m_NumLives: 3
   m_Ship: {fileID: 0}
-  m_NumGold: 15
+  m_NumGold: 111
   towerPrefab: {fileID: 7268561584256709088, guid: 6f7eef6d713fcc14ea743a8428b106d4, type: 3}
 --- !u!1 &946445511
 GameObject:

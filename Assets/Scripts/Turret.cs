@@ -81,6 +81,11 @@ namespace SpaceShip
             }
         }
 
+        public void SetTurretProperties(TurretProperties tp)
+        {
+            m_TurretProperties = tp;
+        }
+
         public void AssignLoadout(TurretProperties props)
         {
             if (m_Mode != props.Mode) return;

@@ -17,7 +17,7 @@ namespace SpaceShip
         [SerializeField] private float m_DirSensity;
 
         [SerializeField] private CircleArea m_Area;
-        [SerializeField] private bool isPlayer;
+        //[SerializeField] private bool isPlayer;
 
         private Destructible m_Target; // Для самонаводящихся снарядов
 
@@ -49,7 +49,6 @@ namespace SpaceShip
                                 Player.Instance.AddScore(dest.ScoreValue); // Добавить очки за попадание
                                 if (dest.CurrentHitPoints <= 0 && dest.TeamId != 0 && dest != Player.Instance.ActiveShip) Player.Instance.AddKill(); // Добавить убийства
                             }*/
-                        
                     }
                 }
                 OnProjectileLifeEnd(hit.collider, hit.point);
@@ -98,13 +97,15 @@ namespace SpaceShip
 
         private void GetTarget() // Выбор цели в радиусе вокруг снаряда
         {
-                Collider2D targetHit = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), m_Area.Radius);
-                Destructible dest = targetHit.transform.root.GetComponent<Destructible>();
-                if (targetHit != null && dest != m_Parent)
-                {
-                    m_Target = dest;
-                }
-                if (m_Target == null) return;
+            Collider2D targetHit = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), m_Area.Radius);
+            print(targetHit);
+            targetHit.transform.root.TryGetComponent(out Destructible dest);
+
+            if (dest != null && targetHit != null && dest != m_Parent)
+            {
+                m_Target = dest;
+            }
+            if (m_Target == null) return;
         }
         private void CorrectDirection() // Смена курса по направлению к цели
         {

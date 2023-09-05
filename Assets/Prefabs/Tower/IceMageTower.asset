@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8cce4e79382f6c48bd7e46495354f00, type: 3}
-  m_Name: ArcherTower
+  m_Name: IceMageTower
   m_EditorClassIdentifier: 
-  spriteColor: {r: 1, g: 1, b: 1, a: 1}
-  turretProperties: {fileID: 11400000, guid: e9d7dabac8fb88e4683993c9df65accf, type: 2}
-  goldCost: 15
-  towerGUI: {fileID: 21300000, guid: ef25b92a8e4b2644b8420de820e6c11f, type: 3}
-  towerSprite: {fileID: 21300000, guid: 0d1dc428e29b59d4da665429794be749, type: 3}
+  goldCost: 20
+  towerGUI: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
+  towerSprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}
