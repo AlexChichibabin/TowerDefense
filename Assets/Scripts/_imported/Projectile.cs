@@ -84,10 +84,10 @@ namespace SpaceShip
         {
             if (IsSelfDirected == true)
             {
-                if (m_Target == null)
+                /*if (m_Target == null)
                 {
                     GetTarget();
-                }
+                }*/
                 if (m_Target != null)
                 {
                     CorrectDirection();
@@ -95,7 +95,7 @@ namespace SpaceShip
             }
         }
 
-        private void GetTarget() // Выбор цели в радиусе вокруг снаряда
+        /*private void GetTarget() // Выбор цели в радиусе вокруг снаряда
         {
             Collider2D targetHit = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), m_Area.Radius);
             print(targetHit);
@@ -106,7 +106,7 @@ namespace SpaceShip
                 m_Target = dest;
             }
             if (m_Target == null) return;
-        }
+        }*/
         private void CorrectDirection() // Смена курса по направлению к цели
         {
                 Vector3 dir = (m_Target.transform.position - transform.position).normalized;

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using TowerDefense;
 
 namespace SpaceShip
 {
@@ -29,12 +29,15 @@ namespace SpaceShip
         public bool CanFire => m_RefireTimer <= 0;
 
         private Ship m_Ship;
+        private Tower m_Tower;
+
         #endregion
 
         #region UnityEvents
         private void Start()
         {
             m_Ship = transform.root.GetComponent<Ship>();
+            m_Tower = transform.root.GetComponent<Tower>();
         }
 
         private void Update()
@@ -66,8 +69,12 @@ namespace SpaceShip
             Projectile projectile = Instantiate(m_TurretProperties.ProjectilePrefab).GetComponent<Projectile>();
             projectile.transform.position = m_FireSource.transform.position;
             projectile.transform.up = m_FireSource.transform.up;
+            projectile.SetTarget(m_Target);
 
-            projectile.SetParentShooter(m_Ship);
+            if (m_Ship != null)
+            {
+                projectile.SetParentShooter(m_Ship);
+            }
 
             m_RefireTimer = m_TurretProperties.RateOfFire;
 

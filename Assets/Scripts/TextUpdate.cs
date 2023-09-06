@@ -10,8 +10,11 @@ namespace TowerDefense
         public enum UpdateSourse
         {
             Gold,
-            Life
+            Life, 
+            WaveTimer
         }
+
+        [SerializeField] private EnemySpawner m_Spawner;
 
         private Text m_Text;
         public UpdateSourse m_Sourse = UpdateSourse.Gold;
@@ -27,6 +30,9 @@ namespace TowerDefense
                     break;
                 case UpdateSourse.Life:
                     TDPlayer.LifeUpdateSubscribe(UpdateText);
+                    break;
+                case UpdateSourse.WaveTimer:
+                    WaveTimeController.StartWaveTimerTextUpdateSubscribe += UpdateText;
                     break;
             }
         }

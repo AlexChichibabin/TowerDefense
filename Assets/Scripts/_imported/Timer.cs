@@ -1,6 +1,7 @@
 public class Timer
 {
     private float m_CurrentTime;
+    public float CurrentTime => m_CurrentTime;
     public bool IsFinished => m_CurrentTime <= 0;
 
     public Timer(float startTime)
