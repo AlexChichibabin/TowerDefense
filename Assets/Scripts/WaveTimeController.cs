@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -35,7 +33,6 @@ namespace TowerDefense
                     m_CurrentInt = (int)m_StartWaveTimer.CurrentTime;
                     StartWaveTimerTextUpdateSubscribe((int)m_StartWaveTimer.CurrentTime);
                 }
-                print(m_StartWaveTimer.CurrentTime);
             }
             if (m_StartWaveTimer.IsFinished == true)
             {

@@ -51,7 +51,11 @@ namespace SpaceShip
                             }*/
                     }
                 }
-                OnProjectileLifeEnd(hit.collider, hit.point);
+                if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
+                {
+                    OnProjectileLifeEnd(hit.collider, hit.point);
+                }
+                
             }
 
             m_Timer += Time.deltaTime;
@@ -67,7 +71,7 @@ namespace SpaceShip
             if (m_ImpactExplosionPrefab != null)
             {
                 ImpactExplosion expl = Instantiate(m_ImpactExplosionPrefab, pos, Quaternion.identity);
-                expl.SetParentShooter(m_Parent);
+                //expl.SetParentShooter(m_Parent);
             }
 
             Destroy(gameObject);

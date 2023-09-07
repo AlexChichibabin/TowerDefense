@@ -27,18 +27,21 @@ namespace SpaceShip
                 if (hit[i])
                 {
                     Destructible dest = hit[i].transform.root.GetComponent<Destructible>();
+                    //print(dest.name);
 
-                    if (dest != null && dest != m_Parent)
+                    if (dest != null /*&& dest != m_Parent*/)
                     {
-                        if (m_Parent.CurrentHitPoints > 0 && m_Parent != null)
+                        //if (m_Parent.CurrentHitPoints > 0 && m_Parent != null)
                         {
+                            //print(m_Parent.CurrentHitPoints);
+                            //print(m_Parent);
                             dest.ApplyDamage(m_Damage);
 
-                            if (m_Parent == Player.Instance.ActiveShip)
+                            /*if (m_Parent == Player.Instance.ActiveShip)
                             {
                                 Player.Instance.AddScore(dest.ScoreValue * 2); // (2) More scores for explosion, than for common projectile
                                 if (dest.CurrentHitPoints <= 0 && dest.TeamId != 0 && dest != Player.Instance.ActiveShip) Player.Instance.AddKill();
-                            }
+                            }*/
                         }
                     }
                 }
