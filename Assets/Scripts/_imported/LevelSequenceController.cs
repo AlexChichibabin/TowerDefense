@@ -49,7 +49,7 @@ namespace SpaceShip
             //MainStatistics.SaveMainStatistic();
             //PlayerPrefs.Save();
 
-            //ResultPanelController.Instance.ShowResults(LevelStatistics, success);
+            ResultPanelController.Instance.ShowResults(LevelStatistics, success);
             print(LastLevelResult);
         }
 

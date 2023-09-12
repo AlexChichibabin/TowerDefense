@@ -23,7 +23,7 @@ namespace SpaceShip
         private float m_LevelTime;
         public float LevelTime => m_LevelTime;
 
-        private void Start()
+        protected void Start()
         {
             m_Conditions = GetComponentsInChildren<ILevelCondition>();
         }

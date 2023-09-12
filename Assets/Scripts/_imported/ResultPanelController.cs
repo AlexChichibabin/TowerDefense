@@ -31,11 +31,11 @@ namespace SpaceShip
             m_Result.text = success ? "Win" : "Lose";
             m_ButtonNextText.text = success ? "Next" : "Restart";
 
-            m_Kills.text = "Kills : " + levelResults.NumKills.ToString();
+            /*m_Kills.text = "Kills : " + levelResults.NumKills.ToString();
             m_Scores.text = "Scores : " + levelResults.Scores.ToString();
-            m_Time.text = "Time : " + levelResults.Time.ToString();
+            m_Time.text = "Time : " + levelResults.Time.ToString();*/
 
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
 
         public void OnButtonNextAction()

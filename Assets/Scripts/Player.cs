@@ -13,6 +13,8 @@ namespace SpaceShip
         //[SerializeField] private GameObject m_PlayerShipPrefab;
         [HideInInspector] public Ship ActiveShip => m_Ship;
 
+        public event Action OnPlayerDead;
+
         //public static event Action<int> OnLifeUpdate;
 
         //[SerializeField] private CameraController m_CameraController;
@@ -56,8 +58,10 @@ namespace SpaceShip
             
             if (m_NumLives <= 0)
             {
+                m_NumLives = 0;
+                OnPlayerDead?.Invoke();
                 //LevelSequenceController.Instance.FinishCurrentLevel(false);
-                LevelSequenceController.Instance.RestartLevel();
+                //LevelSequenceController.Instance.RestartLevel();
             }
         }
 

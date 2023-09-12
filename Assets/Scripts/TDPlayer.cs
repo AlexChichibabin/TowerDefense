@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using SpaceShip;
 using System;
-using UnityEngine.U2D;
 
 namespace TowerDefense
 {
@@ -38,9 +37,9 @@ namespace TowerDefense
 
         }
 
-        public void ReduceLife(int lives)
+        public void ReduceLife(int damage)
         {
-            ApplyDamage(lives);
+            ApplyDamage(damage);
             OnLifeUpdate(NumLives);
         }
 
