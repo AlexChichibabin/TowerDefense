@@ -2538,7 +2538,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1359500031}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1994641528}
+        m_TargetAssemblyTypeName: SpaceShip.ResultPanelController, Assembly-CSharp
+        m_MethodName: OnButtonNextAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1359500031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4535,7 +4547,7 @@ PrefabInstance:
       objectReference: {fileID: 4481520130578236129}
     - target: {fileID: 519185927733782444, guid: 490efd56b02d9694e81f60080b0a04c6, type: 3}
       propertyPath: m_StartWaveTime
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3192549937104533069, guid: 490efd56b02d9694e81f60080b0a04c6, type: 3}
       propertyPath: m_Name
