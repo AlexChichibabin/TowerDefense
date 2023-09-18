@@ -14,7 +14,7 @@ namespace SpaceShip
         [SerializeField] private int m_ReferenceTime;
         public int ReferenceTime => m_ReferenceTime;
 
-        [SerializeField] private UnityEvent m_EventLevelCompleted;
+        [SerializeField] protected UnityEvent m_EventLevelCompleted;
 
         private ILevelCondition[] m_Conditions;
 

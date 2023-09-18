@@ -15,6 +15,7 @@ namespace TowerDefense
                 StopLevelActivity();
                 ResultPanelController.Instance.ShowResults(PlayerStatistics.Instance, false);
             };
+            m_EventLevelCompleted.AddListener(StopLevelActivity);
         }
 
         private void StopLevelActivity()
