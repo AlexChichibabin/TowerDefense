@@ -9,11 +9,12 @@ namespace TowerDefense
     {
         [SerializeField] private float timeLimit = 4f;
         private float currentLevelTime = 0;
-        public bool IsCompleted => currentLevelTime > timeLimit + WaveTimeController.Instance.StartWaveTime;
+        public bool IsCompleted => Time.time >= timeLimit;
 
-        private void Update()
+        private void Start()
         {
-            currentLevelTime += Time.deltaTime;
+            timeLimit += Time.time;
         }
+
     }
 }

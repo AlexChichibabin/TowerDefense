@@ -7,7 +7,7 @@ namespace SpaceShip
 {
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
-        public static string MainMenuSceneNickname = "scene_main_menu";
+        public static string MainMenuSceneNickname = "LevelMap";
 
         public Episode CurrentEpisode { get; private set; }
 
@@ -27,9 +27,9 @@ namespace SpaceShip
             CurrentLevel = 0;
 
             //сбрасываем статы перед началом эпизода
-            LevelStatistics = PlayerStatistics.Instance;
+            /*LevelStatistics = PlayerStatistics.Instance;
             LevelStatistics.Reset();
-            MainStatistics = TotalStatistics.Instance;
+            MainStatistics = TotalStatistics.Instance;*/
 
             if (CurrentEpisode.Levels.Length > 0 && CurrentEpisode.Levels[CurrentLevel] != null)
             SceneManager.LoadScene(episode.Levels[CurrentLevel]);
@@ -55,7 +55,7 @@ namespace SpaceShip
 
         public void AdvanceLevel()
         {
-            LevelStatistics.Reset();
+            //LevelStatistics.Reset();
             CurrentLevel++;
 
             if (CurrentEpisode.Levels.Length <= CurrentLevel)

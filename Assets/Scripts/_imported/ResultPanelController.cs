@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SpaceShip
@@ -14,6 +15,7 @@ namespace SpaceShip
         [SerializeField] private Text m_Result;
 
         [SerializeField] private Text m_ButtonNextText;
+        [SerializeField] private Button m_MainMenuButton;
 
         private bool m_Success;
 
@@ -46,6 +48,14 @@ namespace SpaceShip
 
             if (m_Success) LevelSequenceController.Instance.AdvanceLevel();
             else LevelSequenceController.Instance.RestartLevel();
+        }
+        public void OnButtonMainMenu()
+        {
+            gameObject.SetActive(false);
+
+            Time.timeScale = 1;
+
+            SceneManager.LoadScene(LevelSequenceController.MainMenuSceneNickname);
         }
     }
 }

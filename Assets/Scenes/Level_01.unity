@@ -135,18 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 627383357093745866, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 173.5164
-      objectReference: {fileID: 0}
-    - target: {fileID: 627383357093745866, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -873.2468
-      objectReference: {fileID: 0}
-    - target: {fileID: 627383357093745866, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -277
-      objectReference: {fileID: 0}
     - target: {fileID: 8809022169641490184, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1674,6 +1662,8 @@ GameObject:
   m_Component:
   - component: {fileID: 913631886}
   - component: {fileID: 913631887}
+  - component: {fileID: 913631889}
+  - component: {fileID: 913631888}
   m_Layer: 0
   m_Name: PlayerCamp
   m_TagString: Untagged
@@ -1714,6 +1704,36 @@ MonoBehaviour:
   m_Ship: {fileID: 0}
   m_NumGold: 25
   towerPrefab: {fileID: 7268561584256709088, guid: 6f7eef6d713fcc14ea743a8428b106d4, type: 3}
+--- !u!114 &913631888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913631885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fd49eea8cbbd64ebf136e7096ef0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 30
+--- !u!114 &913631889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913631885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd2b1f92a523b3479bee0cc491fbd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
+  m_ReferenceTime: 0
+  m_EventLevelCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &982779308
 GameObject:
   m_ObjectHideFlags: 0
