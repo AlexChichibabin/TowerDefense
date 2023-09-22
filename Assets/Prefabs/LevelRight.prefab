@@ -345,7 +345,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.52, y: 4.15, z: 0}
-  m_LocalScale: {x: 0.6142296, y: 0.72608924, z: 0.06784551}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2613776718889667838}
@@ -366,6 +366,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   episode: {fileID: 11400000, guid: edd8c54ff1a720048ba560062ecb7b52, type: 2}
   isLeftSided: 0
+  m_ScrollSprite: {fileID: 2857134653638721778}
+  m_Scores: {fileID: 2484783764094016714}
+  m_Canvas: {fileID: 480500285048069761}
+  m_LevelNameText: {fileID: 8011635963897496695}
+  m_LevelClickArea: {fileID: 643199761367928528}
+  m_ScrollSpritePosition: {x: 0, y: 0, z: 0}
+  m_ScoresPosition: {x: 0, y: 0, z: 0}
+  m_CanvasPosition: {x: 0, y: 0, z: 0}
+  m_LevelNameTextPosition: {x: 0, y: 0, z: 0}
+  m_LevelClickAreaPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3080381009824470289
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.49595687, b: 0, a: 0}
+  m_Color: {r: 0.8301887, g: 0.49595687, b: 0, a: 0.49803922}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

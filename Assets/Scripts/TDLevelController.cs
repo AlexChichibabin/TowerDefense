@@ -35,7 +35,8 @@ namespace TowerDefense
             DisableAll<Spawner>();
             DisableAll<Projectile>();
             DisableAll<Tower>();
-
+            TimeLevelCondition tlc = GetComponent<TimeLevelCondition>();
+            tlc.LevelIsStoped = true;
         }
     }
 }

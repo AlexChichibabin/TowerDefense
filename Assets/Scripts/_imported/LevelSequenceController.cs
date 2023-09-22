@@ -50,7 +50,7 @@ namespace SpaceShip
             //PlayerPrefs.Save();
 
             ResultPanelController.Instance.ShowResults(LevelStatistics, success);
-            print(LastLevelResult);
+            //print(LastLevelResult);
         }
 
         public void AdvanceLevel()

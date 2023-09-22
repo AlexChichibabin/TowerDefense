@@ -41,7 +41,7 @@ namespace SpaceShip
             //Respawn();
         }
         
-        private void OnShipDeath()
+        /*private void OnShipDeath()
         {
             m_NumLives--;
 
@@ -50,7 +50,7 @@ namespace SpaceShip
                 //Respawn();
             }
             else LevelSequenceController.Instance.FinishCurrentLevel(false);
-        }
+        }*/
 
         protected void ApplyDamage(int damage)
         {
