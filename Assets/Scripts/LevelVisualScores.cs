@@ -11,7 +11,7 @@ namespace TowerDefense
 
 
         [SerializeField] private Color starColor = Color.yellow;
-        [SerializeField][Range(0, 255)] private int blackInvisibility = 188;
+        //[SerializeField][Range(0, 255)] private int blackInvisibility = 188;
 
         private void Start()
         {

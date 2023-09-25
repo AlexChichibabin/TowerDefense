@@ -8,7 +8,12 @@ namespace TowerDefense
 {
     public class MapCompletion : SingletonBase<MapCompletion>
     {
-        const string filename = "completion.dat";
+        public const string filename = "completion.dat";
+
+        /*public static void ResetSavedData()
+        {
+            Saver<EpisodeScore[]>.Reset(filename);
+        }*/
 
         [Serializable]
         private class EpisodeScore
