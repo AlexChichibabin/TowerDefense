@@ -6,13 +6,25 @@ namespace TowerDefense
 {
     public class MapLevel : MonoBehaviour
     {
-        [SerializeField] private Episode episode;
-        private int starsAmount;
+        private Episode m_Episode;
+        private int m_StarsAmount;
+        [SerializeField] private LevelVisualScores m_VisualScores;
 
+        private void Awake()
+        {
+            m_VisualScores = GetComponentInChildren<LevelVisualScores>();
+        }
 
         public void LoadLevel()
         {
-            LevelSequenceController.Instance.StartEpisode(episode);
+            LevelSequenceController.Instance.StartEpisode(m_Episode);
+        }
+
+        public void SetLevelData(Episode episode, int scores)
+        {
+            m_Episode = episode;
+            m_StarsAmount = scores;
+            m_VisualScores.SetStars(scores);
         }
         /*[Header("VisualLeftRight")]
         [SerializeField] private bool isLeftSided;
