@@ -10,7 +10,11 @@ namespace TowerDefense
         private int starsAmount;
 
 
-        [Header("VisualLeftRight")]
+        public void LoadLevel()
+        {
+            LevelSequenceController.Instance.StartEpisode(episode);
+        }
+        /*[Header("VisualLeftRight")]
         [SerializeField] private bool isLeftSided;
 
         [SerializeField] private SpriteRenderer m_ScrollSprite;
@@ -19,29 +23,44 @@ namespace TowerDefense
         [SerializeField] private Text m_LevelNameText;
         [SerializeField] private RectTransform m_LevelClickArea;
 
-        [SerializeField] private Vector3 m_ScrollSpritePosition;
-        [SerializeField] private Vector3 m_ScoresPosition;
-        [SerializeField] private Vector3 m_CanvasPosition;
-        [SerializeField] private Vector3 m_LevelNameTextPosition;
-        [SerializeField] private Vector3 m_LevelClickAreaPosition;
+        [Header("LeftSidePositions")]
+        [SerializeField] private Vector3 m_LScrollSpritePosition;
+        [SerializeField] private Vector3 m_LScoresPosition;
+        [SerializeField] private Vector3 m_LCanvasPosition;
+        [SerializeField] private Vector3 m_LLevelNameTextPosition;
+        [SerializeField] private Vector3 m_LLevelClickAreaPosition;
 
-        public void LoadLevel()
-        {
-            LevelSequenceController.Instance.StartEpisode(episode);
-        }
+        [Header("RightSidePositions")]
+        [SerializeField] private Vector3 m_RScrollSpritePosition;
+        [SerializeField] private Vector3 m_RScoresPosition;
+        [SerializeField] private Vector3 m_RCanvasPosition;
+        [SerializeField] private Vector3 m_RLevelNameTextPosition;
+        [SerializeField] private Vector3 m_RLevelClickAreaPosition;
+
+        
 
 #if UNITY_EDITOR
         private void OnValidate()
         {
             if (isLeftSided)
             {
-                m_ScrollSprite.transform.position = m_ScrollSpritePosition;
-                m_Scores.transform.position = m_ScoresPosition;
-                m_Canvas.transform.position = m_CanvasPosition;
-                m_LevelNameText.transform.position = m_LevelNameTextPosition;
-                m_LevelClickArea.position = m_LevelClickAreaPosition;
+                //m_ScrollSprite.transform.localPosition = m_ScrollSpritePosition;
+               // m_Scores.transform.localposition = m_ScoresPosition;
+                //m_Canvas.transform.localposition = m_CanvasPosition;
+                m_LevelNameText.transform.localPosition = m_LLevelNameTextPosition;
+                m_LevelNameText.text = m_LevelNameText.GetComponentInParent<MapLevel>().name;
+                //m_LevelClickArea.localposition = m_LevelClickAreaPosition;
+            }
+            else
+            {
+                //m_ScrollSprite.transform.localPosition = m_ScrollSpritePosition;
+                // m_Scores.transform.localposition = m_ScoresPosition;
+                //m_Canvas.transform.localposition = m_CanvasPosition;
+                m_LevelNameText.transform.localPosition = m_RLevelNameTextPosition;
+                m_LevelNameText.text = m_LevelNameText.GetComponentInParent<MapLevel>().name;
+                //m_LevelClickArea.localposition = m_LevelClickAreaPosition;
             }
         }
-#endif
+#endif*/
     }
 }
