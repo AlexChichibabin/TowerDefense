@@ -5,7 +5,7 @@ using System.IO;
 
 namespace TowerDefense
 {
-    public class MainMenuPanel : MonoBehaviour
+    public class MainMenuPanel : SingletonBase<MainMenuPanel>
     {
         [SerializeField] private Button continueButton;
         [SerializeField] private GameObject CheckNewGamePanel;

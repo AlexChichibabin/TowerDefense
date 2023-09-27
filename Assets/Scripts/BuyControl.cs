@@ -9,7 +9,7 @@ namespace TowerDefense
         {
             t = GetComponent<RectTransform>();
             BuildSite.OnClickEvent += MoveToBuildSite;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
 
         private void MoveToBuildSite(Transform builtSite)
@@ -29,7 +29,10 @@ namespace TowerDefense
             {
                 tbc.SetBuildSite(builtSite);
             }
-
+        }
+        private void OnDestroy()
+        {
+            BuildSite.OnClickEvent -= MoveToBuildSite;
         }
     }
 }

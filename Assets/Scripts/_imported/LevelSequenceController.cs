@@ -7,7 +7,8 @@ namespace SpaceShip
 {
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
-        public static string MainMenuSceneNickname = "LevelMap";
+        public static string MainMenuSceneNickname = "MainMenu";
+        public static string MapSceneNickname = "LevelMap";
 
         public Episode CurrentEpisode { get; private set; }
 
@@ -32,13 +33,14 @@ namespace SpaceShip
             MainStatistics = TotalStatistics.Instance;*/
 
             if (CurrentEpisode.Levels.Length > 0 && CurrentEpisode.Levels[CurrentLevel] != null)
-            SceneManager.LoadScene(episode.Levels[CurrentLevel]);
+
+                SceneManager.LoadScene(episode.Levels[CurrentLevel]);
         }
 
         public void RestartLevel()
         {
             //SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
         }
 
         public void FinishCurrentLevel(bool success)
@@ -56,16 +58,23 @@ namespace SpaceShip
         public void AdvanceLevel()
         {
             //LevelStatistics.Reset();
-            CurrentLevel++;
-
-            if (CurrentEpisode.Levels.Length <= CurrentLevel)
+            if (CurrentEpisode)
             {
-                SceneManager.LoadScene(MainMenuSceneNickname);
+                CurrentLevel++;
+
+                if (CurrentEpisode.Levels.Length <= CurrentLevel)
+                {
+                    SceneManager.LoadScene(MapSceneNickname);
+                }
+                else
+                {
+                    SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
+                }
             }
             else
             {
-                SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
-            }
+                SceneManager.LoadScene(MapSceneNickname);
+            }        
         }
 
         private void CalculateLevelStatistic()

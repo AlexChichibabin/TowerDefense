@@ -6,14 +6,15 @@ namespace TowerDefense
     public class TimeLevelCondition : MonoBehaviour, ILevelCondition
     {
         [SerializeField] private float timeLimit = 4f;
+        [SerializeField] private WaveTimeController waveTimeController;
 
-        public bool LevelIsStoped = false;
+        [HideInInspector] public bool LevelIsStoped = false;
         public bool IsCompleted => CheckCompletion();
 
 
         private void Start()
         {
-            timeLimit += Time.time;
+            timeLimit += Time.time + waveTimeController.StartWaveTime;
         }
         private void FixedUpdate()
         {

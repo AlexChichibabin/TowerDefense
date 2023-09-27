@@ -26,6 +26,11 @@ namespace TowerDefense
             }
         }
 
+        private void OnDestroy()
+        {
+            TDPlayer.GoldUpdateUnSubscribe(GoldStatusCheck);
+        }
+
         public void SetBuildSite(Transform value)
         {
             buildSite = value;

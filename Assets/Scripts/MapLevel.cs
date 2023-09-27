@@ -14,6 +14,10 @@ namespace TowerDefense
         {
             m_VisualScores = GetComponentInChildren<LevelVisualScores>();
         }
+        private void Start()
+        {
+            //print(m_Episode);
+        }
 
         public void LoadLevel()
         {

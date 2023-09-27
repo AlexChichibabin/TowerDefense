@@ -135,6 +135,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 4380257269039754591, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -873.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380257269039754591, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -272
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775792644884308343, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_Spawner
+      value: 
+      objectReference: {fileID: 893071552}
+    - target: {fileID: 5026969350302505735, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_Spawner
+      value: 
+      objectReference: {fileID: 893071552}
+    - target: {fileID: 5575421263044510393, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_Spawner
+      value: 
+      objectReference: {fileID: 893071552}
     - target: {fileID: 8809022169641490184, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1716,7 +1736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fd49eea8cbbd64ebf136e7096ef0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 30
+  timeLimit: 2
+  waveTimeController: {fileID: 519185928455876163}
   LevelIsStoped: 0
 --- !u!114 &913631889
 MonoBehaviour:
@@ -1731,22 +1752,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 0
+  m_ReferenceTime: 10
   m_EventLevelCompleted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &982779308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,6 +1940,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1781d424fc6b6b546884bebbc4e9e412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1098534710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4414116395716546715, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+  m_PrefabInstance: {fileID: 32940516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1113051008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2036,17 +2056,6 @@ MonoBehaviour:
   m_Radius: 0.15
   m_PatrolPointAccuracy: 0
   m_SpecifiedPositions: []
---- !u!114 &1223925340 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1730953161691002292, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-  m_PrefabInstance: {fileID: 32940516}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1285514349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,8 +2940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
   m_Spawner: {fileID: 893071552}
-  m_TimerText: {fileID: 1223925340}
-  m_StartWaveTime: 6
+  m_TimerText: {fileID: 1098534710}
+  m_StartWaveTime: 2
 --- !u!1 &3192549936550248354
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,6 @@ namespace TowerDefense
     {
         public const string filename = "completion.dat";
 
-        /*public static void ResetSavedData()
-        {
-            Saver<EpisodeScore[]>.Reset(filename);
-        }*/
-
         [Serializable]
         private class EpisodeScore
         {
@@ -24,7 +19,10 @@ namespace TowerDefense
 
         public static void SaveEpisodeResult(int levelScore)
         {
-            Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
+            if (Instance)
+                Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
+            else
+                print($"Episode complete with score {levelScore}");
         }
         private void SaveResult(Episode currentEpisode, int levelScore)
         {

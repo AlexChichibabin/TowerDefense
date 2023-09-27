@@ -24,8 +24,8 @@ namespace TowerDefense
 
         public void OnNoButton()
         {
+            MainMenuPanel.Instance.gameObject.SetActive(true);
             gameObject.SetActive(false);
-            //MainMenuPanel.Instance.gameObject.SetActive(true);
         }
     }
 }

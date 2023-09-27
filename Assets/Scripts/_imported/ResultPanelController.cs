@@ -30,8 +30,8 @@ namespace SpaceShip
 
             m_Success = success;
 
-            m_Result.text = success ? "Win" : "Lose";
-            m_ButtonNextText.text = success ? "Next" : "Restart";
+            m_Result.text = success ? "Победа" : "Поражение";
+            m_ButtonNextText.text = success ? "Дальше" : "Заново";
 
             /*m_Kills.text = "Kills : " + levelResults.NumKills.ToString();
             m_Scores.text = "Scores : " + levelResults.Scores.ToString();
@@ -40,6 +40,16 @@ namespace SpaceShip
             //Time.timeScale = 0;
         }
 
+        private void UpdateCurrentLevelStats() 
+        {
+            int timeBonus = (int)(LevelController.Instance.ReferenceTime - (int)LevelController.Instance.LevelTime);
+
+            if(timeBonus > 0)
+            {
+
+            }
+        }
+        
         public void OnButtonNextAction()
         {
             gameObject.SetActive(false);
@@ -49,6 +59,15 @@ namespace SpaceShip
             if (m_Success) LevelSequenceController.Instance.AdvanceLevel();
             else LevelSequenceController.Instance.RestartLevel();
         }
+        public void OnButtonMapMenu()
+        {
+            gameObject.SetActive(false);
+
+            Time.timeScale = 1;
+
+            SceneManager.LoadScene(LevelSequenceController.MapSceneNickname);
+        }
+
         public void OnButtonMainMenu()
         {
             gameObject.SetActive(false);

@@ -14,7 +14,7 @@ namespace TowerDefense
             WaveTimer
         }
 
-        [SerializeField] private EnemySpawner m_Spawner;
+        //[SerializeField] private EnemySpawner m_Spawner;
 
         private Text m_Text;
         public UpdateSourse m_Sourse = UpdateSourse.Gold;

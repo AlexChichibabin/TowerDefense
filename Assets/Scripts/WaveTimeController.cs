@@ -29,17 +29,19 @@ namespace TowerDefense
             if (m_StartWaveTimer.CurrentTime > 0)
             {
                 m_StartWaveTimer.RemoveTime(Time.deltaTime);
-                if ((m_CurrentInt) > (int)m_StartWaveTimer.CurrentTime)
+                if (m_CurrentInt > (int)m_StartWaveTimer.CurrentTime)
                 {
                     m_CurrentInt = (int)m_StartWaveTimer.CurrentTime;
-                    StartWaveTimerTextUpdateSubscribe((int)m_StartWaveTimer.CurrentTime);
+                    StartWaveTimerTextUpdateSubscribe(m_CurrentInt+1);
                 }
             }
             if (m_StartWaveTimer.IsFinished == true)
             {
                 m_Spawner.gameObject.SetActive(true);
                 m_TimerText.gameObject.SetActive(false);
+                gameObject.SetActive(false);
             }
+            
         }
     }
 }
