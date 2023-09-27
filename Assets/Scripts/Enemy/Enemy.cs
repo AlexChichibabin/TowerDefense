@@ -2,6 +2,7 @@ using UnityEngine;
 using SpaceShip;
 using UnityEditor;
 using UnityEditor.Events;
+using System;
 
 namespace TowerDefense
 {
@@ -11,10 +12,13 @@ namespace TowerDefense
         private int m_Damage;
         private int m_Gold;
 
-        /*private void Start()
+        public event Action OnEnd;
+        private void OnDestroy()
         {
-            transform.GetComponent<TDPatrolController>().EndPath.AddListener(OnEndPath);
-        }*/
+            OnEnd?.Invoke();
+        }
+
+
         public void Use(EnemyAsset asset)
         {
             var sr = transform.Find("VisualModel").GetComponent<SpriteRenderer>();

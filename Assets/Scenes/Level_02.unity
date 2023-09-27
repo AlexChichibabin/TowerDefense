@@ -1146,17 +1146,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &631853888 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 519185927733782444, guid: 490efd56b02d9694e81f60080b0a04c6, type: 3}
-  m_PrefabInstance: {fileID: 2325926126221910190}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f5d325b046751f4e89e830882d7d489, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &655384524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1507,7 @@ MonoBehaviour:
   - {fileID: 98140797}
   - {fileID: 1797367175}
   currentWave: {fileID: 574978592}
+  activeEnemyCount: 0
 --- !u!1 &913631885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,7 +1519,7 @@ GameObject:
   - component: {fileID: 913631886}
   - component: {fileID: 913631887}
   - component: {fileID: 913631888}
-  - component: {fileID: 913631889}
+  - component: {fileID: 913631890}
   m_Layer: 0
   m_Name: PlayerCamp
   m_TagString: Untagged
@@ -1568,7 +1558,7 @@ MonoBehaviour:
   m_DoNotDestroyOnLoad: 0
   m_NumLives: 3
   m_Ship: {fileID: 0}
-  m_NumGold: 25
+  m_NumGold: 187
   towerPrefab: {fileID: 7268561584256709088, guid: 6f7eef6d713fcc14ea743a8428b106d4, type: 3}
 --- !u!114 &913631888
 MonoBehaviour:
@@ -1583,11 +1573,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 10
+  m_ReferenceTime: 30
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &913631889
+--- !u!114 &913631890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1596,12 +1586,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 913631885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07fd49eea8cbbd64ebf136e7096ef0b5, type: 3}
+  m_Script: {fileID: 11500000, guid: cc8e81f18b0f223418268284b439f578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 300
-  waveTimeController: {fileID: 631853888}
-  LevelIsStoped: 0
 --- !u!1 &975441001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,10 +3272,6 @@ PrefabInstance:
     - target: {fileID: 1020848207639448050, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775792644884308343, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-      propertyPath: m_Spawner
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5903744727067536286, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
       propertyPath: m_Name

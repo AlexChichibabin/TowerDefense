@@ -24,6 +24,7 @@ namespace SpaceShip
         protected void Start()
         {
             m_Conditions = GetComponentsInChildren<ILevelCondition>();
+            m_LevelTime = 0;
         }
 
         private void Update()

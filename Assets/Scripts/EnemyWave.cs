@@ -25,6 +25,12 @@ namespace TowerDefense
 
         [SerializeField] private float prepareTime = 10f;
 
+        [HideInInspector]
+        public float GetRemainingTime() { return prepareTime - Time.time; }
+
+        public static Action<float> OnWavePrepare;
+        
+
         private void Awake()
         {
             enabled = false;
@@ -34,6 +40,7 @@ namespace TowerDefense
 
         public void Prepare(Action spawnEnemies)
         {
+            OnWavePrepare?.Invoke(prepareTime);
             prepareTime += Time.time;
             enabled = true;
             OnWaveReady += spawnEnemies;
