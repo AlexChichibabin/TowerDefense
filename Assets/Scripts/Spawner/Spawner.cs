@@ -50,7 +50,7 @@ namespace TowerDefense
             for (int i = 0; i < m_NumSpawns; i++)
             {
                 var e = GenerateSpawnedEntity();
-                e.transform.position = m_Area.GetRandomInsideZone();
+                e.transform.position = m_Area.GetRandomInsideZone2D();
             }
         }
     }

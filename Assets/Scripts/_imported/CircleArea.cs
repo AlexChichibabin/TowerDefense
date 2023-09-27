@@ -21,12 +21,18 @@ namespace SpaceShip
         [SerializeField] private CircleGizmoMode m_CircleGizmoMode;
         public float Radius => m_Radius;
 
-        public Vector2 GetRandomInsideZone()
+        public Vector3 GetRandomInsideZone2D()
         {
-            return (Vector2)transform.position + (Vector2)UnityEngine.Random.insideUnitSphere * m_Radius;
+            Vector3 v3 = transform.position + UnityEngine.Random.insideUnitSphere * m_Radius;
+            v3.z = 0;
+            return v3;
+        }
+        public Vector3 GetRandomInsideZone3D()
+        {
+            return transform.position + UnityEngine.Random.insideUnitSphere * m_Radius;
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         //private static Color GizmoColor = new Color(0, 1, 0, 0.3f);
 
         private void OnDrawGizmosSelected()

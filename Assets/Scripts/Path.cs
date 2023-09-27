@@ -8,6 +8,9 @@ namespace TowerDefense
 {
     public class Path : MonoBehaviour
     {
+        [SerializeField] private CircleArea startArea;
+        public CircleArea StartArea { get { return startArea; } }
+        
         enum CircleGizmoMode
         {
             SolidDisk,

@@ -6,7 +6,7 @@ namespace TowerDefense
 {
     public class WaveTimeController : SingletonBase<WaveTimeController>
     {
-        [SerializeField] private EnemySpawner m_Spawner;
+        [SerializeField] private EnemyWaveManager m_Spawner;
         [SerializeField] private Text m_TimerText;
         [SerializeField] private float m_StartWaveTime;
         public float StartWaveTime => m_StartWaveTime;
