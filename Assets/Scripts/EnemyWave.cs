@@ -44,6 +44,7 @@ namespace TowerDefense
             prepareTime += Time.time;
             enabled = true;
             OnWaveReady += spawnEnemies;
+            
         }
 
         private void Update()

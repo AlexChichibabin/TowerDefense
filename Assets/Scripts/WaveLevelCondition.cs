@@ -11,7 +11,7 @@ namespace TowerDefense
 
         private void Start()
         {
-            if(Time.time > 0.001f)
+            //if(Time.time > 0.001f)
             FindObjectOfType<EnemyWaveManager>().OnAllWavesDead += () =>
             {
                 isCompleted = true;

@@ -20,6 +20,10 @@ namespace TowerDefense
                 {
                     ForceNextWave();
                 }
+                else
+                {
+                    OnAllWavesDead?.Invoke();
+                }
             }
         }
 
@@ -59,13 +63,7 @@ namespace TowerDefense
                 TDPlayer.Instance.ChangeGold((int)currentWave.GetRemainingTime());
                 SpawnEnemies();
             }
-            else
-            {
-                if (activeEnemyCount == 0)
-                {
-                    OnAllWavesDead?.Invoke();
-                }
-            }
+            
         }
     }
 }

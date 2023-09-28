@@ -8,9 +8,11 @@ namespace TowerDefense
     public class NextWaveGUI : MonoBehaviour
     {
         [SerializeField] private Text m_BonusAmount;
+        [SerializeField] private Text m_TimeToNextWaveText;
 
         private EnemyWaveManager manager;
         private float timeToNextWave;
+        
 
         private void Start()
         {
@@ -31,6 +33,7 @@ namespace TowerDefense
             var bonus = (int)timeToNextWave;
             if (timeToNextWave <= 0) bonus = 0 ;
             m_BonusAmount.text = bonus.ToString();
+            m_TimeToNextWaveText.text = bonus.ToString();
             timeToNextWave -= Time.deltaTime;
         }
     }

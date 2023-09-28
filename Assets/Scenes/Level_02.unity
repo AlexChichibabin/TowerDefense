@@ -1061,7 +1061,7 @@ MonoBehaviour:
     - asset: {fileID: 11400000, guid: 1711d89b0760339479de0bd64028506b, type: 2}
       count: 1
   - squads: []
-  prepareTime: 2
+  prepareTime: 5
   nextWave: {fileID: 408003859}
 --- !u!4 &574978593
 Transform:
@@ -2236,11 +2236,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1887422475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1613711531 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 271467351209472250, guid: 48e7e4ad25a053e448426a716b002ed8, type: 3}
-  m_PrefabInstance: {fileID: 6317372846326769436}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1713329309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,6 +3074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaveTimeController
       objectReference: {fileID: 0}
+    - target: {fileID: 3192549937104533069, guid: 490efd56b02d9694e81f60080b0a04c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6546425815924296957, guid: 490efd56b02d9694e81f60080b0a04c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.18
@@ -3277,10 +3276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 6472990993530619562, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-      propertyPath: buildSite
-      value: 
-      objectReference: {fileID: 1613711531}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
