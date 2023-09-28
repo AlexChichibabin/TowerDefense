@@ -8,14 +8,14 @@ namespace SpaceShip
 {
     public class ResultPanelController : SingletonBase<ResultPanelController>
     {
-        [SerializeField] private Text m_Kills;
-        [SerializeField] private Text m_Scores;
-        [SerializeField] private Text m_Time;
+        //[SerializeField] private Text m_Kills;
+        //[SerializeField] private Text m_Scores;
+        //[SerializeField] private Text m_Time;
 
         [SerializeField] private Text m_Result;
 
         [SerializeField] private Text m_ButtonNextText;
-        [SerializeField] private Button m_MainMenuButton;
+        //[SerializeField] private Button m_MainMenuButton;
 
         private bool m_Success;
 
