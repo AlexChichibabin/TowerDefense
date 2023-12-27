@@ -6,7 +6,7 @@ using System;
 
 namespace TowerDefense
 {
-    [RequireComponent(typeof(TDPatrolController))]
+    [RequireComponent(typeof(TDPatrolController))] // obsidian://open?vault=Scripts&file=TDPatrolController.cs
     public class Enemy : MonoBehaviour
     {
         private int m_Damage;
