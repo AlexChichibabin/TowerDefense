@@ -52,7 +52,7 @@ namespace TowerDefense
             if (Time.time >= prepareTime)
             {
                 enabled = false;
-                OnWaveReady?.Invoke(); // Такая запись с "?" равна if(OnWaveReady) {Invoke()}  Т.е. если есть подписка на OnWaveReady
+                OnWaveReady?.Invoke(); // Такая запись с "?" равна if(OnWaveReady) {Invoke()}  Т.е. если подписка на OnWaveReady не null
             }
         }
         public IEnumerable<(EnemyAsset asset, int count, int pathIndex)> EnumerateSquads()
@@ -71,6 +71,7 @@ namespace TowerDefense
         {
             OnWaveReady -= spawnEnemies;
             if (nextWave) nextWave.Prepare(spawnEnemies);
+            else OnWavePrepare?.Invoke(0);
             return nextWave;
         }
 

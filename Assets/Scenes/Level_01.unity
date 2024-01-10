@@ -489,7 +489,7 @@ MonoBehaviour:
     - asset: {fileID: 11400000, guid: 1711d89b0760339479de0bd64028506b, type: 2}
       count: 2
   - squads: []
-  prepareTime: 20
+  prepareTime: 10
   nextWave: {fileID: 2056661772}
 --- !u!1 &409942863
 GameObject:
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   - squads:
     - asset: {fileID: 11400000, guid: 4bb5166080980494da7e6eb9b1530ba3, type: 2}
       count: 2
-  prepareTime: 20
+  prepareTime: 15
   nextWave: {fileID: 1412649755}
 --- !u!1 &2096848506
 GameObject:
