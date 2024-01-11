@@ -10,6 +10,8 @@ namespace TowerDefense
         private int m_StarsAmount;
         [SerializeField] private LevelVisualScores m_VisualScores;
 
+        public bool IsComplete { get { return gameObject.activeSelf && m_StarsAmount > 0; } }
+
         private void Awake()
         {
             m_VisualScores = GetComponentInChildren<LevelVisualScores>();
@@ -29,6 +31,11 @@ namespace TowerDefense
             m_Episode = episode;
             m_StarsAmount = scores;
             m_VisualScores.SetStars(scores);
+        }
+
+        public int GetStarsAmount()
+        {
+            return m_StarsAmount;
         }
         /*[Header("VisualLeftRight")]
         [SerializeField] private bool isLeftSided;

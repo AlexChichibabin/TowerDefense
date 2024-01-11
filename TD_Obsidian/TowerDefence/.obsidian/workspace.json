@@ -11,11 +11,24 @@
             "id": "197029de8f08fa5d",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MapCompletion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c0d3c193e810408e",
+            "type": "leaf",
+            "state": {
               "type": "graph",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -138,8 +151,14 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "197029de8f08fa5d",
+  "active": "c0d3c193e810408e",
   "lastOpenFiles": [
+    "UI/NextWaveGUI.md",
+    "UI/BranchLevel.md",
+    "UI/MapLevel.md",
+    "UI/MainMenuPanel.md",
+    "MapCompletion.md",
+    "LevelDisplayController.md",
     "Spawner/WaveLevelcondition.md",
     "TimeLevelCondition.md",
     "TDPlayer.md",
@@ -148,24 +167,18 @@
     "Saver.md",
     "Player.md",
     "NullBuildSite.md",
-    "MapCompletion.md",
     "LevelVisualScores.md",
-    "LevelDisplayController.md",
-    "UI/MapLevel.md",
     "BuildSite.md",
     "BuyControl.md",
     "Entity.md",
     "_imported/SingletonBase.md",
     "UI/TowerBuyControl.md",
     "_imported/LevelController.md",
-    "UI/NextWaveGUI.md",
     "UI/TextUpdate.md",
     "UI/WaveTimeController.md",
-    "UI/MainMenuPanel.md",
     "UI/CheckNewGamePanel.md",
     "UI/LevelNameFromObject.md",
     "Tower/Tower.md",
-    "Tower/Turret.md",
     "UI",
     "Tower",
     "TD",

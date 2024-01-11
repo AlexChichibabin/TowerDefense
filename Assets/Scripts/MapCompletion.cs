@@ -38,11 +38,18 @@ namespace TowerDefense
         }
 
         [SerializeField] private EpisodeScore[] completionData;
+        [SerializeField] private int totalScores;
+        public int TotalScores { get { return totalScores; } }
+        //[SerializeField] private EpisodeScore[] branchCompletionData;
 
         private new void Awake()
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(filename, ref completionData);
+            foreach (var score in completionData)
+            {
+                totalScores += score.score;
+            }
         }
         public bool TryIndex(int id, out Episode episode, out int score)
         {
