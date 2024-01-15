@@ -11,11 +11,6 @@ namespace TowerDefense
 
         [SerializeField] private Color starColor = Color.yellow;
 
-        private void Start()
-        {
-
-        }
-
         public void SetStars(int scores)
         {
             currentScores = scores;
@@ -29,12 +24,5 @@ namespace TowerDefense
                 starsObjects[i].color = starColor;
             }
         }
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-
-        }
-#endif
     }
 }

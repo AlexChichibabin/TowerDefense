@@ -50,18 +50,19 @@ namespace TowerDefense
             {
                 totalScores += score.score;
             }
+            print("total scores are:" + totalScores);
         }
-        public bool TryIndex(int id, out Episode episode, out int score)
+
+        public int GetEpisodeScore(Episode m_Episode)
         {
-            if (id >= 0 && id < completionData.Length)
+            foreach (var data in completionData)
             {
-                episode = completionData[id].episode;
-                score = completionData[id].score;
-                return true;
+                if (data.episode == m_Episode)
+                {
+                    return data.score;
+                }
             }
-            episode = null;
-            score = 0;
-            return false;
+            return 0;
         }
     }
 }

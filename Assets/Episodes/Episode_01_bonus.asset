@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb890b06fe4e8074e98df7dada28e468, type: 3}
-  m_Name: Episode_05
+  m_Name: Episode_01_bonus
   m_EditorClassIdentifier: 
-  m_EpisodeName: Episode 5
+  m_EpisodeName: Episode 1_bonus
   m_Levels:
   - Level_02
   m_PreviewImage: {fileID: 0}
