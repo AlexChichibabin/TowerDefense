@@ -46,12 +46,23 @@ namespace TowerDefense
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(filename, ref completionData);
+            /*foreach (var score in completionData)
+            {
+                totalScores += score.score;
+            }
+            print("total scores are:" + totalScores);*/
+        }
+        private void OnLevelWasLoaded(int level)
+        {
+            totalScores = 0;
             foreach (var score in completionData)
             {
                 totalScores += score.score;
             }
             print("total scores are:" + totalScores);
+            print("This is level:" + level);
         }
+
 
         public int GetEpisodeScore(Episode m_Episode)
         {

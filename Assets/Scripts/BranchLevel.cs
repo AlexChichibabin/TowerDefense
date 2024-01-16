@@ -15,11 +15,18 @@ namespace TowerDefense
 
         [SerializeField] private int needStars = 3;
 
+        private void Start()
+        {
+            int scores = MapCompletion.Instance.TotalScores;
+            
+        }
+
         public void TryActivate()
         {
             gameObject.SetActive(rootLevel.IsComplete);
             print($"rootLevel is: {rootLevel.IsComplete}");
-            print($"TotalScores from MapCompletion: {MapCompletion.Instance.TotalScores}");
+            print("TotalScores from MapCompletion: " + MapCompletion.Instance.TotalScores);
+
             if (needStars > MapCompletion.Instance.TotalScores)
             {
                 pointText.text = (needStars - MapCompletion.Instance.TotalScores).ToString();
