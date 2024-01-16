@@ -40,19 +40,26 @@ namespace TowerDefense
         [SerializeField] private EpisodeScore[] completionData;
         [SerializeField] private int totalScores;
         public int TotalScores { get { return totalScores; } }
+
         //[SerializeField] private EpisodeScore[] branchCompletionData;
 
         private new void Awake()
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(filename, ref completionData);
-            /*foreach (var score in completionData)
+
+            foreach (var score in completionData)
             {
                 totalScores += score.score;
             }
-            print("total scores are:" + totalScores);*/
+            print("total scores (awake) are:" + totalScores);
         }
-        private void OnLevelWasLoaded(int level)
+
+        private void Start()
+        {
+            print("total scores (start) are:" + totalScores);
+        }
+        /*private void OnLevelWasLoaded(int level)
         {
             totalScores = 0;
             foreach (var score in completionData)
@@ -61,7 +68,7 @@ namespace TowerDefense
             }
             print("total scores are:" + totalScores);
             print("This is level:" + level);
-        }
+        }*/
 
 
         public int GetEpisodeScore(Episode m_Episode)

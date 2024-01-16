@@ -15,11 +15,6 @@ namespace TowerDefense
 
         [SerializeField] private int needStars = 3;
 
-        private void Start()
-        {
-            int scores = MapCompletion.Instance.TotalScores;
-            
-        }
 
         public void TryActivate()
         {
