@@ -50,25 +50,10 @@ namespace TowerDefense
 
             foreach (var score in completionData)
             {
-                totalScores += score.score;
+                Instance.totalScores += score.score;
             }
-            print("total scores (awake) are:" + totalScores);
+            print("total scores (awake) are:" + Instance.totalScores);
         }
-
-        private void Start()
-        {
-            print("total scores (start) are:" + totalScores);
-        }
-        /*private void OnLevelWasLoaded(int level)
-        {
-            totalScores = 0;
-            foreach (var score in completionData)
-            {
-                totalScores += score.score;
-            }
-            print("total scores are:" + totalScores);
-            print("This is level:" + level);
-        }*/
 
 
         public int GetEpisodeScore(Episode m_Episode)
