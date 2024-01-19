@@ -7,16 +7,23 @@ namespace TowerDefense
 {
     public class BuyUpgrade : MonoBehaviour
     {
+        [SerializeField] private UpgradeAsset asset;
         [SerializeField] private Image upgradeIcon;
-        [SerializeField] private Text levelCurrent, levelNext, cost;
+        [SerializeField] private Text level, levelNext, cost;
         [SerializeField] private Button buyButton;
 
-        public void SetUpgrade(UpgradeAsset asset, int levelNext = 1)
+        public void Initialize()
         {
-            upgradeIcon.sprite = asset.sprite;
-            this.levelNext.text = levelNext.ToString();
-            levelCurrent.text = (levelNext-1).ToString();
-            cost.text = asset.costByLevel[levelNext].ToString();
+            if(upgradeIcon) upgradeIcon.sprite = asset.sprite;
+            var level = Upgrades.GetUpgradeLevel(asset); // Int level
+            levelNext.text = $"Lvl: {level+1}";
+            this.level.text = $"Lvl: {level}"; // Текствовый объект level
+            cost.text = $"Buy: {asset.costByLevel[level]}";
+        }
+
+        public void Buy()
+        {
+            Upgrades.BuyUpgrade(asset);
         }
     }
 }

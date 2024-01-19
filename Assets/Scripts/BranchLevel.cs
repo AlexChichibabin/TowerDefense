@@ -19,8 +19,6 @@ namespace TowerDefense
         public void TryActivate()
         {
             gameObject.SetActive(rootLevel.IsComplete);
-            print($"rootLevel is: {rootLevel.IsComplete}");
-            print("TotalScores from MapCompletion: " + MapCompletion.Instance.TotalScores);
 
             if (needStars > MapCompletion.Instance.TotalScores)
             {
@@ -28,9 +26,7 @@ namespace TowerDefense
             }
             else
             {
-                print($"blockPanel before: {pointText.transform.parent.gameObject.activeSelf}");
                 pointText.transform.parent.gameObject.SetActive(false);
-                print($"blockPanel after: {pointText.transform.parent.gameObject.activeSelf}");
                 GetComponent<MapLevel>().Initialize();
             }
         }

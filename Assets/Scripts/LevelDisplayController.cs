@@ -27,7 +27,6 @@ namespace TowerDefense
             }
             for (int i = 0; i < branchLevels.Length; i++)
             {
-                print("Branch: TryActivate");
                 branchLevels[i].TryActivate();
                 
             }

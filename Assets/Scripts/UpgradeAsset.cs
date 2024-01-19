@@ -9,7 +9,7 @@ namespace TowerDefense
     {
         public Sprite sprite;
 
-        public int[] costByLevel = { 3 };
+        public int[] costByLevel = { 4 };
 
     }
 }

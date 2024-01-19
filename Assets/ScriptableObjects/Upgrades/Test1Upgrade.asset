@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 972a5fe0a5d3d714a8d22698d623b2fe, type: 3}
-  m_Name: HealthUpgrade
+  m_Name: Test1Upgrade
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: a3608854150dd6748adad329ab38d1da, type: 3}
-  costByLevel: 03000000
+  sprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}
+  costByLevel: 02000000

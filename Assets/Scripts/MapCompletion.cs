@@ -52,7 +52,6 @@ namespace TowerDefense
             {
                 Instance.totalScores += score.score;
             }
-            print("total scores (awake) are:" + Instance.totalScores);
         }
 
 
