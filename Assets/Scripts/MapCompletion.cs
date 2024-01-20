@@ -47,7 +47,7 @@ namespace TowerDefense
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(filename, ref completionData);
-
+            Instance.totalScores = 0;
             foreach (var score in completionData)
             {
                 Instance.totalScores += score.score;

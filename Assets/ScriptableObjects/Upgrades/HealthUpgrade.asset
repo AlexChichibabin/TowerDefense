@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HealthUpgrade
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a3608854150dd6748adad329ab38d1da, type: 3}
-  costByLevel: 03000000
+  costByLevel: 030000000400000005000000
