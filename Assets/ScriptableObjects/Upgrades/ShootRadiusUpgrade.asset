@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 972a5fe0a5d3d714a8d22698d623b2fe, type: 3}
-  m_Name: Test2Upgrade
+  m_Name: ShootRadiusUpgrade
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: b50ce09d615e14248ac610924ec5a3f2, type: 3}
-  costByLevel: 01000000
+  sprite: {fileID: 21300000, guid: 06b3b764465972e4c85071e9bac4296c, type: 3}
+  costByLevel: 010000000200000003000000

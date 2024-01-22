@@ -8,35 +8,46 @@ namespace TowerDefense
 {
     public class BuyUpgrade : MonoBehaviour
     {
+        [Header("UpgradeAsset")]
         [SerializeField] private UpgradeAsset asset;
-        [SerializeField] private Image upgradeIcon;
-        [SerializeField] private Text level, levelNext, levelMax, costText;
+
+        [Header("Interface")]
+        [SerializeField] private Text level;
+        [SerializeField] private Text levelNext;
+        [SerializeField] private Text levelMax;
+        [SerializeField] private Text costText;
         [SerializeField] private GameObject lvlsFolder;
         [SerializeField] private Button buyButton;
 
-        private static int costNumber = 0;
+        [Header ("Icon")]
+        [SerializeField] private bool plusTextIsActive;
+        [SerializeField] private Text plusText;
+        [SerializeField] private string plusString;
+        [SerializeField] private Image upgradeIcon;
+
+        private static int costNumber = 0; //Current cost
         private bool isMax = false;
 
         public void Initialize()
         {
-            if(upgradeIcon) upgradeIcon.sprite = asset.sprite; // Допилить
+            if (upgradeIcon) upgradeIcon.sprite = asset.sprite; // Допилить
+            if (plusText)
+            {
+                if (!plusTextIsActive) plusText.gameObject.SetActive(false);
+                else plusText.text = plusString;
+            }
+
             var level = Upgrades.GetUpgradeLevel(asset); // Int level
-          
-            //this.level.text = $"Lvl: {level}"; 
+
             if (level >= asset.costByLevel.Length)
-            {               
-                SetMaxLvlText();
-                levelMax.text = $"Lvl: {level} (Max)";
+            {
+                SetMaxLvlText(level);
                 isMax = true;
                 costNumber = int.MaxValue;
             }
-            else 
+            else
             {
-                this.level.text = $"Lvl: {level}"; // Текствовый объект level
-                levelNext.text = $"Lvl: {level + 1}";
-                costText.text = $"Buy: {asset.costByLevel[level]}";
-                costNumber = asset.costByLevel[level];
-                levelMax.gameObject.SetActive(false);
+                SetCurrentLvlText(level);
             }
         }
 
@@ -46,24 +57,30 @@ namespace TowerDefense
             Initialize();
         }
 
-        private void SetMaxLvlText()
+        private void SetMaxLvlText(int level)
         {
             buyButton.interactable = false;
             buyButton.transform.Find("ImageStar").gameObject.SetActive(false);
             levelMax.gameObject.SetActive(true);
             lvlsFolder.gameObject.SetActive(false);
             costText.text = "X";
+            levelMax.text = $"Lvl: {level} (Max)";
+        }
+        private void SetCurrentLvlText(int level)
+        {
+            this.level.text = $"Lvl: {level}"; // Текствовый объект level
+            levelNext.text = $"Lvl: {level + 1}";
+            costText.text = $"Buy: {asset.costByLevel[level]}";
+            costNumber = asset.costByLevel[level];
+            levelMax.gameObject.SetActive(false);
         }
 
         public void CheckCost(int money)
         {
-            if (isMax)
-            {
-                return;
-            }
+            if (isMax) return;
+
             Initialize();
             buyButton.interactable = money >= costNumber;
-            print(costNumber);
         }
     }
 }

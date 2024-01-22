@@ -14,7 +14,7 @@ namespace TowerDefense
         [Serializable]
         private class UpgradeSave
         {
-            public UpgradeAsset aseet;
+            public UpgradeAsset asset;
             public int level = 0;
         }
 
@@ -23,7 +23,7 @@ namespace TowerDefense
         {
             foreach (var upgrade in Instance.save)
             {
-                if (upgrade.aseet == asset)
+                if (upgrade.asset == asset)
                 {
                     upgrade.level++;
                     Saver<UpgradeSave[]>.Save(filename, Instance.save);
@@ -39,7 +39,7 @@ namespace TowerDefense
             {
                 for (int i = 0; i < upgrade.level; i++)
                 {
-                    result += upgrade.aseet.costByLevel[i];
+                    result += upgrade.asset.costByLevel[i];
                 }
             }
             return result;
@@ -55,7 +55,7 @@ namespace TowerDefense
         {
             foreach (var upgrade in Instance.save)
             {
-                if (upgrade.aseet == asset)
+                if (upgrade.asset == asset)
                 {
                     return upgrade.level;
                 }

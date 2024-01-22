@@ -47,6 +47,14 @@ namespace TowerDefense
             OnLifeUpdate(NumLives);
         }
 
+        [SerializeField] private UpgradeAsset healthUpgrade;
+        private new void Awake()
+        {
+            base.Awake();
+            var level = Upgrades.GetUpgradeLevel(healthUpgrade);
+            ApplyDamage(-level);
+        }
+
         // TODO: Верим, что золота на постройку достаточно
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)
         {
