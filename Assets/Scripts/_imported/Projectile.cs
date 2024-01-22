@@ -7,6 +7,7 @@ namespace SpaceShip
     public class Projectile : Entity
     {
         [SerializeField] private float m_Velocity;
+        public float Velocity => m_Velocity;
         [SerializeField] private float m_LifeTime;
         [SerializeField] private int m_Damage;
         public int Damage => m_Damage;
@@ -40,22 +41,13 @@ namespace SpaceShip
                 {
                     if (m_ImpactExplosionPrefab == null)
                     {
-                        //if (m_Parent == null) return;
-
                             dest.ApplyDamage(m_Damage);
-
-                            /*if (m_Parent == Player.Instance.ActiveShip) // Если родитель - игрок
-                            {
-                                Player.Instance.AddScore(dest.ScoreValue); // Добавить очки за попадание
-                                if (dest.CurrentHitPoints <= 0 && dest.TeamId != 0 && dest != Player.Instance.ActiveShip) Player.Instance.AddKill(); // Добавить убийства
-                            }*/
                     }
                 }
                 if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
                 {
                     OnProjectileLifeEnd(hit.collider, hit.point);
                 }
-                
             }
 
             m_Timer += Time.deltaTime;
@@ -64,6 +56,12 @@ namespace SpaceShip
             transform.position += new Vector3(step.x, step.y, 0);
 
             ControllRocket();
+        }
+
+        public void MultiplyVelocity(float coefficient)
+        {
+            print("MultiplyVelocity is " + coefficient);
+            m_Velocity *= coefficient;
         }
 
         private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)

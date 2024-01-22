@@ -31,13 +31,26 @@ namespace SpaceShip
         private Ship m_Ship;
         private Tower m_Tower;
 
+        private bool accelerationIsActive = false;
+
         #endregion
 
         #region UnityEvents
+
+
         private void Start()
         {
             m_Ship = transform.root.GetComponent<Ship>();
             m_Tower = transform.root.GetComponent<Tower>();
+            if (m_TurretProperties == ArcherProps)
+            {
+                //print("m_TurretProperties is " + m_TurretProperties);
+                if (m_Tower.ArrowAccelerationLevel >= 1)
+                {
+                    //print("ArrowAccelerationLevel OnStart is " + m_Tower.ArrowAccelerationLevel);
+                    accelerationIsActive = true;
+                }
+            }
         }
 
         private void Update()
@@ -70,6 +83,9 @@ namespace SpaceShip
             projectile.transform.position = m_FireSource.transform.position;
             projectile.transform.up = m_FireSource.transform.up;
             projectile.SetTarget(m_Target);
+            print("Velocity before is " + projectile.Velocity);
+            AccelerateArrows(projectile);
+            print("Velocity after is " + projectile.Velocity);
 
             if (m_Ship != null)
             {
@@ -85,6 +101,17 @@ namespace SpaceShip
             if (m_Mode == TurretMode.Secondary && m_ImpactSoundSecondary != null)
             {
                 Instantiate(m_ImpactSoundSecondary, projectile.transform.position, Quaternion.identity);
+            }
+
+        }
+
+        [SerializeField] private TurretProperties ArcherProps;
+        private void AccelerateArrows(Projectile projectile)
+        {
+            print("acceleration is " + accelerationIsActive);
+            if (accelerationIsActive == true)
+            {
+                projectile.MultiplyVelocity(1.0f + (float)m_Tower.ArrowAccelerationLevel / 10.0f);
             }
         }
 

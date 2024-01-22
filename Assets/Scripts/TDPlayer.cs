@@ -51,16 +51,12 @@ namespace TowerDefense
         private new void Awake()
         {
             base.Awake();
-            var level = Upgrades.GetUpgradeLevel(healthUpgrade);
-            ApplyDamage(-level);
+            var HealthLevel = Upgrades.GetUpgradeLevel(healthUpgrade);
+            ApplyDamage(-HealthLevel);
         }
 
-        // TODO: Верим, что золота на постройку достаточно
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)
         {
-            /*if (m_NumGold >= m_TowerAsset.goldCost)
-            {
-            }*/
             ChangeGold(-towerAsset.goldCost);
             var tower = Instantiate(towerPrefab, buildSite.position, Quaternion.identity);
             SpriteRenderer sr = tower.GetComponentInChildren<SpriteRenderer>();

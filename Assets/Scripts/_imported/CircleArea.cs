@@ -21,6 +21,11 @@ namespace SpaceShip
         [SerializeField] private CircleGizmoMode m_CircleGizmoMode;
         public float Radius => m_Radius;
 
+        public void SetRadius(float r)
+        {
+            m_Radius = r;
+        }
+
         public Vector3 GetRandomInsideZone2D()
         {
             Vector3 v3 = transform.position + UnityEngine.Random.insideUnitSphere * m_Radius;
