@@ -10,7 +10,7 @@ namespace SpaceShip
         /// <summary>
         /// object name for user
         /// </summary>
-        [SerializeField] private string m_Nickname;
+        [SerializeField] protected string m_Nickname;
         public string Nickname => m_Nickname;
     }
 }

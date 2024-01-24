@@ -1,22 +1,42 @@
-using TowerDefense;
+using System;
 using UnityEngine;
+using UnityEditor;
+using Unity.Burst.CompilerServices;
+
 
 namespace SpaceShip
 {
     public class Projectile : Entity
     {
+        public void SetFromOtherProjectile(Projectile other)
+        {
+            other.SetData(out m_Velocity, out m_LifeTime, out m_Damage, out m_Nickname, out m_ImpactExplosionPrefab, out IsSelfDirected, out m_DirSensity, out m_Area);
+        }
+
+        private void SetData(out float m_Velocity, out float m_LifeTime, out int m_Damage, out string m_Nickname, out ImpactExplosion m_ImpactExplosionPrefab, out bool IsSelfDirected, out float m_DirSensity, out CircleArea m_Area)
+        {
+            m_Velocity = this.m_Velocity;
+            m_LifeTime = this.m_LifeTime;
+            m_Damage = this.m_Damage;
+            m_Nickname = this.m_Nickname;
+            m_ImpactExplosionPrefab = this.m_ImpactExplosionPrefab;
+            IsSelfDirected = this.IsSelfDirected;
+            m_DirSensity = this.m_DirSensity;
+            m_Area = this.m_Area;
+        }
+
         [SerializeField] private float m_Velocity;
         public float Velocity => m_Velocity;
         [SerializeField] private float m_LifeTime;
-        [SerializeField] private int m_Damage;
+        [SerializeField] protected int m_Damage;
         public int Damage => m_Damage;
 
         [Header("RocketAndSelfdirection")]
-        [SerializeField] private ImpactExplosion m_ImpactExplosionPrefab;
-        [SerializeField] private bool IsSelfDirected;
-        [SerializeField] private float m_DirSensity;
+        [SerializeField] protected ImpactExplosion m_ImpactExplosionPrefab;
+        [SerializeField] protected bool IsSelfDirected;
+        [SerializeField] protected float m_DirSensity;
 
-        [SerializeField] private CircleArea m_Area;
+        [SerializeField] protected CircleArea m_Area;
         //[SerializeField] private bool isPlayer;
 
         private Destructible m_Target; // Для самонаводящихся снарядов
@@ -41,59 +61,38 @@ namespace SpaceShip
             ControllRocket();
         }
 
-        private void OnHit(RaycastHit2D hit)
+        protected virtual void OnHit(RaycastHit2D hit)
         {
-            if (hit)
-            {
-                Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
+            Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
 
-                if (enemy != null)
+            if (dest != null && dest != m_Parent)
+            {
+                if (m_ImpactExplosionPrefab == null)
                 {
-                    if (m_ImpactExplosionPrefab == null)
-                    {
-                        enemy.TakeDamage(m_Damage);
-                    }
+                    dest.ApplyDamage(m_Damage);
                 }
-                if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
-                {
-                    OnProjectileLifeEnd(hit.collider, hit.point);
-                }
+            }
+            if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
+            {
+                OnProjectileLifeEnd(hit.collider, hit.point);
             }
         }
-
-        /*private void OnHit(RaycastHit2D hit)
-        {
-            if (hit)
-            {
-                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
-
-                if (dest != null && dest != m_Parent)
-                {
-                    if (m_ImpactExplosionPrefab == null)
-                    {
-                        dest.ApplyDamage(m_Damage);
-                    }
-                }
-                if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
-                {
-                    OnProjectileLifeEnd(hit.collider, hit.point);
-                }
-            }
-        }*/
 
         public void MultiplyVelocity(float coefficient) // Using by Upgrade
         {
-            //print("MultiplyVelocity is " + coefficient);
             m_Velocity *= coefficient;
         }
 
-        private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
+        protected void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {
+            print("yes");
             if (m_ImpactExplosionPrefab != null)
             {
+                print(m_ImpactExplosionPrefab);
                 ImpactExplosion expl = Instantiate(m_ImpactExplosionPrefab, pos, Quaternion.identity);
                 //expl.SetParentShooter(m_Parent);
             }
+            print(gameObject);
 
             Destroy(gameObject);
         }
@@ -117,7 +116,7 @@ namespace SpaceShip
             }
         }
 
-        /*private void GetTarget() // Выбор цели в радиусе вокруг снаряда
+        private void GetTarget() // Выбор цели в радиусе вокруг снаряда
         {
             Collider2D targetHit = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), m_Area.Radius);
             print(targetHit);
@@ -128,17 +127,35 @@ namespace SpaceShip
                 m_Target = dest;
             }
             if (m_Target == null) return;
-        }*/
+        }
         private void CorrectDirection() // Смена курса по направлению к цели
         {
-                Vector3 dir = (m_Target.transform.position - transform.position).normalized;
-                transform.up = Vector3.Slerp(transform.up, dir, Time.deltaTime * m_DirSensity);
+            Vector3 dir = (m_Target.transform.position - transform.position).normalized;
+            transform.up = Vector3.Slerp(transform.up, dir, Time.deltaTime * m_DirSensity);
         }
 
         public void SetTarget(Destructible target) // Для самонаводящихся снарядов
         {
             m_Target = target;
         }
+    }
+}
+namespace TowerDefense
+{
+    [CustomEditor(typeof(SpaceShip.Projectile))]
+    public class ProjectileInspector : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
 
+            if (GUILayout.Button("Create TDProjectile")) // Creates TDProjectile component with the same settings as Projectile and destroys last one
+            {
+                var target = this.target as SpaceShip.Projectile;
+                var tdProj = target.gameObject.AddComponent<TDProjectile>();
+                tdProj.SetFromOtherProjectile(target);
+                DestroyImmediate(target, true);
+            }
+        }
     }
 }

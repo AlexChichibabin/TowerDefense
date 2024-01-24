@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8cce4e79382f6c48bd7e46495354f00, type: 3}
-  m_Name: WizardTower
+  m_Name: MagicTower
   m_EditorClassIdentifier: 
   spriteColor: {r: 0.9811321, g: 0.9575715, b: 0.71641153, a: 1}
   turretProperties: {fileID: 11400000, guid: 9839477e054e2a049872b0dc384f4492, type: 2}

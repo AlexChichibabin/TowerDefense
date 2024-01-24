@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cce4e79382f6c48bd7e46495354f00, type: 3}
   m_Name: FireMageTower
   m_EditorClassIdentifier: 
-  spriteColor: {r: 0.8784314, g: 0.31764707, b: 0.07058824, a: 1}
+  spriteColor: {r: 0.8679245, g: 0.5013142, b: 0.33980063, a: 1}
   turretProperties: {fileID: 11400000, guid: 40220d8159252b44893fe34870638bde, type: 2}
   goldCost: 25
   towerGUI: {fileID: 21300000, guid: 34d6703ba7cf6dd469bb0aad4781fccb, type: 3}
