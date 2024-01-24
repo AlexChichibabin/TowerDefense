@@ -6,16 +6,25 @@ using System;
 
 namespace TowerDefense
 {
-    [RequireComponent(typeof(TDPatrolController))] // obsidian://open?vault=Scripts&file=TDPatrolController.cs
+    [RequireComponent(typeof(Destructible))]
+    [RequireComponent(typeof(TDPatrolController))]
     public class Enemy : MonoBehaviour
     {
-        private int m_Damage;
-        private int m_Gold;
+        [SerializeField] private int m_Damage;
+        [SerializeField] private int m_Gold;
+        [SerializeField] private int m_Armor;
+
+        private Destructible m_Destructible;
 
         public event Action OnEnd;
         private void OnDestroy()
         {
             OnEnd?.Invoke();
+        }
+
+        private void Awake()
+        {
+            m_Destructible = GetComponent<Destructible>();
         }
 
 
@@ -35,6 +44,7 @@ namespace TowerDefense
 
             m_Damage = asset.damage;
             m_Gold = asset.gold;
+            m_Armor = asset.armor;
         }
         public void OnEndPath()
         {
@@ -43,6 +53,11 @@ namespace TowerDefense
         public void OnEnemyDeath()
         {
             TDPlayer.Instance.ChangeGold(m_Gold);
+        }
+        public void TakeDamage(int damage)
+        {
+            m_Destructible.ApplyDamage(Mathf.Max(1, damage - m_Armor));
+            print(Mathf.Max(1, damage - m_Armor));
         }
     }
 

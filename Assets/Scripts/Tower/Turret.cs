@@ -83,9 +83,9 @@ namespace SpaceShip
             projectile.transform.position = m_FireSource.transform.position;
             projectile.transform.up = m_FireSource.transform.up;
             projectile.SetTarget(m_Target);
-            print("Velocity before is " + projectile.Velocity);
+            //print("Velocity before is " + projectile.Velocity);
             AccelerateArrows(projectile);
-            print("Velocity after is " + projectile.Velocity);
+            //print("Velocity after is " + projectile.Velocity);
 
             if (m_Ship != null)
             {
@@ -108,7 +108,7 @@ namespace SpaceShip
         [SerializeField] private TurretProperties ArcherProps;
         private void AccelerateArrows(Projectile projectile)
         {
-            print("acceleration is " + accelerationIsActive);
+            //print("acceleration is " + accelerationIsActive);
             if (accelerationIsActive == true)
             {
                 projectile.MultiplyVelocity(1.0f + (float)m_Tower.ArrowAccelerationLevel / 10.0f);

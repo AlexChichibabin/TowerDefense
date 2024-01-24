@@ -19,13 +19,13 @@ namespace TowerDefense
 
         private void Awake()
         {
-            print("Shooting Range standart is " + m_Area.Radius);
+            //print("Shooting Range standart is " + m_Area.Radius);
             var AccuracyLevel = Upgrades.GetUpgradeLevel(AccuracyUpgrade);
             if (AccuracyLevel >= 1)
             {
                 m_Area.SetRadius(m_Area.Radius*(1.0f + (float)AccuracyLevel / 10.0f));
             }
-            print("Shooting Range upgraded is " + m_Area.Radius);
+            //print("Shooting Range upgraded is " + m_Area.Radius);
 
             arrowAccelerationLevel = Upgrades.GetUpgradeLevel(ArrowAccelerationUpgrade);
 

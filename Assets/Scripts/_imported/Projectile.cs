@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using TowerDefense;
 using UnityEngine;
 
 namespace SpaceShip
@@ -30,25 +29,9 @@ namespace SpaceShip
         {
             float stepLenght = m_Velocity * Time.deltaTime;
             Vector2 step = transform.up * stepLenght;
-
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
 
-            if (hit)
-            {
-                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
-
-                if (dest != null && dest != m_Parent)
-                {
-                    if (m_ImpactExplosionPrefab == null)
-                    {
-                            dest.ApplyDamage(m_Damage);
-                    }
-                }
-                if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
-                {
-                    OnProjectileLifeEnd(hit.collider, hit.point);
-                }
-            }
+            OnHit(hit);
 
             m_Timer += Time.deltaTime;
             if (m_Timer > m_LifeTime) Destroy(gameObject);
@@ -58,9 +41,49 @@ namespace SpaceShip
             ControllRocket();
         }
 
-        public void MultiplyVelocity(float coefficient)
+        private void OnHit(RaycastHit2D hit)
         {
-            print("MultiplyVelocity is " + coefficient);
+            if (hit)
+            {
+                Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
+
+                if (enemy != null)
+                {
+                    if (m_ImpactExplosionPrefab == null)
+                    {
+                        enemy.TakeDamage(m_Damage);
+                    }
+                }
+                if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
+                {
+                    OnProjectileLifeEnd(hit.collider, hit.point);
+                }
+            }
+        }
+
+        /*private void OnHit(RaycastHit2D hit)
+        {
+            if (hit)
+            {
+                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+
+                if (dest != null && dest != m_Parent)
+                {
+                    if (m_ImpactExplosionPrefab == null)
+                    {
+                        dest.ApplyDamage(m_Damage);
+                    }
+                }
+                if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
+                {
+                    OnProjectileLifeEnd(hit.collider, hit.point);
+                }
+            }
+        }*/
+
+        public void MultiplyVelocity(float coefficient) // Using by Upgrade
+        {
+            //print("MultiplyVelocity is " + coefficient);
             m_Velocity *= coefficient;
         }
 
@@ -75,7 +98,7 @@ namespace SpaceShip
             Destroy(gameObject);
         }
 
-        private Destructible m_Parent;
+        private Destructible m_Parent; // For explosion function
 
         public void SetParentShooter(Destructible parent)
         {
@@ -86,10 +109,7 @@ namespace SpaceShip
         {
             if (IsSelfDirected == true)
             {
-                /*if (m_Target == null)
-                {
-                    GetTarget();
-                }*/
+
                 if (m_Target != null)
                 {
                     CorrectDirection();
