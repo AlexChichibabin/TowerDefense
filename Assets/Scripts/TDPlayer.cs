@@ -59,13 +59,8 @@ namespace TowerDefense
         {
             ChangeGold(-towerAsset.goldCost);
             var tower = Instantiate(towerPrefab, buildSite.position, Quaternion.identity);
-            SpriteRenderer sr = tower.GetComponentInChildren<SpriteRenderer>();
-            sr.sprite = towerAsset.towerSprite;
-            sr.color = towerAsset.spriteColor;
-            Turret tur = tower.GetComponentInChildren<Turret>();
-            tur.SetTurretProperties(towerAsset.turretProperties);
-            Destroy(buildSite.gameObject); // Не работает
-
+            tower.Use(towerAsset);
+            Destroy(buildSite.gameObject);
         }
     }
 }

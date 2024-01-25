@@ -9,7 +9,7 @@ namespace SpaceShip
     public class ImpactExplosion : ImpactEffect
     {
         [SerializeField] private float m_Radius;
-        [SerializeField] private Projectile m_Projectile;
+        [SerializeField] private TDProjectile m_Projectile;
         private int m_Damage;
 
 

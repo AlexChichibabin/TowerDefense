@@ -70,6 +70,13 @@ namespace TowerDefense
                 }
             }
         }
-
+        public void Use(TowerAsset asset)
+        {
+            SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+            sr.sprite = asset.towerSprite;
+            sr.color = asset.spriteColor;
+            Turret tur = GetComponentInChildren<Turret>();
+            tur.SetTurretProperties(asset.turretProperties);
+        }
     }
 }

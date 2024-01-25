@@ -85,14 +85,11 @@ namespace SpaceShip
 
         protected void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {
-            print("yes");
             if (m_ImpactExplosionPrefab != null)
             {
-                print(m_ImpactExplosionPrefab);
                 ImpactExplosion expl = Instantiate(m_ImpactExplosionPrefab, pos, Quaternion.identity);
                 //expl.SetParentShooter(m_Parent);
             }
-            print(gameObject);
 
             Destroy(gameObject);
         }

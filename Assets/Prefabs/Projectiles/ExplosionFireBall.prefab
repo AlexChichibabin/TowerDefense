@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LifeTime: 0.3
   m_Radius: 0.8
-  m_Projectile: {fileID: 6584829310075774217, guid: 11e816975b1952d4e8c6cdcfac9ae2ac, type: 3}
+  m_Projectile: {fileID: 4781937755728224456, guid: 11e816975b1952d4e8c6cdcfac9ae2ac, type: 3}
 --- !u!1 &4250530591401763713
 GameObject:
   m_ObjectHideFlags: 0
