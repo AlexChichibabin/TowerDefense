@@ -27,16 +27,29 @@ namespace TowerDefense
 
                 if (enemy != null)
                 {
-                    if (m_ImpactExplosionPrefab == null)
+                    if (m_ImpactAreaAttack == null)
                     {
                         enemy.TakeDamage(m_Damage, m_DamageType);
                     }
                 }
-                if (!hit.collider.transform.root.GetComponent<ImpactExplosion>())
+                if (!hit.collider.transform.root.GetComponent<ImpactAreaAttack>())
                 {
                     OnProjectileLifeEnd(hit.collider, hit.point);
                 }
             }
+        }
+
+        protected override void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
+        {
+            if (m_ImpactAreaAttack != null)
+            {
+                ImpactAreaAttack expl = Instantiate(m_ImpactAreaAttack, pos, Quaternion.identity);
+                expl.SetProjectileProperties(m_Damage, m_DamageType);
+                //expl.SetParentShooter(m_Parent);
+            }
+
+            base.OnProjectileLifeEnd(col, pos);
+
         }
     }
 }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8cce4e79382f6c48bd7e46495354f00, type: 3}
-  m_Name: FireMageTower
+  m_Name: ExplosingTower
   m_EditorClassIdentifier: 
-  spriteColor: {r: 0.8679245, g: 0.5013142, b: 0.33980063, a: 1}
+  spriteColor: {r: 0.8679245, g: 0.4534657, b: 0.40530434, a: 1}
   turretProperties: {fileID: 11400000, guid: 40220d8159252b44893fe34870638bde, type: 2}
   goldCost: 25
-  towerGUI: {fileID: 21300000, guid: 34d6703ba7cf6dd469bb0aad4781fccb, type: 3}
+  towerGUI: {fileID: 21300000, guid: 19a3a05dff2ee774da09fe822a5e5031, type: 3}
   towerSprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}

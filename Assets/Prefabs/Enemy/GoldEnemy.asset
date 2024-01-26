@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9636371cf8d0ad40aec26149e9ab42d, type: 3}
-  m_Name: Enemy_04
+  m_Name: GoldEnemy
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 1, a: 1}
-  spriteScale: {x: 2, y: 2}
-  sprite: {fileID: 33897107, guid: 9a21471ad8121f44c92ab96f5c77f17d, type: 3}
-  animations: {fileID: 9100000, guid: 0b588ef7807b68f4a9d69354e76d9c04, type: 2}
-  moveSpeed: 2
+  spriteScale: {x: 3, y: 3}
+  sprite: {fileID: -740577958, guid: cd5e3bfa7822d92449962b2363959205, type: 3}
+  animations: {fileID: 9100000, guid: e4bfab9c9d7f8004ea9307cdfaae9878, type: 2}
+  moveSpeed: 1
   hp: 1
+  armor: 0
+  armorType: 5
   score: 1
-  radius: 0.17
+  radius: 0.26
   damage: 1
   gold: 3

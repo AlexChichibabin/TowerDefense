@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.1344841, g: 0.072312206, b: 0.6132076, a: 1}
+  m_Color: {r: 0.15018693, g: 0.7075472, b: 0.23102169, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8286433504591871730}
   - component: {fileID: 2743435032971279023}
   m_Layer: 0
-  m_Name: ProjectileMagicMissile
+  m_Name: ProjectileAcidicMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,15 +130,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3a6cddb8499be41b50e0653deb4ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Nickname: MagicMissile
+  m_Nickname: AcidicMissile
   m_Velocity: 5
   m_LifeTime: 4
   m_Damage: 30
-  m_ImpactAreaAttack: {fileID: 0}
+  m_ImpactAreaAttack: {fileID: 5162282867861638996, guid: 11e5f6bc08d4e2449afecfb8a696fb8b, type: 3}
   IsSelfDirected: 1
   m_DirSensity: 10
   m_Area: {fileID: 2743435032971279023}
-  m_DamageType: 1
+  m_DamageType: 5
 --- !u!114 &2743435032971279023
 MonoBehaviour:
   m_ObjectHideFlags: 0

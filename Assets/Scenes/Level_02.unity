@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCamp
       objectReference: {fileID: 0}
+    - target: {fileID: 3247544410890709137, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

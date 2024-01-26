@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d87ba0f2fc7b1d4abfebb91ba9be365, type: 3}
-  m_Name: FireTurret
+  m_Name: FreezingTurret
   m_EditorClassIdentifier: 
   m_Mode: 2
-  m_ProjectilePrefab: {fileID: 4781937755728224456, guid: 11e816975b1952d4e8c6cdcfac9ae2ac, type: 3}
-  m_RateOfFire: 1.5
+  m_ProjectilePrefab: {fileID: 8286433504591871730, guid: 1ff27c8d157604048ab09899c06f58d9, type: 3}
+  m_RateOfFire: 0.5
   m_EnergyUsage: 0
   m_AmmoUsage: 0
   m_LaunchSFX: {fileID: 0}

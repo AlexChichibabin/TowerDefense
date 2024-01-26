@@ -32,7 +32,7 @@ namespace TowerDefense
         }
         private void Start()
         {
-            m_Turrets = GetComponentsInChildren<Turret>();
+            
         }
 
         private void Update()
@@ -75,8 +75,13 @@ namespace TowerDefense
             SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
             sr.sprite = asset.towerSprite;
             sr.color = asset.spriteColor;
-            Turret tur = GetComponentInChildren<Turret>();
-            tur.SetTurretProperties(asset.turretProperties);
+            //Turret tur = GetComponentInChildren<Turret>();
+            //tur.SetTurretProperties(asset.turretProperties);
+            m_Turrets = GetComponentsInChildren<Turret>();
+            foreach (var turret in m_Turrets)
+            {
+                turret.SetTurretProperties(asset.turretProperties);
+            }
         }
     }
 }

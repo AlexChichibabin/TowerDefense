@@ -93,7 +93,7 @@ namespace TowerDefense
         public void TakeDamage(int damage, TDProjectile.DamageType damageType)
         {
             m_Destructible.ApplyDamage(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor));
-            //print(Mathf.Max(1, damage - m_Armor));
+            print(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor));
         }
     }
 

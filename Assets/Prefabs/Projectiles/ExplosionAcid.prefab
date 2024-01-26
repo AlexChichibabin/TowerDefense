@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: -8687418011429085746}
   - component: {fileID: 5162282867861638996}
   m_Layer: 0
-  m_Name: ExplosionFireBall
+  m_Name: ExplosionAcid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9150943, g: 0.6048588, b: 0.27970806, a: 0.49411765}
+  m_Color: {r: 0.20122893, g: 0.8301887, b: 0.14489143, a: 0.49411765}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -299,7 +299,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9056604, g: 0.8152687, b: 0.7211107, a: 0.21176471}
+  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 0.21176471}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -383,7 +383,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9150943, g: 0.72733265, b: 0.53006405, a: 0.45490196}
+  m_Color: {r: 0.5117763, g: 0.8018868, b: 0.49550554, a: 0.45490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -467,7 +467,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.94509804, g: 0.32707274, b: 0.109803915, a: 0.5882353}
+  m_Color: {r: 0.039268278, g: 0.5943396, b: 0, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

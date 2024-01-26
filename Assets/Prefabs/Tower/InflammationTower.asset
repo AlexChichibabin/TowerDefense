@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8cce4e79382f6c48bd7e46495354f00, type: 3}
-  m_Name: IceMageTower
+  m_Name: InflammationTower
   m_EditorClassIdentifier: 
-  goldCost: 20
-  towerGUI: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
+  spriteColor: {r: 0.9528302, g: 0.9163618, b: 0.22921856, a: 1}
+  turretProperties: {fileID: 11400000, guid: c0f1296044fdd6b429c003e123e194a1, type: 2}
+  goldCost: 25
+  towerGUI: {fileID: 21300000, guid: 34d6703ba7cf6dd469bb0aad4781fccb, type: 3}
   towerSprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}

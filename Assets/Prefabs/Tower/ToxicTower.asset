@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8cce4e79382f6c48bd7e46495354f00, type: 3}
-  m_Name: MagicTower
+  m_Name: ToxicTower
   m_EditorClassIdentifier: 
-  spriteColor: {r: 0.15432537, g: 0.16013329, b: 0.6415094, a: 1}
-  turretProperties: {fileID: 11400000, guid: 9839477e054e2a049872b0dc384f4492, type: 2}
+  spriteColor: {r: 0.6226415, g: 0.12041651, b: 0.59108794, a: 1}
+  turretProperties: {fileID: 11400000, guid: 29f5cdcc9200b2b4087670e928da96ce, type: 2}
   goldCost: 20
-  towerGUI: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
+  towerGUI: {fileID: 21300000, guid: 8ed99c7d89795064982b0346a0c47b0c, type: 3}
   towerSprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}

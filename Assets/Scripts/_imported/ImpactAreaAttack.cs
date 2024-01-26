@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TowerDefense;
+using static TowerDefense.TDProjectile;
 
 namespace SpaceShip
 {
     [RequireComponent(typeof(CircleCollider2D))]
-    public class ImpactExplosion : ImpactEffect
+    public class ImpactAreaAttack : ImpactEffect
     {
         [SerializeField] private float m_Radius;
         [SerializeField] private TDProjectile m_Projectile;
         private int m_Damage;
+        private DamageType m_DamageType;
 
 
         private void Start()
@@ -26,26 +28,20 @@ namespace SpaceShip
             {
                 if (hit[i])
                 {
-                    Destructible dest = hit[i].transform.root.GetComponent<Destructible>();
-                    //print(dest.name);
+                    Enemy enemy = hit[i].transform.root.GetComponent<Enemy>();
 
-                    if (dest != null /*&& dest != m_Parent*/)
+                    if (enemy != null)
                     {
-                        //if (m_Parent.CurrentHitPoints > 0 && m_Parent != null)
-                        {
-                            //print(m_Parent.CurrentHitPoints);
-                            //print(m_Parent);
-                            dest.ApplyDamage(m_Damage);
-
-                            /*if (m_Parent == Player.Instance.ActiveShip)
-                            {
-                                Player.Instance.AddScore(dest.ScoreValue * 2); // (2) More scores for explosion, than for common projectile
-                                if (dest.CurrentHitPoints <= 0 && dest.TeamId != 0 && dest != Player.Instance.ActiveShip) Player.Instance.AddKill();
-                            }*/
-                        }
+                        enemy.TakeDamage(m_Damage, m_DamageType);
                     }
                 }
             }
+        }
+
+        public void SetProjectileProperties(int damage, DamageType damageType)
+        {
+            m_Damage = damage;
+            m_DamageType = damageType;
         }
 
 
