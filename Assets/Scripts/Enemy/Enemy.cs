@@ -28,7 +28,58 @@ namespace TowerDefense
                     case TDProjectile.DamageType.Base: return power/2;
                     default: return Mathf.Max(power-armor, 1);
                 }
-            }
+            },
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType Fire
+                switch(type)
+                {
+                    case TDProjectile.DamageType.Flammable: return Mathf.Max(power-armor*2, 1);
+                    case TDProjectile.DamageType.Freezing: return power+armor/2;
+                    case TDProjectile.DamageType.Base: return power/2;
+                    default: return Mathf.Max(power-armor, 1);
+                }
+            },
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType Heavy
+                switch(type)
+                {
+                    case TDProjectile.DamageType.Magic: return Mathf.Max(power-armor, 1);
+                    case TDProjectile.DamageType.Explosive: return power/2;
+                    case TDProjectile.DamageType.Base: return power/2;
+                    case TDProjectile.DamageType.Acidic: return power-armor/2;
+                    case TDProjectile.DamageType.Toxic: return power;
+                    default: return Mathf.Max(power-armor, 1);
+                }
+            },
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType Freezing
+                switch(type)
+                {
+                    case TDProjectile.DamageType.Base: return power/2;
+                    case TDProjectile.DamageType.Freezing: return Mathf.Max(power-armor*2, 1);
+                    case TDProjectile.DamageType.Flammable: return power+armor/2;
+                    default: return Mathf.Max(power-armor, 1);
+                }
+            },
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType Gold
+                switch(type)
+                {
+                    case TDProjectile.DamageType.Acidic: return Mathf.Max(power-armor*2, 1);
+                    case TDProjectile.DamageType.Base: return power/2;
+                    default: return Mathf.Max(power-armor, 1);
+                }
+            },
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType Dark
+                switch(type)
+                {
+                    case TDProjectile.DamageType.Magic: return Mathf.Max(power-armor, 1);
+                    case TDProjectile.DamageType.Holy: return power*2;
+                    case TDProjectile.DamageType.Base: return power/2;
+                    default: return Mathf.Max(power-armor, 1);
+                }
+            },
 
         };
         public enum ArmorType
@@ -70,10 +121,9 @@ namespace TowerDefense
             sr.transform.localScale = asset.spriteScale;
             sr.sprite = asset.sprite;
             sr.GetComponent<Animator>().runtimeAnimatorController = asset.animations;
-            
 
             GetComponent<Ship>().Use(asset);
-
+            
             var collider = GetComponentInChildren<CircleCollider2D>();
             collider.radius = asset.radius;
 
@@ -93,7 +143,7 @@ namespace TowerDefense
         public void TakeDamage(int damage, TDProjectile.DamageType damageType)
         {
             m_Destructible.ApplyDamage(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor));
-            print(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor));
+            print($"{m_Destructible.Nickname}, {damageType} damage: {ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor)}, EnemyArmor: {m_Armor}");
         }
     }
 

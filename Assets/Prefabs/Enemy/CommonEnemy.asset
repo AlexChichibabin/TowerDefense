@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9636371cf8d0ad40aec26149e9ab42d, type: 3}
   m_Name: CommonEnemy
   m_EditorClassIdentifier: 
+  m_Nick: CommonEnemy
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteScale: {x: 3, y: 3}
   sprite: {fileID: 21300000, guid: 0966982b9c8e06b4ba6750ef9b9489eb, type: 3}
   animations: {fileID: 9100000, guid: 03adf86239d2c994abf1b4f0c5a296ee, type: 2}
   moveSpeed: 2
-  hp: 1
+  hp: 30
   armor: 0
   armorType: 0
   score: 1

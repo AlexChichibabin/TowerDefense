@@ -898,11 +898,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groups:
   - squads:
-    - asset: {fileID: 11400000, guid: 4bb5166080980494da7e6eb9b1530ba3, type: 2}
+    - asset: {fileID: 11400000, guid: b3792fd1dfb90bf40b6f5c4abfcabf5d, type: 2}
       count: 1
-    - asset: {fileID: 11400000, guid: 1711d89b0760339479de0bd64028506b, type: 2}
-      count: 1
-  prepareTime: 5
+  prepareTime: 0
   nextWave: {fileID: 408003859}
 --- !u!4 &574978593
 Transform:

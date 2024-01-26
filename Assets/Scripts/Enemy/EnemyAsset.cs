@@ -7,6 +7,8 @@ namespace TowerDefense
     [CreateAssetMenu]
     public sealed class EnemyAsset : ScriptableObject
     {
+        public string m_Nick;
+
         [Header("Внешний вид")]
         public Color color = Color.white;
         public Vector2 spriteScale = new Vector2(3, 3);

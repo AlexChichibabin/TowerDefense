@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9636371cf8d0ad40aec26149e9ab42d, type: 3}
   m_Name: GoldEnemy
   m_EditorClassIdentifier: 
+  m_Nick: GoldEnemy
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteScale: {x: 3, y: 3}
   sprite: {fileID: -740577958, guid: cd5e3bfa7822d92449962b2363959205, type: 3}
   animations: {fileID: 9100000, guid: e4bfab9c9d7f8004ea9307cdfaae9878, type: 2}
   moveSpeed: 1
-  hp: 1
-  armor: 0
+  hp: 60
+  armor: 5
   armorType: 5
   score: 1
   radius: 0.26

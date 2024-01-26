@@ -117,7 +117,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -164,10 +164,10 @@ MonoBehaviour:
         m_CallState: 2
   m_TeamId: 1
   m_ScoreValue: 1
-  m_Mass: 0.1
-  m_Thrust: 410.6
+  m_Mass: 0.25
+  m_Thrust: 200
   m_Mobility: 1000
-  m_MaxLinearVelocity: 2
+  m_MaxLinearVelocity: 1
   m_MaxAngularVelocity: 1000
 --- !u!114 &8813016426191551466
 MonoBehaviour:
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AIBehaviour: 3
   m_PatrolPoint: {fileID: 0}
-  m_NavigationLinear: 1
+  m_NavigationLinear: 0.5
   m_NavigationAngular: 1
   m_RandomSelectMovePointTime: 0
   m_FindNewTargetTime: 0
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Damage: 1
   m_Gold: 1
   m_Armor: 1
+  m_ArmorType: 0
 --- !u!1 &7154268460694899735
 GameObject:
   m_ObjectHideFlags: 0

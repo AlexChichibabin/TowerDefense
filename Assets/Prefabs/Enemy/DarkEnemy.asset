@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9636371cf8d0ad40aec26149e9ab42d, type: 3}
   m_Name: DarkEnemy
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
+  m_Nick: DarkEnemy
+  color: {r: 0.2924528, g: 0.25520647, b: 0.25520647, a: 0.78431374}
   spriteScale: {x: 2, y: 2}
   sprite: {fileID: -541488981, guid: dee998f5f2c77704391a36a33e8307bf, type: 3}
   animations: {fileID: 9100000, guid: cfcb07922e4630d4f8ea9f8463f164ea, type: 2}

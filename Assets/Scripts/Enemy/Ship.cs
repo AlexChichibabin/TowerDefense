@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TowerDefense;
 using UnityEngine;
 using UnityEngine.XR;
@@ -279,6 +280,7 @@ namespace SpaceShip
         public new void Use(EnemyAsset asset)
         {
             m_MaxLinearVelocity = asset.moveSpeed;
+            SetName(asset.m_Nick);
             base.Use(asset);
         }
     }
