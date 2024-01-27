@@ -14,22 +14,23 @@ namespace TowerDefense
             } 
         }
         
-        private static event Action<int> OnGoldUpdate;
-        public static void GoldUpdateSubscribe(Action<int> act)
+        private event Action<int> OnGoldUpdate;
+        public void GoldUpdateSubscribe(Action<int> act)
         {
-            OnGoldUpdate += act;
+            Instance.OnGoldUpdate += act;
             act(Instance.m_NumGold);
         }
-        public static void GoldUpdateUnSubscribe(Action<int> act)
+        /*public void GoldUpdateUnSubscribe(Action<int> act) ///
         {
-            OnGoldUpdate -= act;
-        }
-        public static event Action<int> OnLifeUpdate;
-        public static void LifeUpdateSubscribe(Action<int> act)
+            Instance.OnGoldUpdate -= act;
+        }*/
+        public event Action<int> OnLifeUpdate;
+        public void LifeUpdateSubscribe(Action<int> act)
         {
-            OnLifeUpdate += act;
+            Instance.OnLifeUpdate += act;
             act(Instance.NumLives);
         }
+
 
         [SerializeField] private int m_NumGold;
         [SerializeField] private Tower towerPrefab;

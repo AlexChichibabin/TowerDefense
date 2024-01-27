@@ -143,7 +143,7 @@ namespace TowerDefense
         public void TakeDamage(int damage, TDProjectile.DamageType damageType)
         {
             m_Destructible.ApplyDamage(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor));
-            print($"{m_Destructible.Nickname}, {damageType} damage: {ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor)}, EnemyArmor: {m_Armor}");
+            //print($"{m_Destructible.Nickname}, {damageType} damage: {ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor)}, EnemyArmor: {m_Armor}");
         }
     }
 

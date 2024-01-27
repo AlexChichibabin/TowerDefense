@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Velocity: 5
   m_LifeTime: 4
   m_Damage: 30
-  m_ImpactAreaAttack: {fileID: 5162282867861638996, guid: 529d2776a5bf347469f15a7e445015a5, type: 3}
+  m_ImpactAreaAttackPrefab: {fileID: 5162282867861638996, guid: 529d2776a5bf347469f15a7e445015a5, type: 3}
   IsSelfDirected: 1
   m_DirSensity: 10
   m_Area: {fileID: 2743435032971279023}

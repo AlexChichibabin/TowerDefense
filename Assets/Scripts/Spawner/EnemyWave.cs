@@ -24,6 +24,7 @@ namespace TowerDefense
         [SerializeField] private PathGroup[] groups;
 
         [SerializeField] private float prepareTime = 10f;
+        public float PrepareTime => prepareTime;
 
         [HideInInspector]
         public float GetRemainingTime() { return prepareTime - Time.time; }

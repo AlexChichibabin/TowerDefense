@@ -19,7 +19,7 @@ namespace TowerDefense
         {
             if (m_TowerAsset)
             {
-                TDPlayer.GoldUpdateSubscribe(GoldStatusCheck);
+                TDPlayer.Instance.GoldUpdateSubscribe(GoldStatusCheck);
                 m_Text.text = m_TowerAsset.goldCost.ToString();
                 m_Button.GetComponent<Image>().sprite = m_TowerAsset.towerGUI;
 
@@ -28,7 +28,7 @@ namespace TowerDefense
 
         private void OnDestroy()
         {
-            TDPlayer.GoldUpdateUnSubscribe(GoldStatusCheck);
+            //TDPlayer.Instance.GoldUpdateUnSubscribe(GoldStatusCheck);
         }
 
         public void SetBuildSite(Transform value)

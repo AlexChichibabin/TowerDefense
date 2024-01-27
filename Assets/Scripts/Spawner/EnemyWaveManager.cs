@@ -8,6 +8,7 @@ namespace TowerDefense
         [SerializeField] private Enemy m_EnemyPrefab;
         [SerializeField] private Path[] paths;
         [SerializeField] private EnemyWave currentWave;
+        public EnemyWave CurrentWave => currentWave;
 
         [SerializeField] private int activeEnemyCount = 0;
 

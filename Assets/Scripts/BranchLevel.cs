@@ -9,24 +9,28 @@ namespace TowerDefense
     [RequireComponent(typeof(MapLevel))]
     public class BranchLevel : MonoBehaviour
     {
-        [SerializeField] private Text pointText;
+        [SerializeField] private Text m_PointText;
         
-        [SerializeField] private MapLevel rootLevel;
+        [SerializeField] private MapLevel m_RootLevel;
 
-        [SerializeField] private int needStars = 3;
+        [SerializeField] private int m_NeedStars = 3;
 
 
+        /// <summary>
+        /// ѕопытка активации ответвленного уровн€.
+        /// јктиваци€ требует наличи€ очков и выполнени€ root-уровн€.
+        /// </summary>
         public void TryActivate()
         {
-            gameObject.SetActive(rootLevel.IsComplete);
+            gameObject.SetActive(m_RootLevel.IsComplete);
 
-            if (needStars > MapCompletion.Instance.TotalScores)
+            if (m_NeedStars > MapCompletion.Instance.TotalScores)
             {
-                pointText.text = (needStars - MapCompletion.Instance.TotalScores).ToString();
+                m_PointText.text = (m_NeedStars - MapCompletion.Instance.TotalScores).ToString();
             }
             else
             {
-                pointText.transform.parent.gameObject.SetActive(false);
+                m_PointText.transform.parent.gameObject.SetActive(false);
                 GetComponent<MapLevel>().Initialize();
             }
         }

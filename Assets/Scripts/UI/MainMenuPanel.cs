@@ -11,7 +11,7 @@ namespace TowerDefense
         [SerializeField] private GameObject CheckNewGamePanel;
         private void Start()
         {
-            continueButton.interactable = FileHandler.HasFile(MapCompletion.filename);
+            continueButton.interactable = FileHandler.HasFile(MapCompletion.m_FileName);
         }
         public void OnNewGameButton()
         {

@@ -208,16 +208,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: f4998812db8dd4d4f842c7a734be94a1, type: 2}
-  level: {fileID: 3982336030568285356}
-  levelNext: {fileID: 7657879729672704600}
-  levelMax: {fileID: 1036449381548429254}
-  costText: {fileID: 7452147202594021372}
-  lvlsFolder: {fileID: 330090168035715408}
-  buyButton: {fileID: 6431676316465174632}
-  plusTextIsActive: 1
-  plusText: {fileID: 2697588795106540784}
-  plusString: +1 Heal Point
-  upgradeIcon: {fileID: 9007017852324315486}
+  m_LevelText: {fileID: 3982336030568285356}
+  m_NextLevelText: {fileID: 7657879729672704600}
+  m_LvlTextsFolder: {fileID: 330090168035715408}
+  m_MaxLevelText: {fileID: 1036449381548429254}
+  m_UpgradeCostText: {fileID: 7452147202594021372}
+  m_BuyButton: {fileID: 6431676316465174632}
+  m_DescribtionTextIsActive: 1
+  m_DescribtionText: {fileID: 2697588795106540784}
+  m_DescribtionTextString: +1 Heal Point
+  m_UpgradeIcon: {fileID: 9007017852324315486}
 --- !u!1 &2908020576262903001
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 2913142667485614141}
   - component: {fileID: 2697588795106540784}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: DescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

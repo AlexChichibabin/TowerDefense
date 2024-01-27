@@ -6,7 +6,7 @@ namespace TowerDefense
 {
     public class MapCompletion : SingletonBase<MapCompletion>
     {
-        public const string filename = "completion.dat";
+        public const string m_FileName = "completion.dat";
 
         [Serializable]
         private class EpisodeScore
@@ -15,49 +15,44 @@ namespace TowerDefense
             public int score;
         }
 
-        public static void SaveEpisodeResult(int levelScore)
-        {
-            if (Instance)
-                Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
-            else
-                print($"Episode complete with score {levelScore}");
-        }
-        private void SaveResult(Episode currentEpisode, int levelScore)
-        {
-            foreach (var item in completionData)
-            {
-                if (item.episode == currentEpisode)
-                {
-                    if (item.score < levelScore)
-                    {
-                        item.score = levelScore;
-                        Saver<EpisodeScore[]>.Save(filename, completionData);
-                    }
-                }
-            }
-        }
-
-        [SerializeField] private EpisodeScore[] completionData;
-        [SerializeField] private int totalScores;
-        public int TotalScores { get { return totalScores; } }
-
+        [SerializeField] private EpisodeScore[] m_CompletionData;
+        public int TotalScores { private set; get; }
         //[SerializeField] private EpisodeScore[] branchCompletionData;
 
         private new void Awake()
         {
             base.Awake();
-            Saver<EpisodeScore[]>.TryLoad(filename, ref completionData);
-            Instance.totalScores = 0;
-            foreach (var score in completionData)
+            Saver<EpisodeScore[]>.TryLoad(m_FileName, ref m_CompletionData);
+            Instance.TotalScores = 0;
+            foreach (var score in m_CompletionData)
             {
-                Instance.totalScores += score.score;
+                Instance.TotalScores += score.score;
             }
         }
 
-
+        public static void SaveEpisodeResult(int levelScore)
+        {
+            if (Instance)
+            { 
+                foreach (var item in Instance.m_CompletionData)
+                {   // Сохранение новых очков прохожения
+                    if (item.episode == LevelSequenceController.Instance.CurrentEpisode)
+                    {
+                        if (item.score < levelScore)
+                        {
+                            Instance.TotalScores += levelScore - item.score;
+                            item.score = levelScore;
+                            Saver<EpisodeScore[]>.Save(m_FileName, Instance.m_CompletionData);
+                        }
+                    }
+                }
+            }
+            else
+                print($"Episode complete with score {levelScore}");
+        }
         public int GetEpisodeScore(Episode m_Episode)
         {
-            foreach (var data in completionData)
+            foreach (var data in m_CompletionData)
             {
                 if (data.episode == m_Episode)
                 {

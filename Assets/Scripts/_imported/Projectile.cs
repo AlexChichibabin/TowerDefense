@@ -10,7 +10,7 @@ namespace SpaceShip
     {
         public void SetFromOtherProjectile(Projectile other)
         {
-            other.SetData(out m_Velocity, out m_LifeTime, out m_Damage, out m_Nickname, out m_ImpactAreaAttack, out IsSelfDirected, out m_DirSensity, out m_Area);
+            other.SetData(out m_Velocity, out m_LifeTime, out m_Damage, out m_Nickname, out m_ImpactAreaAttackPrefab, out IsSelfDirected, out m_DirSensity, out m_Area);
         }
 
         private void SetData(out float m_Velocity, out float m_LifeTime, out int m_Damage, out string m_Nickname, out ImpactAreaAttack m_ImpactExplosionPrefab, out bool IsSelfDirected, out float m_DirSensity, out CircleArea m_Area)
@@ -19,7 +19,7 @@ namespace SpaceShip
             m_LifeTime = this.m_LifeTime;
             m_Damage = this.m_Damage;
             m_Nickname = this.m_Nickname;
-            m_ImpactExplosionPrefab = this.m_ImpactAreaAttack;
+            m_ImpactExplosionPrefab = this.m_ImpactAreaAttackPrefab;
             IsSelfDirected = this.IsSelfDirected;
             m_DirSensity = this.m_DirSensity;
             m_Area = this.m_Area;
@@ -32,7 +32,7 @@ namespace SpaceShip
         public int Damage => m_Damage;
 
         [Header("RocketAndSelfdirection")]
-        [SerializeField] protected ImpactAreaAttack m_ImpactAreaAttack;
+        [SerializeField] protected ImpactAreaAttack m_ImpactAreaAttackPrefab;
         [SerializeField] protected bool IsSelfDirected;
         [SerializeField] protected float m_DirSensity;
 
@@ -67,7 +67,7 @@ namespace SpaceShip
 
             if (dest != null && dest != m_Parent)
             {
-                if (m_ImpactAreaAttack == null)
+                if (m_ImpactAreaAttackPrefab == null)
                 {
                     dest.ApplyDamage(m_Damage);
                 }

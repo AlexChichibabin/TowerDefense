@@ -12,32 +12,32 @@ namespace TowerDefense
         [SerializeField] private UpgradeAsset asset;
 
         [Header("Interface")]
-        [SerializeField] private Text level;
-        [SerializeField] private Text levelNext;
-        [SerializeField] private Text levelMax;
-        [SerializeField] private Text costText;
-        [SerializeField] private GameObject lvlsFolder;
-        [SerializeField] private Button buyButton;
+        [SerializeField] private Text m_LevelText;
+        [SerializeField] private Text m_NextLevelText;
+        [SerializeField] private GameObject m_LvlTextsFolder;
+        [SerializeField] private Text m_MaxLevelText;
+        [SerializeField] private Text m_UpgradeCostText;
+        [SerializeField] private Button m_BuyButton;
 
         [Header ("Icon")]
-        [SerializeField] private bool plusTextIsActive;
-        [SerializeField] private Text plusText;
-        [SerializeField] private string plusString;
-        [SerializeField] private Image upgradeIcon;
+        [SerializeField] private bool m_DescribtionTextIsActive;
+        [SerializeField] private Text m_DescribtionText;
+        [SerializeField] private string m_DescribtionTextString;
+        [SerializeField] private Image m_UpgradeIcon;
 
-        private static int costNumber = 0; //Current cost
+        private static int costNumber = 0; // Current cost
         private bool isMax = false;
 
         public void Initialize()
         {
-            if (upgradeIcon) upgradeIcon.sprite = asset.sprite; // Допилить
-            if (plusText)
+            if (m_UpgradeIcon) m_UpgradeIcon.sprite = asset.sprite;
+            if (m_DescribtionText)
             {
-                if (!plusTextIsActive) plusText.gameObject.SetActive(false);
-                else plusText.text = plusString;
+                if (!m_DescribtionTextIsActive) m_DescribtionText.gameObject.SetActive(false);
+                else m_DescribtionText.text = m_DescribtionTextString;
             }
 
-            var level = Upgrades.GetUpgradeLevel(asset); // Int level
+            var level = Upgrades.GetUpgradeLevel(asset); 
 
             if (level >= asset.costByLevel.Length)
             {
@@ -50,37 +50,39 @@ namespace TowerDefense
                 SetCurrentLvlText(level);
             }
         }
-
         public void Buy()
         {
             Upgrades.BuyUpgrade(asset);
             Initialize();
         }
-
-        private void SetMaxLvlText(int level)
-        {
-            buyButton.interactable = false;
-            buyButton.transform.Find("ImageStar").gameObject.SetActive(false);
-            levelMax.gameObject.SetActive(true);
-            lvlsFolder.gameObject.SetActive(false);
-            costText.text = "X";
-            levelMax.text = $"Lvl: {level} (Max)";
-        }
-        private void SetCurrentLvlText(int level)
-        {
-            this.level.text = $"Lvl: {level}"; // Текствовый объект level
-            levelNext.text = $"Lvl: {level + 1}";
-            costText.text = $"Buy: {asset.costByLevel[level]}";
-            costNumber = asset.costByLevel[level];
-            levelMax.gameObject.SetActive(false);
-        }
-
         public void CheckCost(int money)
         {
             if (isMax) return;
 
             Initialize();
-            buyButton.interactable = money >= costNumber;
+            m_BuyButton.interactable = money >= costNumber;
         }
+
+
+
+        private void SetMaxLvlText(int level)
+        {
+            m_BuyButton.interactable = false;
+            m_BuyButton.transform.Find("ImageStar").gameObject.SetActive(false);
+            m_MaxLevelText.gameObject.SetActive(true);
+            m_LvlTextsFolder.gameObject.SetActive(false);
+            m_UpgradeCostText.text = "X";
+            m_MaxLevelText.text = $"Lvl: {level} (Max)";
+        }
+        private void SetCurrentLvlText(int level)
+        {
+            this.m_LevelText.text = $"Lvl: {level}"; // Текствовый объект level
+            m_NextLevelText.text = $"Lvl: {level + 1}";
+            m_UpgradeCostText.text = $"Buy: {asset.costByLevel[level]}";
+            costNumber = asset.costByLevel[level];
+            m_MaxLevelText.gameObject.SetActive(false);
+        }
+
+
     }
 }

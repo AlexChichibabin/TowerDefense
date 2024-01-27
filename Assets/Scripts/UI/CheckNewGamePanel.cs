@@ -18,7 +18,7 @@ namespace TowerDefense
 
         public void OnYesButton()
         {
-            FileHandler.Reset(MapCompletion.filename);
+            FileHandler.Reset(MapCompletion.m_FileName);
             FileHandler.Reset(Upgrades.filename);
             SceneManager.LoadScene(1);
         }

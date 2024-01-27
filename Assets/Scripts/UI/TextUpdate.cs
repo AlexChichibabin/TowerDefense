@@ -26,10 +26,10 @@ namespace TowerDefense
             switch (m_Sourse)
             {
                 case UpdateSourse.Gold:
-                    TDPlayer.GoldUpdateSubscribe(UpdateText);
+                    TDPlayer.Instance.GoldUpdateSubscribe(UpdateText);
                     break;
                 case UpdateSourse.Life:
-                    TDPlayer.LifeUpdateSubscribe(UpdateText);
+                    TDPlayer.Instance.LifeUpdateSubscribe(UpdateText);
                     break;
                 case UpdateSourse.WaveTimer:
                     WaveTimeController.StartWaveTimerTextUpdateSubscribe += UpdateText;
