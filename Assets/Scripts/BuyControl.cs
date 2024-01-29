@@ -5,7 +5,7 @@ namespace TowerDefense
     public class BuyControl : MonoBehaviour
     {
         private RectTransform m_RectTransform;
-
+        [SerializeField] private TowerBuyControl m_TowerBuyPrefab;
 
 
         private void Awake()
