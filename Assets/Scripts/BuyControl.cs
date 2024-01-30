@@ -39,9 +39,14 @@ namespace TowerDefense
                     {
                         var newControl = Instantiate(m_TowerBuyPrefab, transform);
                         m_ActiveControl.Add(newControl);
-                        newControl.transform.position += Vector3.right * 90 * i;
                         newControl.SetTowerAsset(m_TowerAssets[i]);
                     }
+                }
+                var angle = 360 / m_ActiveControl.Count;
+                for (int i = 0; i < m_TowerAssets.Length; i++)
+                {
+                    var offset = Quaternion.AngleAxis(angle * i, Vector3.forward) * (Vector3.left) * 100;
+                    m_ActiveControl[i].transform.position += offset;
                 }
             }
             else

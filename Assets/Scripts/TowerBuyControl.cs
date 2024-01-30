@@ -29,7 +29,7 @@ namespace TowerDefense
 
         private void OnDestroy()
         {
-            //TDPlayer.Instance.GoldUpdateUnSubscribe(GoldStatusCheck);
+
         }
 
         public void SetBuildSite(Transform value)
