@@ -6,6 +6,7 @@ namespace TowerDefense
     public class TowerBuyControl : MonoBehaviour
     {
         [SerializeField] private TowerAsset m_TowerAsset;
+        public void SetTowerAsset(TowerAsset towerAsset) { m_TowerAsset = towerAsset; }
         [SerializeField] private Text m_Text;
         [SerializeField] private Button m_Button;
         [SerializeField] private Transform buildSite;

@@ -3021,6 +3021,46 @@ PrefabInstance:
       propertyPath: m_TowerBuyPrefab
       value: 
       objectReference: {fileID: 4131811995699502734, guid: dc3b07ef6cfaed04a8e0f5cf2c2f6181, type: 3}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_MagicTowerUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: f3d4b673b1bc17940a51807b1bc42682, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a4684dacda4d0d4faaf0abfebffe24e, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f2ba1d488ad71d64584f68db5f37699f, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: faec82c408fbb61499accb425b51af15, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: d44f62487cc51ab4492d5a2495e15339, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 327a95b6ef744ca49940dbdb415b64b5, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f3616f2f873a794392368a998cc0c3a, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: e280889e3307ac940b6e0548cae9c950, type: 2}
+    - target: {fileID: 2994641363068398163, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: m_TowerAssets.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: eef48be3a937d1d4f8cfc78ee12d49b4, type: 2}
     - target: {fileID: 3418996709554106603, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
       propertyPath: m_IsActive
       value: 0

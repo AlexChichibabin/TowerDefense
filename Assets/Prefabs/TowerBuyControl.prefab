@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7165735572fc1445924e059a360ca6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TowerAsset: {fileID: 11400000, guid: f2ba1d488ad71d64584f68db5f37699f, type: 2}
+  m_TowerAsset: {fileID: 0}
   m_Text: {fileID: 2863126557484610238}
   m_Button: {fileID: 4629171633500072946}
   buildSite: {fileID: 0}
