@@ -8,9 +8,7 @@ namespace TowerDefense
         private RectTransform m_RectTransform;
         [SerializeField] private TowerBuyControl m_TowerBuyPrefab;
         [SerializeField] private TowerAsset[] m_TowerAssets;
-        [SerializeField] private UpgradeAsset m_MagicTowerUpgrade;
         private List<TowerBuyControl> m_ActiveControl;
-
 
         private void Awake()
         {
@@ -33,19 +31,18 @@ namespace TowerDefense
                 gameObject.SetActive(true);
 
                 m_ActiveControl = new List<TowerBuyControl>();
-                for (int i = 0; i < m_TowerAssets.Length; i++)
-                {
-                    if (i != 6 || Upgrades.GetUpgradeLevel(m_MagicTowerUpgrade) > 0)
+                foreach (var asset in m_TowerAssets) 
+                    if (asset.IsAvailable())
                     {
                         var newControl = Instantiate(m_TowerBuyPrefab, transform);
                         m_ActiveControl.Add(newControl);
-                        newControl.SetTowerAsset(m_TowerAssets[i]);
+                        newControl.SetTowerAsset(asset);
                     }
-                }
+
                 var angle = 360 / m_ActiveControl.Count;
-                for (int i = 0; i < m_TowerAssets.Length; i++)
+                for (int i = 0; i < m_ActiveControl.Count; i++)
                 {
-                    var offset = Quaternion.AngleAxis(angle * i, Vector3.forward) * (Vector3.left) * 100;
+                    var offset = Quaternion.AngleAxis(angle * i, Vector3.forward) * Vector3.up * 21 * m_ActiveControl.Count;
                     m_ActiveControl[i].transform.position += offset;
                 }
             }
@@ -55,7 +52,7 @@ namespace TowerDefense
                 gameObject.SetActive(false);
             }
 
-            foreach (var tbc in GetComponentsInChildren<TowerBuyControl>()) 
+            foreach (var tbc in GetComponentsInChildren<TowerBuyControl>())
             {
                 tbc.SetBuildSite(builtSite);
             }
