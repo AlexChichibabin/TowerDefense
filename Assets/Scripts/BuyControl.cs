@@ -7,7 +7,6 @@ namespace TowerDefense
     {
         private RectTransform m_RectTransform;
         [SerializeField] private TowerBuyControl m_TowerBuyPrefab;
-        [SerializeField] private TowerAsset[] m_TowerAssets;
         private List<TowerBuyControl> m_ActiveControl;
 
         private void Awake()
@@ -22,22 +21,24 @@ namespace TowerDefense
             BuildSite.OnClickEvent -= MoveToBuildSite;
         }
 
-        private void MoveToBuildSite(Transform builtSite)
+        private void MoveToBuildSite(BuildSite builtSite)
         {
             if (builtSite)
             {
-                var position = Camera.main.WorldToScreenPoint(builtSite.position);
+                var position = Camera.main.WorldToScreenPoint(builtSite.transform.root.position);
                 m_RectTransform.anchoredPosition = position;
                 gameObject.SetActive(true);
 
                 m_ActiveControl = new List<TowerBuyControl>();
-                foreach (var asset in m_TowerAssets) 
+                foreach (var asset in builtSite.BuildableTowers)
+                {
                     if (asset.IsAvailable())
                     {
                         var newControl = Instantiate(m_TowerBuyPrefab, transform);
                         m_ActiveControl.Add(newControl);
                         newControl.SetTowerAsset(asset);
                     }
+                }
 
                 var angle = 360 / m_ActiveControl.Count;
                 for (int i = 0; i < m_ActiveControl.Count; i++)
@@ -54,7 +55,7 @@ namespace TowerDefense
 
             foreach (var tbc in GetComponentsInChildren<TowerBuyControl>())
             {
-                tbc.SetBuildSite(builtSite);
+                tbc.SetBuildSite(builtSite.transform.root);
             }
         }
     }
