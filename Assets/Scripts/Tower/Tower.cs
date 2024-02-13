@@ -75,13 +75,12 @@ namespace TowerDefense
             SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
             sr.sprite = asset.towerSprite;
             sr.color = asset.spriteColor;
-            //Turret tur = GetComponentInChildren<Turret>();
-            //tur.SetTurretProperties(asset.turretProperties);
             m_Turrets = GetComponentsInChildren<Turret>();
             foreach (var turret in m_Turrets)
             {
                 turret.SetTurretProperties(asset.turretProperties);
             }
+            GetComponentInChildren<BuildSite>().SetBuildableTowers(asset.m_UpgradesTo);
         }
     }
 }

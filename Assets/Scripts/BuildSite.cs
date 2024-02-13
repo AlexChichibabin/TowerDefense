@@ -6,8 +6,20 @@ namespace TowerDefense
 {
     public class BuildSite : MonoBehaviour, IPointerDownHandler
     {
-        [SerializeField] private TowerAsset[] m_BuildableTowers;
-        public TowerAsset[] BuildableTowers { get { return m_BuildableTowers; } }
+        public TowerAsset[] buildableTowers;
+        public void SetBuildableTowers(TowerAsset[] towers)
+        {
+            if (towers == null || towers.Length == 0)
+            {
+                //gameObject.SetActive(false);
+                Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                buildableTowers = towers;
+            }
+            
+        }
         public static event Action<BuildSite> OnClickEvent;
 
         public static void HideControls()

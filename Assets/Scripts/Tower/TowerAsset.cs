@@ -14,7 +14,20 @@ namespace TowerDefense
         [SerializeField] private UpgradeAsset requiredUpgrade;
         [SerializeField] private int requiredUpgradeLevel;
 
-        public bool IsAvailable() => !requiredUpgrade || 
+
+        public bool IsAvailable() => !requiredUpgrade ||
                     requiredUpgradeLevel <= Upgrades.GetUpgradeLevel(requiredUpgrade);
+        /*public bool IsAvailable()
+        {
+            //Debug.Log(Upgrades.GetUpgradeLevel(requiredUpgrade));
+            if (requiredUpgrade != null) return true;
+            else 
+                if(requiredUpgradeLevel <= Upgrades.GetUpgradeLevel(requiredUpgrade)) return true;
+
+            return false;
+        }*/
+
+
+        public TowerAsset[] m_UpgradesTo;
     }
 }
