@@ -29,7 +29,14 @@ namespace SpaceShip
         /// maximum linear speed
         /// </summary>
         [SerializeField] private float m_MaxLinearVelocity;
+        private float m_MaxLinearVelocityBackup;
         public float MaxLinearVelocity => m_MaxLinearVelocity;
+        public void HalfMaxLinearVelocity() 
+        {
+            m_MaxLinearVelocityBackup = m_MaxLinearVelocity;
+            m_MaxLinearVelocity /= 2;
+        }
+        public void RestoreMaxLinearVelocity() { m_MaxLinearVelocity = m_MaxLinearVelocityBackup; }
         /// <summary>
         /// maximum rotate speed
         /// </summary>
