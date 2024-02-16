@@ -9,15 +9,17 @@ namespace SpaceShip
     [RequireComponent(typeof(CircleCollider2D))]
     public class ImpactAreaAttack : ImpactEffect
     {
-        [SerializeField] private float m_Radius;
+        private float m_Radius;
         [SerializeField] private TDProjectile m_Projectile;
+        private SpriteRenderer m_LargeCircle;
         private int m_Damage;
         private DamageType m_DamageType;
 
 
         private void Start()
         {
-            m_Damage = m_Projectile.Damage;
+            m_LargeCircle = FindFirstObjectByType<SpriteRenderer>();
+            m_Radius = m_LargeCircle.transform.localScale.x/2;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +30,7 @@ namespace SpaceShip
             {
                 if (hit[i])
                 {
-                    Enemy enemy = hit[i].transform.root.GetComponent<Enemy>();
+                    hit[i].transform.root.TryGetComponent<Enemy>(out var enemy);
 
                     if (enemy != null)
                     {

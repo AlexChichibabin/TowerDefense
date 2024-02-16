@@ -3,26 +3,39 @@ using UnityEngine;
 using SpaceShip;
 using System.Collections;
 using UnityEngine.UI;
+using static TowerDefense.TDProjectile;
+using static UnityEditor.PlayerSettings;
 
 namespace TowerDefense
 {
     public class Abilities : SingletonBase<Abilities>
     {
-        public interface Usable { void Use(); }
-
         [Serializable]
-        public class FireAbility: Usable
+        public class FireAbility
         {
             [SerializeField] private int m_Cost = 10;
             [SerializeField] private int m_Damage = 50;
+            [SerializeField] private Color m_TargetingColor;
+            [SerializeField] private ImpactAreaAttack m_ImpactAreaAttackPrefab;
+            [SerializeField] private DamageType m_DamageType;
             public void Use()
             {
-
+                ClickProtection.Instance.Activate((Vector2 v) =>
+                {
+                    Vector3 position = v;
+                    position.z = -Camera.main.transform.position.z;
+                    position = Camera.main.ScreenToWorldPoint(position);
+                    if (m_ImpactAreaAttackPrefab != null)
+                    {
+                        ImpactAreaAttack expl = Instantiate(m_ImpactAreaAttackPrefab, position, Quaternion.identity);
+                        expl.SetProjectileProperties(m_Damage, m_DamageType);
+                    }
+                });
             }
         }
 
         [Serializable]
-        public class FreezeAbility: Usable
+        public class FreezeAbility
         {
             [SerializeField] private int m_Cost = 10;
             [SerializeField] private float m_CoolDown = 5f;
@@ -60,10 +73,13 @@ namespace TowerDefense
             }
         }
 
+        [SerializeField] private Image m_TargetingCircle;
+        //[SerializeField] private Image m_ClickProtection;
+        [SerializeField] private Button m_FreezeButton;
+
         [SerializeField] private FireAbility m_FireAbility;
         public void UseFireAbility() => m_FireAbility.Use();
         [SerializeField] private FreezeAbility m_FreezeAbility;
-        [SerializeField] private Button m_FreezeButton;
         public void UseFreezeAbility() => m_FreezeAbility.Use();
     }
 }
