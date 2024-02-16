@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 485076664846555606}
   - component: {fileID: -8687418011429085746}
   - component: {fileID: 5162282867861638996}
+  - component: {fileID: -1017418746086251444}
   m_Layer: 0
   m_Name: ExplosionFireBall
   m_TagString: Untagged
@@ -104,7 +105,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.0001
 --- !u!95 &-8687418011429085746
 Animator:
   serializedVersion: 5
@@ -139,8 +140,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LifeTime: 0.3
-  m_Radius: 0.8
-  m_Projectile: {fileID: 4781937755728224456, guid: 11e816975b1952d4e8c6cdcfac9ae2ac, type: 3}
+  m_Area: {fileID: -1017418746086251444}
+--- !u!114 &-1017418746086251444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758441659301390784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2034be04958301046840b08ba76976d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Radius: 0.88
+  m_GizmosColor: {r: 0, g: 0, b: 0, a: 0.3}
+  m_CircleGizmoMode: 0
 --- !u!1 &4250530591401763713
 GameObject:
   m_ObjectHideFlags: 0

@@ -1425,15 +1425,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_TargetingCircle: {fileID: 0}
+  m_TargetingCircle: {fileID: 688968947167682046}
   m_FreezeButton: {fileID: 7881045594013860842}
   m_FireAbility:
     m_Cost: 10
-    m_Damage: 50
+    m_Damage: 389
     m_TargetingColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ImpactAreaAttackPrefab: {fileID: 5162282867861638996, guid: cbff58fca89319b42909342383ba1195, type: 3}
+    m_DamageType: 0
   m_FreezeAbility:
     m_Cost: 10
-    m_CoolDown: 9.3
+    m_CoolDown: 10
     m_Duration: 5
 --- !u!1 &3883313657105323468
 GameObject:
@@ -1642,8 +1644,9 @@ GameObject:
   - component: {fileID: 7201128472904454681}
   - component: {fileID: 3958425885672124403}
   - component: {fileID: 5630414192359495463}
+  - component: {fileID: 3249181000677309449}
   m_Layer: 5
-  m_Name: MisClick
+  m_Name: ClickProtector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1683,13 +1686,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4579003094152956945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1719,6 +1722,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildableTowers: []
+--- !u!114 &3249181000677309449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4579003094152956945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926b3ee2b13c4194ea3c40bb8a856f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
 --- !u!1 &5214034320779413071
 GameObject:
   m_ObjectHideFlags: 0

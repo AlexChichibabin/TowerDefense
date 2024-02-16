@@ -10,16 +10,17 @@ namespace SpaceShip
     public class ImpactAreaAttack : ImpactEffect
     {
         private float m_Radius;
-        [SerializeField] private TDProjectile m_Projectile;
-        private SpriteRenderer m_LargeCircle;
+        //[SerializeField] private TDProjectile m_Projectile;
+        //[SerializeField] private SpriteRenderer m_LargeCircle;
+        [SerializeField] CircleArea m_Area;
         private int m_Damage;
         private DamageType m_DamageType;
 
 
         private void Start()
         {
-            m_LargeCircle = FindFirstObjectByType<SpriteRenderer>();
-            m_Radius = m_LargeCircle.transform.localScale.x/2;
+            m_Radius = m_Area.Radius;
+            GetComponent<CircleCollider2D>().radius = m_Radius;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
