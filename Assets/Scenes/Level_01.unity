@@ -3010,17 +3010,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3424489584731288691, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: requiredUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: 66a68e8f36812cc4e84ce0ec25522b82, type: 2}
+    - target: {fileID: 3424489584731288691, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: requiredUpgradeLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238008797221993656, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: requiredUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a122f87a44d05842bd6d1a76bbb89bf, type: 2}
+    - target: {fileID: 5238008797221993656, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
+      propertyPath: requiredUpgradeLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5903744727067536286, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
       propertyPath: m_Name
       value: HUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 7711726709350204296, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-      propertyPath: m_FireAbility.m_Damage
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7711726709350204296, guid: bef677a16f83ba24d87684f2b3be56a3, type: 3}
-      propertyPath: m_FireAbility.m_DamageType
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

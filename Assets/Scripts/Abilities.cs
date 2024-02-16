@@ -4,20 +4,48 @@ using SpaceShip;
 using System.Collections;
 using UnityEngine.UI;
 using static TowerDefense.TDProjectile;
-using static UnityEditor.PlayerSettings;
+//using static UnityEditor.PlayerSettings;
+
 
 namespace TowerDefense
 {
     public class Abilities : SingletonBase<Abilities>
     {
+        private Spell[] m_ActiveSpells;
+        private void Start()
+        {
+            m_ActiveSpells = GetComponentsInChildren<Spell>();
+
+            foreach (var spell in m_ActiveSpells)
+            {
+                print(spell.IsAvailable());
+                if (spell.IsAvailable() == false)
+                {
+                    spell.gameObject.SetActive(false);
+                }
+            }
+            
+            if (m_ActiveSpells.Length > 0)
+            {
+                gameObject.SetActive(true);
+                for (int i = 0; i < m_ActiveSpells.Length; i++)
+                {
+                    if (i > 4) continue;
+                    var spellRect = m_ActiveSpells[i].GetComponent<RectTransform>();
+                    spellRect.anchoredPosition = new Vector3(-400 + 200*i, 0, 0);
+                    
+                }
+            }
+        }
         [Serializable]
         public class FireAbility
         {
-            [SerializeField] private int m_Cost = 10;
-            [SerializeField] private int m_Damage = 50;
-            [SerializeField] private Color m_TargetingColor;
             [SerializeField] private ImpactAreaAttack m_ImpactAreaAttackPrefab;
+            [SerializeField] private Color m_TargetingColor;
             [SerializeField] private DamageType m_DamageType;
+            [SerializeField] private int m_Damage = 50;
+            [SerializeField] private int m_Cost = 10;      
+            
             public void Use()
             {
                 ClickProtection.Instance.Activate((Vector2 v) =>
@@ -81,5 +109,6 @@ namespace TowerDefense
         public void UseFireAbility() => m_FireAbility.Use();
         [SerializeField] private FreezeAbility m_FreezeAbility;
         public void UseFreezeAbility() => m_FreezeAbility.Use();
+
     }
 }

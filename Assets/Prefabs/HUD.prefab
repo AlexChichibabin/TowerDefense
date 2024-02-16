@@ -1336,6 +1336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2663696261219529975}
   - component: {fileID: 1218092913085285299}
+  - component: {fileID: 5238008797221993656}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -1374,6 +1375,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3687204168726024825}
   m_CullTransparentMesh: 1
+--- !u!114 &5238008797221993656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687204168726024825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55bf19a9ab781474e812aa6237f5d562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3714108260604531678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,11 +1441,11 @@ MonoBehaviour:
   m_TargetingCircle: {fileID: 688968947167682046}
   m_FreezeButton: {fileID: 7881045594013860842}
   m_FireAbility:
-    m_Cost: 10
-    m_Damage: 389
-    m_TargetingColor: {r: 0, g: 0, b: 0, a: 0}
     m_ImpactAreaAttackPrefab: {fileID: 5162282867861638996, guid: cbff58fca89319b42909342383ba1195, type: 3}
-    m_DamageType: 0
+    m_TargetingColor: {r: 0, g: 0, b: 0, a: 0}
+    m_DamageType: 3
+    m_Damage: 60
+    m_Cost: 10
   m_FreezeAbility:
     m_Cost: 10
     m_CoolDown: 10
@@ -2819,6 +2832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8654219550286258052}
   - component: {fileID: 2970878602826008996}
+  - component: {fileID: 3424489584731288691}
   m_Layer: 0
   m_Name: Freeze
   m_TagString: Untagged
@@ -2856,6 +2870,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6798199176922315195}
   m_CullTransparentMesh: 1
+--- !u!114 &3424489584731288691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798199176922315195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55bf19a9ab781474e812aa6237f5d562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6849116181834242673
 GameObject:
   m_ObjectHideFlags: 0

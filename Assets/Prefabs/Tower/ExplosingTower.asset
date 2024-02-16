@@ -17,6 +17,6 @@ MonoBehaviour:
   goldCost: 25
   towerGUI: {fileID: 21300000, guid: 19a3a05dff2ee774da09fe822a5e5031, type: 3}
   towerSprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}
-  requiredUpgrade: {fileID: 0}
+  requiredUpgrade: {fileID: 11400000, guid: cba2dde20ae716f4ab078b8d2f672084, type: 2}
   requiredUpgradeLevel: 1
   m_UpgradesTo: []
