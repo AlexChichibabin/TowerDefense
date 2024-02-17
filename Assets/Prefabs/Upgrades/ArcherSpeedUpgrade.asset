@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ArcherSpeedUpgrade
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 850e1cb495d28564e90f83ba4625952d, type: 3}
-  costByLevel: 010000000200000003000000
+  m_IncreaseValue: 0
+  costByLevel: 010000000000000000000000

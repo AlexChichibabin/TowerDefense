@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 972a5fe0a5d3d714a8d22698d623b2fe, type: 3}
-  m_Name: MagicTowerUpgrade
+  m_Name: ManaUpgrade
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
-  m_IncreaseValue: 0
+  sprite: {fileID: 21300000, guid: ffbf6107621f56c40ba216c1f1d4af14, type: 3}
+  m_IncreaseValue: 1
   costByLevel: 010000000000000000000000

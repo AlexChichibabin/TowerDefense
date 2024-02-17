@@ -10,6 +10,7 @@ namespace TowerDefense
         public enum UpdateSourse
         {
             Gold,
+            Mana,
             Life, 
             WaveTimer
         }
@@ -27,6 +28,9 @@ namespace TowerDefense
             {
                 case UpdateSourse.Gold:
                     TDPlayer.Instance.GoldUpdateSubscribe(UpdateText);
+                    break;
+                case UpdateSourse.Mana:
+                    TDPlayer.Instance.ManaUpdateSubscribe(UpdateText);
                     break;
                 case UpdateSourse.Life:
                     TDPlayer.Instance.LifeUpdateSubscribe(UpdateText);

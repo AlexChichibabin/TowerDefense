@@ -4,6 +4,8 @@ using SpaceShip;
 using System.Collections;
 using UnityEngine.UI;
 using static TowerDefense.TDProjectile;
+using Unity.VisualScripting;
+using static TowerDefense.Abilities;
 //using static UnityEditor.PlayerSettings;
 
 
@@ -12,19 +14,39 @@ namespace TowerDefense
     public class Abilities : SingletonBase<Abilities>
     {
         private Spell[] m_ActiveSpells;
+        [SerializeField] private Image m_TargetingCircle;
+        [SerializeField] private Button m_FreezeButton;
+        [SerializeField] private Button m_FireButton;
+        [SerializeField] private FreezeAbility m_FreezeAbility;
+        [SerializeField] private FireAbility m_FireAbility;
+        [SerializeField] private Text m_FreezeManaCostText;
+        [SerializeField] private Text m_FireManaCostText;
+        [SerializeField] private UpgradeAsset m_FreezeUpgrade;
+        [SerializeField] private UpgradeAsset m_FireUpgrade;
+
+
         private void Start()
         {
+            // Подписка на золото и манну
+            TDPlayer.Instance.ManaUpdateSubscribe(ManaStatusCheck);
+            m_FreezeManaCostText.text = m_FreezeAbility.ManaCost.ToString();
+            m_FireManaCostText.text = m_FireAbility.ManaCost.ToString();
+            if (m_FireUpgrade) ChangeExplosionDamage(m_FireUpgrade.m_IncreaseValue);
+            if (m_FreezeUpgrade) ChangeFreezeDuration(m_FreezeUpgrade.m_IncreaseValue);
+
+            print("Explosion spell damage is: " + m_FireAbility.m_Damage);
+            print("Freeze spell duration is: " + m_FreezeAbility.m_Duration);
+
             m_ActiveSpells = GetComponentsInChildren<Spell>();
 
             foreach (var spell in m_ActiveSpells)
             {
-                print(spell.IsAvailable());
                 if (spell.IsAvailable() == false)
                 {
                     spell.gameObject.SetActive(false);
                 }
             }
-            
+
             if (m_ActiveSpells.Length > 0)
             {
                 gameObject.SetActive(true);
@@ -32,24 +54,55 @@ namespace TowerDefense
                 {
                     if (i > 4) continue;
                     var spellRect = m_ActiveSpells[i].GetComponent<RectTransform>();
-                    spellRect.anchoredPosition = new Vector3(-400 + 200*i, 0, 0);
-                    
+                    spellRect.anchoredPosition = new Vector3(-400 + 200 * i, 0, 0);
+
                 }
             }
         }
+        private void ManaStatusCheck(int mana)
+        {
+            if (mana >= m_FreezeAbility.ManaCost != m_FreezeButton.interactable)
+            {
+                m_FreezeButton.interactable = !m_FreezeButton.interactable;
+                m_FreezeManaCostText.color = m_FreezeButton.interactable ? Color.white : Color.red;
+            }
+            if (mana >= m_FireAbility.ManaCost != m_FireButton.interactable)
+            {
+                m_FireButton.interactable = !m_FireButton.interactable;
+                m_FireManaCostText.color = m_FireButton.interactable ? Color.white : Color.red;
+            }
+        }
+        private void ChangeExplosionDamage(int increaseCount)
+        {
+            if (m_FireUpgrade) m_FireAbility.SetDamage(m_FireUpgrade.m_IncreaseValue * Upgrades.GetUpgradeLevel(m_FireUpgrade));
+        }
+        private void ChangeFreezeDuration(int increaseCount)
+        {
+            if (m_FreezeUpgrade) m_FreezeAbility.SetDuration(m_FreezeUpgrade.m_IncreaseValue * Upgrades.GetUpgradeLevel(m_FreezeUpgrade));
+        }
+
         [Serializable]
         public class FireAbility
         {
             [SerializeField] private ImpactAreaAttack m_ImpactAreaAttackPrefab;
             [SerializeField] private Color m_TargetingColor;
             [SerializeField] private DamageType m_DamageType;
-            [SerializeField] private int m_Damage = 50;
-            [SerializeField] private int m_Cost = 10;      
-            
+            [SerializeField] public int m_Damage = 50; // надо private
+            [SerializeField] private int m_GoldCost = 10;
+            [SerializeField] private int m_ManaCost = 10;
+            public int GoldCost => m_GoldCost;
+            public int ManaCost => m_ManaCost;
+
+
+            public void SetDamage(int damageIncrease)
+            {
+                m_Damage += damageIncrease;
+            }
             public void Use()
             {
                 ClickProtection.Instance.Activate((Vector2 v) =>
                 {
+                    TDPlayer.Instance.ChangeMana(-m_ManaCost);
                     Vector3 position = v;
                     position.z = -Camera.main.transform.position.z;
                     position = Camera.main.ScreenToWorldPoint(position);
@@ -60,20 +113,30 @@ namespace TowerDefense
                     }
                 });
             }
+            
         }
 
         [Serializable]
         public class FreezeAbility
         {
-            [SerializeField] private int m_Cost = 10;
             [SerializeField] private float m_CoolDown = 5f;
-            [SerializeField] private float m_Duration = 5;
+            [SerializeField] public float m_Duration = 5; // надо private
+            [SerializeField] private int m_GoldCost = 10;
+            [SerializeField] private int m_ManaCost = 10;
+            public int GoldCost => m_GoldCost;
+            public int ManaCost => m_ManaCost;
+
+            public void SetDuration(int duationIncrease)
+            {
+                m_Duration += duationIncrease;
+            }
             public void Use()
             {
                 void Slow(Enemy ship) // Slow all enemies
                 {
                     ship.GetComponent<Ship>().HalfMaxLinearVelocity();
                 }
+                TDPlayer.Instance.ChangeMana(-m_ManaCost);
                 foreach (var ship in FindObjectsOfType<Ship>())
                 {
                     ship.HalfMaxLinearVelocity();
@@ -101,13 +164,7 @@ namespace TowerDefense
             }
         }
 
-        [SerializeField] private Image m_TargetingCircle;
-        //[SerializeField] private Image m_ClickProtection;
-        [SerializeField] private Button m_FreezeButton;
-
-        [SerializeField] private FireAbility m_FireAbility;
         public void UseFireAbility() => m_FireAbility.Use();
-        [SerializeField] private FreezeAbility m_FreezeAbility;
         public void UseFreezeAbility() => m_FreezeAbility.Use();
 
     }

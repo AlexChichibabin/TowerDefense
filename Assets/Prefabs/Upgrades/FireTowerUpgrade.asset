@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: FireTowerUpgrade
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 34d6703ba7cf6dd469bb0aad4781fccb, type: 3}
-  costByLevel: 010000000200000003000000
+  m_IncreaseValue: 0
+  costByLevel: 010000000000000000000000

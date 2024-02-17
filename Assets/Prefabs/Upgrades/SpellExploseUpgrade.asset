@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SpellExploseUpgrade
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 19a3a05dff2ee774da09fe822a5e5031, type: 3}
-  costByLevel: 010000000200000003000000
+  m_IncreaseValue: 10
+  costByLevel: 010000000000000000000000

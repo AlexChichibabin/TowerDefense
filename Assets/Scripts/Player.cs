@@ -9,6 +9,9 @@ namespace SpaceShip
     {
         [SerializeField] private int m_NumLives;
         public int NumLives { get { return m_NumLives; } }
+
+        [SerializeField] protected int m_NumMana;
+        public int NumMana { get { return m_NumMana; } }
         [SerializeField] private Ship m_Ship;
         //[SerializeField] private GameObject m_PlayerShipPrefab;
         [HideInInspector] public Ship ActiveShip => m_Ship;

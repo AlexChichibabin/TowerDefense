@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ToxicTowerUpgrade
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 8ed99c7d89795064982b0346a0c47b0c, type: 3}
-  costByLevel: 010000000200000003000000
+  m_IncreaseValue: 0
+  costByLevel: 010000000000000000000000

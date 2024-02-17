@@ -901,18 +901,18 @@ PrefabInstance:
     - target: {fileID: 1158040788227964943, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: asset
       value: 
-      objectReference: {fileID: 11400000, guid: f3d4b673b1bc17940a51807b1bc42682, type: 2}
+      objectReference: {fileID: 11400000, guid: 2457db5cacf427c41be87832a62ded3f, type: 2}
     - target: {fileID: 1158040788227964943, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: m_DescribtionTextString
       value: +1 Lvl Magic
       objectReference: {fileID: 0}
     - target: {fileID: 2582858322119083801, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: m_Name
-      value: Upgrade 4 MageTower
+      value: Upgrade 13 ManaUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 2582858322119083801, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4629100332700834076, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: m_Pivot.x
@@ -3042,6 +3042,10 @@ MonoBehaviour:
     level: 0
   - asset: {fileID: 11400000, guid: 0a122f87a44d05842bd6d1a76bbb89bf, type: 2}
     level: 0
+  - asset: {fileID: 11400000, guid: 2457db5cacf427c41be87832a62ded3f, type: 2}
+    level: 0
+  - asset: {fileID: 11400000, guid: c5dc4bc1c94200b4c9a0ffe91f296a21, type: 2}
+    level: 0
 --- !u!1001 &735559712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3054,6 +3058,10 @@ PrefabInstance:
       propertyPath: asset
       value: 
       objectReference: {fileID: 11400000, guid: c5dc4bc1c94200b4c9a0ffe91f296a21, type: 2}
+    - target: {fileID: 1158040788227964943, guid: 232fab1b64c46d445bef720b56095209, type: 3}
+      propertyPath: m_DescribtionTextString
+      value: +1 lvl Freeze
+      objectReference: {fileID: 0}
     - target: {fileID: 2582858322119083801, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: m_Name
       value: Upgrade 10 FreezeTower
@@ -3878,6 +3886,7 @@ MonoBehaviour:
   - {fileID: 480617755}
   - {fileID: 1503541358}
   - {fileID: 1688877805}
+  - {fileID: 2130822183}
   m_PreviousPage: {fileID: 1250394352}
   m_NextPage: {fileID: 1768087587}
   m_PreviousButton: {fileID: 391153160}
@@ -7704,6 +7713,10 @@ PrefabInstance:
       propertyPath: plusTextIsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1158040788227964943, guid: 232fab1b64c46d445bef720b56095209, type: 3}
+      propertyPath: m_DescribtionTextString
+      value: +1 Shoot Range
+      objectReference: {fileID: 0}
     - target: {fileID: 2582858322119083801, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: m_Name
       value: Upgrade 3 Accuracy
@@ -7818,6 +7831,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4629100332700834076, guid: 232fab1b64c46d445bef720b56095209, type: 3}
   m_PrefabInstance: {fileID: 234279722}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2130822183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1158040788227964943, guid: 232fab1b64c46d445bef720b56095209, type: 3}
+  m_PrefabInstance: {fileID: 234279722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f18c420e95f7345a38fb1f7aafc45d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &646336232489625817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7914,6 +7938,10 @@ PrefabInstance:
     - target: {fileID: 1158040788227964943, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: plusTextIsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158040788227964943, guid: 232fab1b64c46d445bef720b56095209, type: 3}
+      propertyPath: m_DescribtionTextString
+      value: +1 Arch Spd
       objectReference: {fileID: 0}
     - target: {fileID: 2582858322119083801, guid: 232fab1b64c46d445bef720b56095209, type: 3}
       propertyPath: m_Name
