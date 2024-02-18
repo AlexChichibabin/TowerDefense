@@ -11,6 +11,7 @@ namespace TowerDefense
         [SerializeField] private int m_NumGold;
         [SerializeField] private Tower m_TowerPrefab;
         [SerializeField] private UpgradeAsset m_HealthUpgrade;
+        public UpgradeAsset HealthUpgrade => m_HealthUpgrade;
         [SerializeField] private UpgradeAsset m_ManaUpgrade;
         [SerializeField] private float m_ManaTime;
         private float manaTimer;
@@ -28,8 +29,8 @@ namespace TowerDefense
 
             manaTimer = m_ManaTime + Time.time;
 
-            print("Mana per timeUnit is: " + m_ManaCountPerTime);
-            print("Lives amount: " + NumLives);
+            /*print("Mana per timeUnit is: " + m_ManaCountPerTime);
+            print("Lives amount: " + NumLives);*/
         }
 
         private void Update()

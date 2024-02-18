@@ -14,7 +14,7 @@ namespace TowerDefense
 
         private void Start()
         {
-            timeLimit += waveManager.CurrentWave.PrepareTime;
+            //timeLimit += waveManager.CurrentWave.PrepareTime;
         }
         private void FixedUpdate()
         {

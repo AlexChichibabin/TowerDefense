@@ -34,8 +34,8 @@ namespace TowerDefense
             if (m_FireUpgrade) ChangeExplosionDamage(m_FireUpgrade.m_IncreaseValue);
             if (m_FreezeUpgrade) ChangeFreezeDuration(m_FreezeUpgrade.m_IncreaseValue);
 
-            print("Explosion spell damage is: " + m_FireAbility.m_Damage);
-            print("Freeze spell duration is: " + m_FreezeAbility.m_Duration);
+            /*print("Explosion spell damage is: " + m_FireAbility.m_Damage);
+            print("Freeze spell duration is: " + m_FreezeAbility.m_Duration);*/
 
             m_ActiveSpells = GetComponentsInChildren<Spell>();
 

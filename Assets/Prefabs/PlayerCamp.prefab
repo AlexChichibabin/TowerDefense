@@ -50,10 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
   m_NumLives: 3
+  m_NumMana: 0
   m_Ship: {fileID: 0}
   m_NumGold: 187
-  towerPrefab: {fileID: 7268561584256709088, guid: 6f7eef6d713fcc14ea743a8428b106d4, type: 3}
-  healthUpgrade: {fileID: 11400000, guid: f4998812db8dd4d4f842c7a734be94a1, type: 2}
+  m_TowerPrefab: {fileID: 7268561584256709088, guid: 6f7eef6d713fcc14ea743a8428b106d4, type: 3}
+  m_HealthUpgrade: {fileID: 11400000, guid: f4998812db8dd4d4f842c7a734be94a1, type: 2}
+  m_ManaUpgrade: {fileID: 11400000, guid: 2457db5cacf427c41be87832a62ded3f, type: 2}
+  m_ManaTime: 2
+  m_ManaCountPerTime: 2
 --- !u!114 &7906820034630234006
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredUpgrade: {fileID: 11400000, guid: 0a122f87a44d05842bd6d1a76bbb89bf, type: 2}
-  requiredUpgradeLevel: 0
+  requiredUpgradeLevel: 1
 --- !u!1 &3714108260604531678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,8 +1969,8 @@ MonoBehaviour:
     m_ManaCost: 10
   m_FreezeManaCostText: {fileID: 14401412422371072}
   m_FireManaCostText: {fileID: 7419869269546285344}
-  m_FreezeUpgrade: {fileID: 0}
-  m_FireUpgrade: {fileID: 0}
+  m_FreezeUpgrade: {fileID: 11400000, guid: 66a68e8f36812cc4e84ce0ec25522b82, type: 2}
+  m_FireUpgrade: {fileID: 11400000, guid: 0a122f87a44d05842bd6d1a76bbb89bf, type: 2}
 --- !u!1 &3883313657105323468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,7 +3548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredUpgrade: {fileID: 11400000, guid: 66a68e8f36812cc4e84ce0ec25522b82, type: 2}
-  requiredUpgradeLevel: 0
+  requiredUpgradeLevel: 1
 --- !u!1 &6849116181834242673
 GameObject:
   m_ObjectHideFlags: 0

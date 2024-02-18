@@ -393,6 +393,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 299288501461700603, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
+      propertyPath: m_TowerPrefab
+      value: 
+      objectReference: {fileID: 7268561584256709088, guid: 6f7eef6d713fcc14ea743a8428b106d4, type: 3}
+    - target: {fileID: 299288501461700603, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
+      propertyPath: m_HealthUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: f4998812db8dd4d4f842c7a734be94a1, type: 2}
     - target: {fileID: 1031801930698223483, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.75
@@ -2562,6 +2570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1781d424fc6b6b546884bebbc4e9e412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildableTowers: []
 --- !u!1 &1073933688
 GameObject:
   m_ObjectHideFlags: 0

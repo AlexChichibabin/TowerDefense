@@ -9,6 +9,7 @@ namespace TowerDefense
         [SerializeField] private Enemy m_EnemyPrefab;
         [SerializeField] private Path[] paths;
         [SerializeField] private EnemyWave currentWave;
+        [SerializeField] private GameObject m_NextWaveGUI;
         public EnemyWave CurrentWave => currentWave;
 
         [SerializeField] private int activeEnemyCount = 0;
@@ -57,6 +58,10 @@ namespace TowerDefense
                 }
             }
             currentWave = currentWave.PrepareNext(SpawnEnemies); // Отписка текущей волны и подписка следующей на currentWave.OnWaveReady
+        }
+        public void SetActiveNextWaveGUI(bool active)
+        {
+            m_NextWaveGUI.SetActive(active);
         }
 
         public void ForceNextWave()

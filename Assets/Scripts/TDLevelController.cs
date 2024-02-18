@@ -7,8 +7,8 @@ namespace TowerDefense
 {
     public class TDLevelController : LevelController
     {
-        private int m_LevelScore = 3;       
-        //public int levelScore => 1;
+        private int m_LevelScore = 3;
+        private int m_UpdatedLives = 0;
 
         private new void Start()
         {
@@ -32,12 +32,29 @@ namespace TowerDefense
                 }
             );
 
+            void StartLifeUpgrade(int _) // Начало костыля с расчетом жизней
+            {
+                m_UpdatedLives = _;
+                print(m_UpdatedLives);
+
+                TDPlayer.Instance.OnLifeUpdate -= StartLifeUpgrade;
+                TDPlayer.Instance.OnLifeUpdate += LifeScoreChange;
+            }
+            
             void LifeScoreChange(int _)
             {
-                m_LevelScore--;
-                TDPlayer.Instance.OnLifeUpdate -= LifeScoreChange;
+                if (_ < m_UpdatedLives || _ < 3)
+                {
+                    print(TDPlayer.Instance.NumLives);
+                    m_LevelScore--;
+                    TDPlayer.Instance.OnLifeUpdate -= StartLifeUpgrade;
+                    TDPlayer.Instance.OnLifeUpdate -= LifeScoreChange;
+                }
             }
-            TDPlayer.Instance.OnLifeUpdate += LifeScoreChange;
+
+            if (Upgrades.GetUpgradeLevel(TDPlayer.Instance.HealthUpgrade) > 0) TDPlayer.Instance.OnLifeUpdate += StartLifeUpgrade;
+            else TDPlayer.Instance.OnLifeUpdate += LifeScoreChange; // Конец костыля
+            
         }
 
         private void StopLevelActivity()
@@ -54,10 +71,11 @@ namespace TowerDefense
                     obj.enabled = false;
                 }
             }
-            DisableAll<Spawner>();
+            DisableAll<EnemyWave>();
             DisableAll<Projectile>();
             DisableAll<Tower>();
             DisableAll<NextWaveGUI>();
+            GetComponent<TDPlayer>().enabled = false;
             TryGetComponent<TimeLevelCondition>(out var tlc);
             if (tlc) tlc.LevelIsStoped = true;
         }

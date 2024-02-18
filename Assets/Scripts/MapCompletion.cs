@@ -46,6 +46,7 @@ namespace TowerDefense
                         }
                     }
                 }
+                print($"Episode complete with score {levelScore}");
             }
             else
                 print($"Episode complete with score {levelScore}");
