@@ -5,6 +5,9 @@ namespace TowerDefense
 {
     public class TDProjectile : Projectile
     {
+        [SerializeField] private Sound m_ShotSound = Sound.Arrow;
+        [SerializeField] private Sound m_HitSound = Sound.ArrowHit;
+
         public enum DamageType
         {
             Base, // main physic damage
@@ -15,6 +18,10 @@ namespace TowerDefense
             Acidic, // periodic damage to physic armor
             Toxic, // periodic damage with ignore armor
             Holy // increase damage to dark type of armor
+        }
+        private void Start()
+        {
+            m_ShotSound.Play();
         }
 
         /// <summary>
@@ -32,6 +39,7 @@ namespace TowerDefense
             if (hit)
             {
                 Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
+                m_HitSound.Play();
 
                 if (enemy != null)
                 {

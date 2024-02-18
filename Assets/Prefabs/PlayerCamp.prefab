@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 299288501461700603}
   - component: {fileID: 7906820034630234006}
   - component: {fileID: 6179192142925430743}
-  - component: {fileID: 5032193241267460514}
   m_Layer: 0
   m_Name: PlayerCamp
   m_TagString: Untagged
@@ -71,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 30
+  m_ReferenceTime: 60
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -87,21 +86,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8e81f18b0f223418268284b439f578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5032193241267460514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3247544410890709137}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07fd49eea8cbbd64ebf136e7096ef0b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeLimit: 4
-  waveManager: {fileID: 0}
-  LevelIsStoped: 0
 --- !u!1 &6710728786162755435
 GameObject:
   m_ObjectHideFlags: 0

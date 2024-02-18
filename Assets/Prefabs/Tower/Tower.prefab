@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Area: {fileID: 8782388504268525396}
   AccuracyUpgrade: {fileID: 11400000, guid: 16ba35ee09b976b4db410db3437440f7, type: 2}
   ArrowAccelerationUpgrade: {fileID: 11400000, guid: b0ab03430489974469afc7d4efb51e4d, type: 2}
+  m_Lead: 0.2
 --- !u!1 &4236748063014232135
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,12 +452,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbdf0517c5cf2d4389f7dcff164b788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BuildableTowers:
-  - {fileID: 11400000, guid: 2a4684dacda4d0d4faaf0abfebffe24e, type: 2}
-  - {fileID: 11400000, guid: f2ba1d488ad71d64584f68db5f37699f, type: 2}
-  - {fileID: 11400000, guid: faec82c408fbb61499accb425b51af15, type: 2}
-  - {fileID: 11400000, guid: d44f62487cc51ab4492d5a2495e15339, type: 2}
-  - {fileID: 11400000, guid: 327a95b6ef744ca49940dbdb415b64b5, type: 2}
-  - {fileID: 11400000, guid: 3f3616f2f873a794392368a998cc0c3a, type: 2}
-  - {fileID: 11400000, guid: e280889e3307ac940b6e0548cae9c950, type: 2}
-  - {fileID: 11400000, guid: eef48be3a937d1d4f8cfc78ee12d49b4, type: 2}
+  buildableTowers: []

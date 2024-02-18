@@ -35,9 +35,9 @@ namespace TowerDefense
                 case UpdateSourse.Life:
                     TDPlayer.Instance.LifeUpdateSubscribe(UpdateText);
                     break;
-                case UpdateSourse.WaveTimer:
+                /*case UpdateSourse.WaveTimer:
                     WaveTimeController.StartWaveTimerTextUpdateSubscribe += UpdateText;
-                    break;
+                    break;*/
             }
         }
 

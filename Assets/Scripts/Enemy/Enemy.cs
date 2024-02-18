@@ -1,8 +1,9 @@
 using UnityEngine;
 using SpaceShip;
-using UnityEditor;
-using UnityEditor.Events;
 using System;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace TowerDefense
 {
@@ -67,6 +68,13 @@ namespace TowerDefense
                 {
                     case TDProjectile.DamageType.Acidic: return Mathf.Max(power-armor*2, 1);
                     case TDProjectile.DamageType.Base: return power/2;
+                    default: return Mathf.Max(power-armor, 1);
+                }
+            },
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType Capitan
+                switch(type)
+                {
                     default: return Mathf.Max(power-armor, 1);
                 }
             },
@@ -146,7 +154,7 @@ namespace TowerDefense
             //print($"{m_Destructible.Nickname}, {damageType} damage: {ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor)}, EnemyArmor: {m_Armor}");
         }
     }
-
+    #if UNITY_EDITOR
     [CustomEditor(typeof(Enemy))]
     public class EnemyInspector : Editor
     {
@@ -161,4 +169,5 @@ namespace TowerDefense
             }
         }
     }
+    #endif
 }

@@ -10,31 +10,34 @@ namespace TowerDefense
         [SerializeField] private Text m_BonusAmount;
         [SerializeField] private Text m_TimeToNextWaveText;
 
-        private EnemyWaveManager manager;
-        private float timeToNextWave;
-        
+        private EnemyWaveManager m_Manager;
+        private float m_TimeToNextWave;
 
-        private void Start()
+
+        private void Awake()
         {
-            manager = FindObjectOfType<EnemyWaveManager>();
             EnemyWave.OnWavePrepare += (float time) =>
             {
-                timeToNextWave = time;
+                m_TimeToNextWave = time - 0.002f;
             };
+        }
+        private void Start()
+        {
+            m_Manager = FindObjectOfType<EnemyWaveManager>();
         }
 
         public void CallWave()
         {
-            manager.ForceNextWave();
+            m_Manager.ForceNextWave();
         }
 
         private void Update()
         { 
-            var bonus = (int)timeToNextWave;
-            if (timeToNextWave <= 0) bonus = 0 ;
+            var bonus = (int)m_TimeToNextWave + 1;
+            if (m_TimeToNextWave <= 0) bonus = 0 ;
             m_BonusAmount.text = bonus.ToString();
             m_TimeToNextWaveText.text = bonus.ToString();
-            timeToNextWave -= Time.deltaTime;
+            m_TimeToNextWave -= Time.deltaTime;
         }
     }
 }

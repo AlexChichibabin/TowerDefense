@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FreezingEnemy
   m_EditorClassIdentifier: 
   m_Nick: FreezingEnemy
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.21057315, g: 0.38111582, b: 0.49056602, a: 1}
   spriteScale: {x: 4, y: 4}
   sprite: {fileID: -446149214, guid: 1a13d69a122f48b4da479fc3bd681bb4, type: 3}
   animations: {fileID: 9100000, guid: a2849408d82ae4a449f405ad5c4cbcd0, type: 2}

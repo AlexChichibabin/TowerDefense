@@ -30,7 +30,10 @@ namespace TowerDefense
             }
         }
 
-
+        private void Awake()
+        {
+            
+        }
         private void Start()
         {
             currentWave.Prepare(SpawnEnemies); // Подписка на currentWave.OnWaveReady происходит внутри Prepare
@@ -38,6 +41,7 @@ namespace TowerDefense
 
         private void SpawnEnemies()
         {
+            //Sound.Arrow.Play();
             foreach ((EnemyAsset asset, int count, int pathIndex) in currentWave.EnumerateSquads())
             {
                 if (pathIndex < paths.Length)

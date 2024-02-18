@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagicEnemy
   m_EditorClassIdentifier: 
   m_Nick: MagicEnemy
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.49550897, g: 0.28773582, b: 1, a: 0.9411765}
   spriteScale: {x: 2, y: 2}
   sprite: {fileID: -541488981, guid: dee998f5f2c77704391a36a33e8307bf, type: 3}
   animations: {fileID: 9100000, guid: cfcb07922e4630d4f8ea9f8463f164ea, type: 2}

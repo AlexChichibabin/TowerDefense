@@ -1,8 +1,8 @@
-using System;
 using UnityEngine;
-using UnityEditor;
-using Unity.Burst.CompilerServices;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace SpaceShip
 {
@@ -131,6 +131,8 @@ namespace SpaceShip
         }
     }
 }
+
+#if UNITY_EDITOR
 namespace TowerDefense
 {
     [CustomEditor(typeof(SpaceShip.Projectile))]
@@ -150,3 +152,4 @@ namespace TowerDefense
         }
     }
 }
+#endif

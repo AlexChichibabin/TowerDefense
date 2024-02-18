@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GoldEnemy
   m_EditorClassIdentifier: 
   m_Nick: GoldEnemy
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.9245283, g: 0.8382294, b: 0.07413671, a: 1}
   spriteScale: {x: 3, y: 3}
   sprite: {fileID: -740577958, guid: cd5e3bfa7822d92449962b2363959205, type: 3}
   animations: {fileID: 9100000, guid: e4bfab9c9d7f8004ea9307cdfaae9878, type: 2}

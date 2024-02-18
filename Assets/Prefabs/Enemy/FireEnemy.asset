@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireEnemy
   m_EditorClassIdentifier: 
   m_Nick: FireEnemy
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.8490566, g: 0.34639898, b: 0.22027414, a: 1}
   spriteScale: {x: 2, y: 2}
   sprite: {fileID: 33897107, guid: 9a21471ad8121f44c92ab96f5c77f17d, type: 3}
   animations: {fileID: 9100000, guid: 0b588ef7807b68f4a9d69354e76d9c04, type: 2}

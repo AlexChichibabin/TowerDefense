@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c113b842dabee8743b14afb10e878e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NextWave: {fileID: 0}
+  m_NextWave: {fileID: 2056661772}
   m_Groups:
   - squads:
     - asset: {fileID: 11400000, guid: 4bb5166080980494da7e6eb9b1530ba3, type: 2}
@@ -880,13 +880,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 304932028632985007, guid: ea48639afc3c18b4e9e41a56bf8bb55f, type: 3}
-      propertyPath: save.Array.size
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 5251316669809833600, guid: ea48639afc3c18b4e9e41a56bf8bb55f, type: 3}
+      propertyPath: m_BGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 504bf2ea196d66544a5f6cd0b837660c, type: 3}
     - target: {fileID: 5444509874369256845, guid: ea48639afc3c18b4e9e41a56bf8bb55f, type: 3}
       propertyPath: m_Name
       value: SingleLevelTestObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444509874369256845, guid: ea48639afc3c18b4e9e41a56bf8bb55f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7448996775107448835, guid: ea48639afc3c18b4e9e41a56bf8bb55f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -928,6 +932,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7555902906107579307, guid: ea48639afc3c18b4e9e41a56bf8bb55f, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555902906107579307, guid: ea48639afc3c18b4e9e41a56bf8bb55f, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -965,7 +977,7 @@ MonoBehaviour:
   m_NextWave: {fileID: 408003859}
   m_Groups:
   - squads:
-    - asset: {fileID: 11400000, guid: 4bb5166080980494da7e6eb9b1530ba3, type: 2}
+    - asset: {fileID: 11400000, guid: e9fecd391456f984e82b37cccb763b8f, type: 2}
       count: 1
   - squads: []
   m_PrepareTime: 5
@@ -2752,7 +2764,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NextWave: {fileID: 0}
-  m_Groups: []
+  m_Groups:
+  - squads:
+    - asset: {fileID: 11400000, guid: b3792fd1dfb90bf40b6f5c4abfcabf5d, type: 2}
+      count: 1
   m_PrepareTime: 10
 --- !u!1 &2096848506
 GameObject:
@@ -2854,28 +2869,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCamp
       objectReference: {fileID: 0}
-    - target: {fileID: 5032193241267460514, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5032193241267460514, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
-      propertyPath: timeLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5032193241267460514, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
-      propertyPath: waveManager
-      value: 
-      objectReference: {fileID: 893071553}
-    - target: {fileID: 6179192142925430743, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7906820034630234006, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
-      propertyPath: m_ReferenceTime
-      value: 60
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5032193241267460514, guid: cf58e3328f1ccc24997e804744e9cac1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

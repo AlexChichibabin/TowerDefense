@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TowerDefense;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ namespace SpaceShip
         [SerializeField] private Text m_Result;
 
         [SerializeField] private Text m_ButtonNextText;
+        [SerializeField] private OnEnableSound m_OnEnableSound;
         //[SerializeField] private Button m_MainMenuButton;
 
         private bool m_Success;
@@ -29,6 +31,7 @@ namespace SpaceShip
             gameObject.SetActive(true);
 
             m_Success = success;
+            m_OnEnableSound.OnEnabled(success);
 
             m_Result.text = success ? "Победа" : "Поражение";
             m_ButtonNextText.text = success ? "Дальше" : "Заново";
