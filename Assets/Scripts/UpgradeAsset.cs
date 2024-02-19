@@ -8,7 +8,7 @@ namespace TowerDefense
     public sealed class UpgradeAsset : ScriptableObject
     {
         public Sprite Sprite;
-        public int IncreaseValue;
+        public int IncreaseValue = 1;
 
         public int[] CostByLevel = { 4 };
 
