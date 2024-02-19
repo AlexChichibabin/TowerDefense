@@ -3163,7 +3163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180d075bcf84a6747bfd829df6b45252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DoNotDestroyOnLoad: 0
+  m_DoNotDestroyOnLoad: 1
   save:
   - asset: {fileID: 11400000, guid: f4998812db8dd4d4f842c7a734be94a1, type: 2}
     level: 0

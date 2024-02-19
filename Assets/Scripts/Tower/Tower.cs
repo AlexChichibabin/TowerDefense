@@ -62,9 +62,14 @@ namespace TowerDefense
                 if (enter)
                 {
                     m_Target = enter.transform.root.GetComponent<Destructible>();
+                    if (m_Target)
+                    {
+                        m_Target.TryGetComponent<Rigidbody2D>(out var target);
+                        m_TargetRB = target;
+                    }
+                    //print(m_TargetRB);
                     foreach (Turret t in m_Turrets)
                     {
-                        m_TargetRB = m_Target.GetComponent<Rigidbody2D>();
                         t.SetTarget(m_Target);
                     }
                 }

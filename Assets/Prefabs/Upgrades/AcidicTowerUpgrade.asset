@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972a5fe0a5d3d714a8d22698d623b2fe, type: 3}
   m_Name: AcidicTowerUpgrade
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: d343f375030f71a44805493793cc5b78, type: 3}
-  m_IncreaseValue: 0
-  costByLevel: 010000000000000000000000
+  Sprite: {fileID: 21300000, guid: d343f375030f71a44805493793cc5b78, type: 3}
+  IncreaseValue: 0
+  CostByLevel: 000000000000000000000000

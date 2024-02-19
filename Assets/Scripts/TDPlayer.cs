@@ -18,19 +18,17 @@ namespace TowerDefense
         [SerializeField] private int m_ManaCountPerTime;
 
         private event Action<int> OnGoldUpdate;
-        private event Action<int> OnManaUpdate;
+        public event Action<int> OnManaUpdate;
         public event Action<int> OnLifeUpdate;
 
         private void Start()
         {
             var HealthLevel = Upgrades.GetUpgradeLevel(m_HealthUpgrade);
             if (Upgrades.GetUpgradeLevel(m_HealthUpgrade) >= 1) ReduceLife(-HealthLevel);
-            ChangeManaCountPerTime(m_ManaUpgrade.m_IncreaseValue);
+
+            if (m_ManaUpgrade) ChangeManaCountPerTime();
 
             manaTimer = m_ManaTime + Time.time;
-
-            /*print("Mana per timeUnit is: " + m_ManaCountPerTime);
-            print("Lives amount: " + NumLives);*/
         }
 
         private void Update()
@@ -84,9 +82,9 @@ namespace TowerDefense
             OnLifeUpdate(NumLives);
         }
 
-        private void ChangeManaCountPerTime(int increaseCount)
+        private void ChangeManaCountPerTime()
         {
-            if (m_ManaUpgrade) m_ManaCountPerTime += Upgrades.GetUpgradeLevel(m_ManaUpgrade) * increaseCount;
+            m_ManaCountPerTime += Upgrades.GetUpgradeLevel(m_ManaUpgrade) * m_ManaUpgrade.IncreaseValue;
         }
 
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)

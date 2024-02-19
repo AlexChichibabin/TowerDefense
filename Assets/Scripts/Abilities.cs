@@ -4,9 +4,6 @@ using SpaceShip;
 using System.Collections;
 using UnityEngine.UI;
 using static TowerDefense.TDProjectile;
-using Unity.VisualScripting;
-using static TowerDefense.Abilities;
-//using static UnityEditor.PlayerSettings;
 
 
 namespace TowerDefense
@@ -31,8 +28,8 @@ namespace TowerDefense
             TDPlayer.Instance.ManaUpdateSubscribe(ManaStatusCheck);
             m_FreezeManaCostText.text = m_FreezeAbility.ManaCost.ToString();
             m_FireManaCostText.text = m_FireAbility.ManaCost.ToString();
-            if (m_FireUpgrade) ChangeExplosionDamage(m_FireUpgrade.m_IncreaseValue);
-            if (m_FreezeUpgrade) ChangeFreezeDuration(m_FreezeUpgrade.m_IncreaseValue);
+            if (m_FireUpgrade) ChangeExplosionDamage();
+            if (m_FreezeUpgrade) ChangeFreezeDuration();
 
             /*print("Explosion spell damage is: " + m_FireAbility.m_Damage);
             print("Freeze spell duration is: " + m_FreezeAbility.m_Duration);*/
@@ -72,13 +69,13 @@ namespace TowerDefense
                 m_FireManaCostText.color = m_FireButton.interactable ? Color.white : Color.red;
             }
         }
-        private void ChangeExplosionDamage(int increaseCount)
+        private void ChangeExplosionDamage()
         {
-            if (m_FireUpgrade) m_FireAbility.SetDamage(m_FireUpgrade.m_IncreaseValue * Upgrades.GetUpgradeLevel(m_FireUpgrade));
+            if (m_FireUpgrade) m_FireAbility.SetDamage(m_FireUpgrade.IncreaseValue * Upgrades.GetUpgradeLevel(m_FireUpgrade));
         }
-        private void ChangeFreezeDuration(int increaseCount)
+        private void ChangeFreezeDuration()
         {
-            if (m_FreezeUpgrade) m_FreezeAbility.SetDuration(m_FreezeUpgrade.m_IncreaseValue * Upgrades.GetUpgradeLevel(m_FreezeUpgrade));
+            if (m_FreezeUpgrade) m_FreezeAbility.SetDuration(m_FreezeUpgrade.IncreaseValue * Upgrades.GetUpgradeLevel(m_FreezeUpgrade));
         }
 
         [Serializable]
@@ -102,12 +99,12 @@ namespace TowerDefense
             {
                 ClickProtection.Instance.Activate((Vector2 v) =>
                 {
-                    TDPlayer.Instance.ChangeMana(-m_ManaCost);
                     Vector3 position = v;
                     position.z = -Camera.main.transform.position.z;
                     position = Camera.main.ScreenToWorldPoint(position);
                     if (m_ImpactAreaAttackPrefab != null)
                     {
+                        TDPlayer.Instance.ChangeMana(-m_ManaCost);
                         ImpactAreaAttack expl = Instantiate(m_ImpactAreaAttackPrefab, position, Quaternion.identity);
                         expl.SetProjectileProperties(m_Damage, m_DamageType);
                     }

@@ -35,7 +35,7 @@ namespace TowerDefense
             void StartLifeUpgrade(int _) // Начало костыля с расчетом жизней
             {
                 m_UpdatedLives = _;
-                print(m_UpdatedLives);
+                //print(m_UpdatedLives);
 
                 TDPlayer.Instance.OnLifeUpdate -= StartLifeUpgrade;
                 TDPlayer.Instance.OnLifeUpdate += LifeScoreChange;
@@ -45,7 +45,6 @@ namespace TowerDefense
             {
                 if (_ < m_UpdatedLives || _ < 3)
                 {
-                    print(TDPlayer.Instance.NumLives);
                     m_LevelScore--;
                     TDPlayer.Instance.OnLifeUpdate -= StartLifeUpgrade;
                     TDPlayer.Instance.OnLifeUpdate -= LifeScoreChange;
@@ -75,6 +74,8 @@ namespace TowerDefense
             DisableAll<Projectile>();
             DisableAll<Tower>();
             DisableAll<NextWaveGUI>();
+            DisableAll<Spell>();
+            FindObjectOfType<Abilities>().gameObject.SetActive(false);
             GetComponent<TDPlayer>().enabled = false;
             TryGetComponent<TimeLevelCondition>(out var tlc);
             if (tlc) tlc.LevelIsStoped = true;

@@ -30,7 +30,7 @@ namespace TowerDefense
 
         public void Initialize()
         {
-            if (m_UpgradeIcon) m_UpgradeIcon.sprite = asset.sprite;
+            if (m_UpgradeIcon) m_UpgradeIcon.sprite = asset.Sprite;
             if (m_DescribtionText)
             {
                 if (!m_DescribtionTextIsActive) m_DescribtionText.gameObject.SetActive(false);
@@ -39,7 +39,7 @@ namespace TowerDefense
 
             var level = Upgrades.GetUpgradeLevel(asset); 
 
-            if (level >= asset.costByLevel.Length)
+            if (level >= asset.CostByLevel.Length)
             {
                 SetMaxLvlText(level);
                 isMax = true;
@@ -78,8 +78,8 @@ namespace TowerDefense
         {
             this.m_LevelText.text = $"Lvl: {level}"; // Текствовый объект level
             m_NextLevelText.text = $"Lvl: {level + 1}";
-            m_UpgradeCostText.text = $"Buy: {asset.costByLevel[level]}";
-            costNumber = asset.costByLevel[level];
+            m_UpgradeCostText.text = $"Buy: {asset.CostByLevel[level]}";
+            costNumber = asset.CostByLevel[level];
             m_MaxLevelText.gameObject.SetActive(false);
         }
 

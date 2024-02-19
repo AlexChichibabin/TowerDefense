@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972a5fe0a5d3d714a8d22698d623b2fe, type: 3}
   m_Name: SpellFreezeUpgrade
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: f7f287c9a72c33a4da91d7fd0305a58d, type: 3}
-  m_IncreaseValue: 2
-  costByLevel: 000000000000000000000000
+  Sprite: {fileID: 21300000, guid: f7f287c9a72c33a4da91d7fd0305a58d, type: 3}
+  IncreaseValue: 1
+  CostByLevel: 000000000000000000000000
