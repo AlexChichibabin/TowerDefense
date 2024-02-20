@@ -17,19 +17,23 @@ namespace TowerDefense
             Time.timeScale = 0.0f;
             m_PauseButton.interactable = false;
             m_PausePanel.SetActive(true);
-            Instance.OnGamePaused.Invoke(true);
+            Instance.OnGamePaused?.Invoke(true);
         }
         public void ContinueGame()
         {
             Time.timeScale = 1.0f;
             m_PauseButton.interactable = true;
             m_PausePanel.SetActive(false);
-            Instance.OnGamePaused.Invoke(false);
+            Instance.OnGamePaused?.Invoke(false);
         }
         public void LoadMainMenu()
         {
             SceneManager.LoadScene(0);
             Time.timeScale = 1.0f;
+        }
+        public void BackToMainMenu() // Только для кнопки в меню карты
+        {
+            SceneManager.LoadScene(0);
         }
 
         public void LoadMainMap()

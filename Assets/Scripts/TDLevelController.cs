@@ -63,6 +63,7 @@ namespace TowerDefense
 
         private Vector2 m_VelocityBackup;
         private GameObject m_AbilitiesBackup;
+        private List<GameObject> m_WavesBackup = new List<GameObject>();
 
         private void StopLevelActivity()
         {
@@ -80,11 +81,20 @@ namespace TowerDefense
                     obj.enabled = false;
                 }
             }
-            DisableAll<EnemyWave>();
+            void DisableAllObject<T>() where T : MonoBehaviour // Только для волн
+            {
+                foreach (var obj in FindObjectsOfType<T>())
+                {
+                    obj.gameObject.SetActive(false);
+                    m_WavesBackup.Add(obj.gameObject);
+                }
+            }
+            DisableAllObject<EnemyWave>();
             DisableAll<Projectile>();
             DisableAll<Tower>();
             DisableAll<NextWaveGUI>();
             DisableAll<Spell>();
+            DisableAll<BuildSite>();
             m_AbilitiesBackup = FindObjectOfType<Abilities>().gameObject;
             m_AbilitiesBackup.SetActive(false);
             GetComponent<TDPlayer>().enabled = false;
@@ -106,11 +116,19 @@ namespace TowerDefense
                     obj.enabled = true;
                 }
             }
-            EnableAll<EnemyWave>();
+            void EnableAllObject<T>() where T : MonoBehaviour // Только для волн
+            {
+                foreach (var obj in m_WavesBackup)
+                {
+                    obj.gameObject.SetActive(true);
+                }
+            }
+            EnableAllObject<EnemyWave>();
             EnableAll<Projectile>();
             EnableAll<Tower>();
             EnableAll<NextWaveGUI>();
             EnableAll<Spell>();
+            EnableAll<BuildSite>();
             m_AbilitiesBackup.SetActive(true);
             GetComponent<TDPlayer>().enabled = true;
             TryGetComponent<TimeLevelCondition>(out var tlc);
