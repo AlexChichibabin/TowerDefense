@@ -27,7 +27,7 @@ namespace TowerDefense
             if (builtSite)
             {                
                 var position = Camera.main.WorldToScreenPoint(builtSite.transform.root.position);
-                m_RectTransform.anchoredPosition = position;
+                m_RectTransform.position = position;
 
                 foreach (var tbc in GetComponentsInChildren<TowerBuyControl>())
                 {

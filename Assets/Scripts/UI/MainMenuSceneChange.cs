@@ -9,6 +9,7 @@ namespace TowerDefense
     {
         [SerializeField] private Button m_PauseButton;
         [SerializeField] private GameObject m_PausePanel;
+        [SerializeField] private GameObject m_MapToMenuAnimationGameObject;
 
         public event Action<bool> OnGamePaused;
 
@@ -41,5 +42,12 @@ namespace TowerDefense
             SceneManager.LoadScene(1);
             Time.timeScale = 1.0f;
         }
+
+        #region Animated
+        public void LoadMainFromMapMenu()
+        {
+            m_MapToMenuAnimationGameObject.SetActive(true);
+        }
+        #endregion
     }
 }
