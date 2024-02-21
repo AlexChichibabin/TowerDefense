@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TowerDefense
 {
@@ -6,6 +7,10 @@ namespace TowerDefense
     {
         [SerializeField] private Animator m_PanelAnimator;
         [SerializeField] private Animator m_ButtonAnimator;
+
+        [SerializeField] private GameObject m_NullUpgradePanel;
+        //[SerializeField] private GameObject m_NullUpgradePanel;
+        //[SerializeField] private Button m_ExitUpgradeButton;
 
         public void DisappearUpgradeButton()
         {
@@ -23,7 +28,7 @@ namespace TowerDefense
         public void AppearUpgradePanel()
         {
             m_PanelAnimator.Play("UpgradesPanelAppearance");
-
+            m_NullUpgradePanel.SetActive(true);
         }
     }
 }

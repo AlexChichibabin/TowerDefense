@@ -9,7 +9,7 @@ namespace TowerDefense
     {
         [SerializeField] private Button m_PauseButton;
         [SerializeField] private GameObject m_PausePanel;
-        [SerializeField] private GameObject m_MapToMenuAnimationGameObject;
+        [SerializeField] private Animator m_MenuAnimator;
 
         public event Action<bool> OnGamePaused;
 
@@ -34,7 +34,8 @@ namespace TowerDefense
         }
         public void BackToMainMenu() // Только для кнопки в меню карты
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
+            m_MenuAnimator.Play("MapToMenuSceneSwitch");
         }
 
         public void LoadMainMap()
@@ -46,7 +47,7 @@ namespace TowerDefense
         #region Animated
         public void LoadMainFromMapMenu()
         {
-            m_MapToMenuAnimationGameObject.SetActive(true);
+            //m_MapToMenuAnimationGameObject.SetActive(true);
         }
         #endregion
     }
