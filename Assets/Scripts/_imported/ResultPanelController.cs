@@ -17,6 +17,7 @@ namespace SpaceShip
 
         [SerializeField] private Text m_ButtonNextText;
         [SerializeField] private OnEnableSound m_OnEnableSound;
+        [SerializeField] private LevelAnimation m_LevelAnimation;
         //[SerializeField] private Button m_MainMenuButton;
 
         private bool m_Success;
@@ -67,8 +68,8 @@ namespace SpaceShip
             gameObject.SetActive(false);
 
             Time.timeScale = 1;
-
-            SceneManager.LoadScene(LevelSequenceController.MapSceneNickname);
+            m_LevelAnimation.AnimationOnLoad(1);
+            //SceneManager.LoadScene(LevelSequenceController.MapSceneNickname);
         }
 
         public void OnButtonMainMenu()
@@ -76,8 +77,8 @@ namespace SpaceShip
             gameObject.SetActive(false);
 
             Time.timeScale = 1;
-
-            SceneManager.LoadScene(LevelSequenceController.MainMenuSceneNickname);
+            m_LevelAnimation.AnimationOnLoad(0);
+            //SceneManager.LoadScene(LevelSequenceController.MainMenuSceneNickname);
         }
     }
 }

@@ -11,7 +11,6 @@ namespace TowerDefense
         {
             if (towers == null || towers.Length == 0)
             {
-                //gameObject.SetActive(false);
                 Destroy(transform.parent.gameObject);
             }
             else

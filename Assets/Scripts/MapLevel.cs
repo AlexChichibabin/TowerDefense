@@ -1,7 +1,5 @@
 using SpaceShip;
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TowerDefense
 {
@@ -10,6 +8,8 @@ namespace TowerDefense
         [SerializeField] private Episode m_Episode;
         private int m_StarsAmount;
         [SerializeField] private LevelVisualScores m_VisualScores;
+        [SerializeField] private LevelMapAnimation m_MapAnimation;
+        
 
         public bool IsComplete { get { return gameObject.activeSelf && m_StarsAmount > 0; } }
 
@@ -18,10 +18,15 @@ namespace TowerDefense
             m_VisualScores = GetComponentInChildren<LevelVisualScores>();
         }
 
-        public void LoadLevel()
+        public void AnimationBeforeLoadLevel()
+        {
+            m_MapAnimation.AnimationOnLoad(m_Episode);
+        }
+
+        /*public void LoadLevel()
         {
             LevelSequenceController.Instance.StartEpisode(m_Episode);
-        }
+        }*/
 
         public void Initialize()
         {

@@ -842,7 +842,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7298180120091715361}
         m_TargetAssemblyTypeName: TowerDefense.MapLevel, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: AnimationBeforeLoadLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -973,7 +973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5395c1bf0548e14e8ecfef3dfca6349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Episode: {fileID: 0}
   m_VisualScores: {fileID: 4228701861939928087}
+  m_MapAnimation: {fileID: 0}
 --- !u!1 &8345209627215536858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1240,6 @@ MonoBehaviour:
   - {fileID: 7693227031393777649}
   - {fileID: 4230817478130449990}
   starColor: {r: 0.93333334, g: 0.93333334, b: 0.93333334, a: 0.7372549}
-  blackInvisibility: 190
 --- !u!1 &9152201309949871390
 GameObject:
   m_ObjectHideFlags: 0
