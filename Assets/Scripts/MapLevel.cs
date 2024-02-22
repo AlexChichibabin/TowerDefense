@@ -1,14 +1,16 @@
 using SpaceShip;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TowerDefense
 {
     public class MapLevel : MonoBehaviour
     {
         [SerializeField] private Episode m_Episode;
+        [SerializeField] private Text m_NameText;
         private int m_StarsAmount;
         [SerializeField] private LevelVisualScores m_VisualScores;
-        [SerializeField] private LevelMapAnimation m_MapAnimation;
+        [SerializeField] private MapSceneAnimation m_MapAnimation;
         
 
         public bool IsComplete { get { return gameObject.activeSelf && m_StarsAmount > 0; } }
@@ -16,6 +18,7 @@ namespace TowerDefense
         private void Awake()
         {
             m_VisualScores = GetComponentInChildren<LevelVisualScores>();
+            m_NameText.text = gameObject.name;
         }
 
         public void AnimationBeforeLoadLevel()

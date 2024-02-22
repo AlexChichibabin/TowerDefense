@@ -7,44 +7,49 @@ namespace TowerDefense
 {
     public class MainMenuPanel : SingletonBase<MainMenuPanel>
     {
-        [SerializeField] private Button continueButton;
-        [SerializeField] private GameObject CheckNewGamePanel;
+        #region MainMenu
+        [SerializeField] private Button m_ContinueButton;
+        [SerializeField] private GameObject m_CheckNewGamePanel;
         [SerializeField] private Animator m_AnimatedMenuCanvas;
         [SerializeField] private string m_ContinueAnimationName;
-        /*[SerializeField] private Animator m_MenuPanelAnimator;
-        [SerializeField] private GameObject m_Levels;
-        private MapCompletion m_MapLevelControler;
-        private Upgrades m_Upgrades;*/
+        [SerializeField] private string m_NewGameAnimationName;
+        //[SerializeField] private Button NewYesButton;
+        //[SerializeField] private Button NewNoButton;
 
         private void Start()
         {
-            /*m_MapLevelControler = MapCompletion.Instance;
-            m_Upgrades = Upgrades.Instance;
-
-            m_MapLevelControler.gameObject.SetActive(false);
-            m_Upgrades.gameObject.SetActive(false);
-            m_Levels.gameObject.SetActive(false);*/
-            continueButton.interactable = FileHandler.HasFile(MapCompletion.m_FileName);
+            m_ContinueButton.interactable = FileHandler.HasFile(MapCompletion.m_FileName);
+            m_CheckNewGamePanel.SetActive(false);
         }
         public void OnNewGameButton()
         {
-            CheckNewGamePanel.SetActive(true);
+            m_CheckNewGamePanel.SetActive(true);
             gameObject.SetActive(false);
         }
 
         public void OnContinueButton()
         {
-            //SceneManager.LoadScene(1);
             m_AnimatedMenuCanvas.Play(m_ContinueAnimationName);
-            /*m_MenuPanelAnimator.Play("MenuToMapSceneSwitch");
-            m_MapLevelControler.gameObject.SetActive(true);
-            m_Levels.gameObject.SetActive(true);
-            m_Upgrades.gameObject.SetActive(true);*/
         }
 
         public void OnQuitButton()
         {
             Application.Quit();
         }
+        #endregion
+
+        #region Check
+        public void OnYesButton()
+        {
+            FileHandler.Reset(MapCompletion.m_FileName);
+            FileHandler.Reset(Upgrades.filename);
+            m_AnimatedMenuCanvas.Play(m_NewGameAnimationName);
+        }
+        public void OnNoButton()
+        {
+            gameObject.SetActive(true);
+            m_CheckNewGamePanel.SetActive(false);
+        }
+        #endregion
     }
 }

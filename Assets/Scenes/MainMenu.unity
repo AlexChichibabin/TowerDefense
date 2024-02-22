@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &51858531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2638777530334447990, guid: decb7ba096466b947b1081709cd99373, type: 3}
+  m_PrefabInstance: {fileID: 6399720161404352805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264607117
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +541,11 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1705728198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1961646744916035621, guid: decb7ba096466b947b1081709cd99373, type: 3}
+  m_PrefabInstance: {fileID: 6399720161404352805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1793791529
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 909193647451475473, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 909193647451475473, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_AnimatedMenuCanvas
@@ -683,6 +699,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1923495830006855422, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_ContinueButton
+      value: 
+      objectReference: {fileID: 51858531}
+    - target: {fileID: 1923495830006855422, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_CheckNewGamePanel
+      value: 
+      objectReference: {fileID: 1705728198}
+    - target: {fileID: 1923495830006855422, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_AnimatedMenuCanvas
       value: 
       objectReference: {fileID: 5180864355772831538}
@@ -701,6 +725,10 @@ PrefabInstance:
     - target: {fileID: 3314120105694784802, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1.1001511
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359443208335032573, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_Name
+      value: ExitSceneAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 3359443208335032573, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_IsActive

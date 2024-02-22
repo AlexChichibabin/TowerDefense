@@ -299,7 +299,6 @@ GameObject:
   - component: {fileID: 1287050171732268710}
   - component: {fileID: 3748352278513426572}
   - component: {fileID: 5787899047442121486}
-  - component: {fileID: 909193647451475473}
   m_Layer: 5
   m_Name: CheckNewGamePanel
   m_TagString: Untagged
@@ -368,22 +367,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &909193647451475473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961646744916035621}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc095023daacd84699cfbdb5ccd4c40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yesButton: {fileID: 6398410447577220851}
-  noButton: {fileID: 9090111429465744930}
-  m_AnimatedMenuCanvas: {fileID: 0}
-  m_NewGameAnimationName: 
 --- !u!1 &2205083788577669505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,8 +1014,8 @@ RectTransform:
   - {fileID: 6597736541643564365}
   - {fileID: 4118685818857612210}
   - {fileID: 3885804752155962569}
-  - {fileID: 1287050171732268710}
   - {fileID: 3703966215197723945}
+  - {fileID: 1287050171732268710}
   - {fileID: 3351620207255784030}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1089,6 +1072,7 @@ MonoBehaviour:
   m_StartMapAnimationName: StartMapLevel
   m_OnUpgradeAnimationName: OnUpgradeButton
   m_OnExitUpgradeAnimationName: OnExitUpgrade
+  LoadLevelAnimationName: FadeOutLevelAnimation
 --- !u!1 &5592117614730896836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,7 +1640,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 909193647451475473}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerDefense.CheckNewGamePanel, Assembly-CSharp
         m_MethodName: OnNoButton
         m_Mode: 1
@@ -1937,10 +1921,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  continueButton: {fileID: 2638777530334447990}
-  CheckNewGamePanel: {fileID: 1961646744916035621}
+  m_ContinueButton: {fileID: 0}
+  m_CheckNewGamePanel: {fileID: 0}
   m_AnimatedMenuCanvas: {fileID: 0}
   m_ContinueAnimationName: 
+  m_NewGameAnimationName: 
 --- !u!1 &7027932665750929610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 909193647451475473}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerDefense.CheckNewGamePanel, Assembly-CSharp
         m_MethodName: OnYesButton
         m_Mode: 1

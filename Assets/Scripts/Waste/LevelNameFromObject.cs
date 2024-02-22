@@ -9,7 +9,7 @@ namespace TowerDefense
     {
         private void Awake()
         {
-            GetComponent<Text>().text = GetComponentInParent<MapLevel>().gameObject.name;
+            //GetComponent<Text>().text = GetComponentInParent<MapLevel>().gameObject.name;
         }
 #if UNITY_EDITOR
         private void OnValidate()

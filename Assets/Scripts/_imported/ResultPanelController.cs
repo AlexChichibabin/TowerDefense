@@ -17,7 +17,7 @@ namespace SpaceShip
 
         [SerializeField] private Text m_ButtonNextText;
         [SerializeField] private OnEnableSound m_OnEnableSound;
-        [SerializeField] private LevelAnimation m_LevelAnimation;
+        [SerializeField] private LevelSceneAnimation m_LevelAnimation;
         //[SerializeField] private Button m_MainMenuButton;
 
         private bool m_Success;

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class LevelAnimation : MonoBehaviour
+public class LevelSceneAnimation : MonoBehaviour
 {
     [SerializeField] private string m_StartLevelAnimationName;
     [SerializeField] private string m_LevelFadeOutAnimationName;

@@ -11,7 +11,7 @@ namespace TowerDefense
         [SerializeField] private GameObject m_PausePanel;
         [SerializeField] private Animator m_MenuAnimator;
         [SerializeField] private string m_MapToMenuAnimationName;
-        [SerializeField] private LevelAnimation m_LevelAnimation;
+        [SerializeField] private LevelSceneAnimation m_LevelAnimation;
 
 
         public event Action<bool> OnGamePaused;

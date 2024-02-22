@@ -2,7 +2,7 @@ using SpaceShip;
 using System.Collections;
 using UnityEngine;
 
-public class LevelMapAnimation : MonoBehaviour
+public class MapSceneAnimation : MonoBehaviour
 {
     [SerializeField] private string m_StartMapAnimationName;
     [SerializeField] private string m_OnUpgradeAnimationName;
@@ -27,11 +27,15 @@ public class LevelMapAnimation : MonoBehaviour
     }
     public void AnimationOnLoad(Episode episode) // берет у LevelMap инфу об эпизоде и запускает корутину, в котоую передат эпизод
     {
-        this.StartCoroutine(AnimateAndLoadLevel(episode)); 
+        this.StartCoroutine(AnimateThenLoadLevel(episode)); 
     }
-    IEnumerator AnimateAndLoadLevel(Episode episode) // Запускает анимацию и ждет, когда она в своем конце
-                                                     // изменит состояние Метки конца анимации (m_MarkEndAnimation).
-                                                     // Тогда вызывает загрузку эпизода
+    /// <summary>
+    /// Запускает анимацию и ждет, когда она в своем конце изменит состояние метки конца анимации (m_MarkEndAnimation).
+    /// Тогда вызывает загрузку эпизода/
+    /// </summary>
+    /// <param name="episode"></param>
+    /// <returns></returns>
+    IEnumerator AnimateThenLoadLevel(Episode episode)
     {
         m_AnimatedMenuCanvas.Play(LoadLevelAnimationName);
         while (m_MarkEndAnimation == false)
@@ -40,11 +44,6 @@ public class LevelMapAnimation : MonoBehaviour
         }
         LevelSequenceController.Instance.StartEpisode(episode);
     }
-    private bool m_MarkEndAnimation;
-    public void MarkOfEndAnimation()
-    {
-        m_MarkEndAnimation = true;
-    }
-
-
+    private bool m_MarkEndAnimation; // Метка конца анимации
+    public void MarkOfEndAnimation(bool isEnd) => m_MarkEndAnimation = isEnd; 
 }
