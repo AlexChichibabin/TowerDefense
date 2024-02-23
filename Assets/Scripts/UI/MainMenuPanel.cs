@@ -11,8 +11,8 @@ namespace TowerDefense
         [SerializeField] private Button m_ContinueButton;
         [SerializeField] private GameObject m_CheckNewGamePanel;
         [SerializeField] private Animator m_AnimatedMenuCanvas;
-        [SerializeField] private string m_ContinueAnimationName;
-        [SerializeField] private string m_NewGameAnimationName;
+        [SerializeField] private string m_ContinueAnimationName = "ContinueGameSceneSwitch";
+        [SerializeField] private string m_NewGameAnimationName = "NewGameSceneSwitch";
         //[SerializeField] private Button NewYesButton;
         //[SerializeField] private Button NewNoButton;
 

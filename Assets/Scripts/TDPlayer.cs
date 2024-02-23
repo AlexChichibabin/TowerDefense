@@ -1,7 +1,6 @@
 using UnityEngine;
 using SpaceShip;
 using System;
-using UnityEngine.SceneManagement;
 
 namespace TowerDefense
 {

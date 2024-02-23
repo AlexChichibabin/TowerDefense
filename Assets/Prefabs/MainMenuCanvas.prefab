@@ -163,9 +163,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8759786826903597629}
-  - component: {fileID: 2485901830136088433}
-  - component: {fileID: 6538211908868999591}
-  - component: {fileID: 5325939824529684110}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -196,98 +193,6 @@ RectTransform:
   m_AnchoredPosition: {x: -450, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &2485901830136088433
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946269484004462179}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3fe4455d58f3f894a99a5db93bbe7fd4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6538211908868999591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946269484004462179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c8344bc9da08142b43497b5d75793d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelAnimator: {fileID: 2485901830136088433}
-  m_ButtonAnimator: {fileID: 3752572738691367096}
-  m_NullUpgradePanel: {fileID: 8040006908989669162}
---- !u!114 &5325939824529684110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946269484004462179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6538211908868999591}
-        m_TargetAssemblyTypeName: TowerDefense.UpgradePanelChange, Assembly-CSharp
-        m_MethodName: DisappearUpgradePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1961646744916035621
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +393,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1923495830006855422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerDefense.MainMenu, Assembly-CSharp
         m_MethodName: OnContinueButton
         m_Mode: 1
@@ -671,7 +576,7 @@ GameObject:
   - component: {fileID: 8419000808661505454}
   - component: {fileID: 544758306451420702}
   m_Layer: 5
-  m_Name: ImageFadeOutAnimation
+  m_Name: OutSceneAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,7 +597,7 @@ RectTransform:
   m_Father: {fileID: 7491527382021357052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 2, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -717,15 +622,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -967,7 +872,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1923495830006855422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerDefense.MainMenu, Assembly-CSharp
         m_MethodName: OnQuitButton
         m_Mode: 1
@@ -990,7 +895,7 @@ GameObject:
   - component: {fileID: 7491527382021357052}
   - component: {fileID: 1552069717924919761}
   - component: {fileID: 3241034713487521781}
-  - component: {fileID: 4877100297152793758}
+  - component: {fileID: 5794539860751006974}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -1057,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de79ea144197aa049a412a0f461d9bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4877100297152793758
+--- !u!114 &5794539860751006974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1066,12 +971,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5511113344460887213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01edbc9b04132e45a59efc3175796fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 60aba7ba0e4ff744492666c8982f33b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartMapAnimationName: StartMapLevel
   m_OnUpgradeAnimationName: OnUpgradeButton
   m_OnExitUpgradeAnimationName: OnExitUpgrade
+  m_MapToMenuAnimationName: MapToMenuSceneSwitch
   LoadLevelAnimationName: FadeOutLevelAnimation
 --- !u!1 &5592117614730896836
 GameObject:
@@ -1164,7 +1070,6 @@ GameObject:
   - component: {fileID: 5660634329233024740}
   - component: {fileID: 8649488084103678164}
   - component: {fileID: 6893552428631157694}
-  - component: {fileID: 3752572738691367096}
   m_Layer: 5
   m_Name: UpgardesButton
   m_TagString: Untagged
@@ -1275,8 +1180,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4877100297152793758}
-        m_TargetAssemblyTypeName: LevelMapAnimation, Assembly-CSharp
+      - m_Target: {fileID: 5794539860751006974}
+        m_TargetAssemblyTypeName: MapSceneAnimation, Assembly-CSharp
         m_MethodName: OnButtonUpgrade
         m_Mode: 1
         m_Arguments:
@@ -1287,27 +1192,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!95 &3752572738691367096
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729973627902662245}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7bb68fcd77d0bfa4bb99961eeaeefff8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5881686006527514983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,8 +1312,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4877100297152793758}
-        m_TargetAssemblyTypeName: LevelMapAnimation, Assembly-CSharp
+      - m_Target: {fileID: 5794539860751006974}
+        m_TargetAssemblyTypeName: MapSceneAnimation, Assembly-CSharp
         m_MethodName: OnExitUpgrade
         m_Mode: 1
         m_Arguments:
@@ -1848,7 +1732,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1923495830006855422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerDefense.MainMenu, Assembly-CSharp
         m_MethodName: OnNewGameButton
         m_Mode: 1
@@ -1870,7 +1754,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3703966215197723945}
   - component: {fileID: 1539204169784742130}
-  - component: {fileID: 1923495830006855422}
   m_Layer: 5
   m_Name: MainMenuPanel
   m_TagString: Untagged
@@ -1908,24 +1791,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7021134502219616320}
   m_CullTransparentMesh: 1
---- !u!114 &1923495830006855422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7021134502219616320}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc17672b2952c3458dfae682f0ac668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_DoNotDestroyOnLoad: 0
-  m_ContinueButton: {fileID: 0}
-  m_CheckNewGamePanel: {fileID: 0}
-  m_AnimatedMenuCanvas: {fileID: 0}
-  m_ContinueAnimationName: 
-  m_NewGameAnimationName: 
 --- !u!1 &7027932665750929610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,8 +1990,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4877100297152793758}
-        m_TargetAssemblyTypeName: LevelMapAnimation, Assembly-CSharp
+      - m_Target: {fileID: 5794539860751006974}
+        m_TargetAssemblyTypeName: MapSceneAnimation, Assembly-CSharp
         m_MethodName: OnExitUpgrade
         m_Mode: 1
         m_Arguments:
@@ -2672,8 +2537,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2341676539469770213, guid: 6f7f1e45ec8f7634a9d34e664762dc13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5794539860751006974}
+    - target: {fileID: 2341676539469770213, guid: 6f7f1e45ec8f7634a9d34e664762dc13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMainMenu
+      value: OnButtonMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2341676539469770213, guid: 6f7f1e45ec8f7634a9d34e664762dc13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MapSceneAnimation, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5916372662593238510, guid: 6f7f1e45ec8f7634a9d34e664762dc13, type: 3}
       propertyPath: m_MenuAnimator
@@ -2691,7 +2564,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackButton
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5916372662593238510, guid: 6f7f1e45ec8f7634a9d34e664762dc13, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

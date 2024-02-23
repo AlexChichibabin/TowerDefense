@@ -1,29 +1,36 @@
 using SpaceShip;
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class MapSceneAnimation : MonoBehaviour
 {
-    [SerializeField] private string m_StartMapAnimationName;
-    [SerializeField] private string m_OnUpgradeAnimationName;
-    [SerializeField] private string m_OnExitUpgradeAnimationName;
+    [SerializeField] private string m_StartMapAnimationName = "StartMapLevel";
+    [SerializeField] private string m_OnUpgradeAnimationName = "OnUpgradeButton";
+    [SerializeField] private string m_OnExitUpgradeAnimationName = "OnExitUpgrade";
+    [SerializeField] private string m_MapToMenuAnimationName = "MapToMenuSceneSwitch";
     public string LoadLevelAnimationName = "FadeOutLevelAnimation";
 
-    private Animator m_AnimatedMenuCanvas;
+    private Animator m_MenuAnimator;
 
     private void Start()
     {
-        m_AnimatedMenuCanvas = GetComponent<Animator>();
-        m_AnimatedMenuCanvas.Play(m_StartMapAnimationName);
+        m_MenuAnimator = GetComponent<Animator>();
+        m_MenuAnimator.Play(m_StartMapAnimationName);
     }
     public void OnButtonUpgrade()
     {
-        m_AnimatedMenuCanvas.Play(m_OnUpgradeAnimationName);
+        m_MenuAnimator.Play(m_OnUpgradeAnimationName);
     }
 
     public void OnExitUpgrade()
     {
-        m_AnimatedMenuCanvas.Play(m_OnExitUpgradeAnimationName);
+        m_MenuAnimator.Play(m_OnExitUpgradeAnimationName);
+    }
+    public void OnButtonMainMenu() // Только для кнопки в меню карты
+    {
+        //SceneManager.LoadScene(0);
+        m_MenuAnimator.Play(m_MapToMenuAnimationName);
     }
     public void AnimationOnLoad(Episode episode) // берет у LevelMap инфу об эпизоде и запускает корутину, в котоую передат эпизод
     {
@@ -37,7 +44,7 @@ public class MapSceneAnimation : MonoBehaviour
     /// <returns></returns>
     IEnumerator AnimateThenLoadLevel(Episode episode)
     {
-        m_AnimatedMenuCanvas.Play(LoadLevelAnimationName);
+        m_MenuAnimator.Play(LoadLevelAnimationName);
         while (m_MarkEndAnimation == false)
         {
             yield return null;
@@ -45,5 +52,12 @@ public class MapSceneAnimation : MonoBehaviour
         LevelSequenceController.Instance.StartEpisode(episode);
     }
     private bool m_MarkEndAnimation; // Метка конца анимации
-    public void MarkOfEndAnimation(bool isEnd) => m_MarkEndAnimation = isEnd; 
+    public void MarkEndAnimation(int isEnd)
+    {
+        if (isEnd > 1) isEnd = 1;
+            m_MarkEndAnimation = Convert.ToBoolean(isEnd);
+
+    }
+
+
 }

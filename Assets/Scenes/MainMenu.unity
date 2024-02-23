@@ -134,6 +134,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &173030657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7021134502219616320, guid: decb7ba096466b947b1081709cd99373, type: 3}
+  m_PrefabInstance: {fileID: 6399720161404352805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &173030660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173030657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc17672b2952c3458dfae682f0ac668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
+  m_ContinueButton: {fileID: 51858531}
+  m_CheckNewGamePanel: {fileID: 1705728198}
+  m_AnimatedMenuCanvas: {fileID: 5180864355772831538}
+  m_ContinueAnimationName: ContinueGameSceneSwitch
+  m_NewGameAnimationName: NewGameSceneSwitch
+--- !u!1 &178311145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5511113344460887213, guid: decb7ba096466b947b1081709cd99373, type: 3}
+  m_PrefabInstance: {fileID: 6399720161404352805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1264607117
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +686,23 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1552069717924919761, guid: decb7ba096466b947b1081709cd99373, type: 3}
   m_PrefabInstance: {fileID: 6399720161404352805}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5180864355772831541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178311145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60aba7ba0e4ff744492666c8982f33b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartMapAnimationName: StartMapLevel
+  m_OnUpgradeAnimationName: OnUpgradeButton
+  m_OnExitUpgradeAnimationName: OnExitUpgrade
+  m_MapToMenuAnimationName: MapToMenuSceneSwitch
+  LoadLevelAnimationName: FadeOutLevelAnimation
 --- !u!1001 &6399720161404352805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,6 +714,18 @@ PrefabInstance:
     - target: {fileID: 83872205309040835, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1.1001511
+      objectReference: {fileID: 0}
+    - target: {fileID: 659787771297099240, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 173030660}
+    - target: {fileID: 659787771297099240, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNewGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 659787771297099240, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerDefense.MainMenuPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 861888755333052954, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -722,6 +779,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.100029
       objectReference: {fileID: 0}
+    - target: {fileID: 2638777530334447990, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 173030660}
+    - target: {fileID: 2638777530334447990, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnContinueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638777530334447990, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerDefense.MainMenuPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969380826977621857, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 173030660}
+    - target: {fileID: 2969380826977621857, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnQuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969380826977621857, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerDefense.MainMenuPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3314120105694784802, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1.1001511
@@ -773,6 +854,18 @@ PrefabInstance:
     - target: {fileID: 5729973627902662245, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398410447577220851, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 173030660}
+    - target: {fileID: 6398410447577220851, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnYesButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398410447577220851, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerDefense.MainMenuPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6399598832383375173, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_IsActive
@@ -878,10 +971,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.100029
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9090111429465744930, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 173030660}
+    - target: {fileID: 9090111429465744930, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNoButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090111429465744930, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerDefense.MainMenuPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4877100297152793758, guid: decb7ba096466b947b1081709cd99373, type: 3}
+    - {fileID: 5794539860751006974, guid: decb7ba096466b947b1081709cd99373, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5511113344460887213, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5180864355772831541}
+    - targetCorrespondingSourceObject: {fileID: 7021134502219616320, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 173030660}
   m_SourcePrefab: {fileID: 100100000, guid: decb7ba096466b947b1081709cd99373, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

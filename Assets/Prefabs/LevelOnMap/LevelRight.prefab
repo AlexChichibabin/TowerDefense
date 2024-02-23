@@ -365,8 +365,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Episode: {fileID: 0}
+  m_NameText: {fileID: 8011635963897496695}
   m_VisualScores: {fileID: 6302464834151561559}
   m_MapAnimation: {fileID: 0}
+  m_IsLefted: 0
 --- !u!1 &3080381009824470289
 GameObject:
   m_ObjectHideFlags: 0

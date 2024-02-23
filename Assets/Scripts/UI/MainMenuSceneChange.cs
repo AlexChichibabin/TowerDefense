@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using SpaceShip;
+
 
 namespace TowerDefense
 {
@@ -12,7 +12,6 @@ namespace TowerDefense
         [SerializeField] private Animator m_MenuAnimator;
         [SerializeField] private string m_MapToMenuAnimationName;
         [SerializeField] private LevelSceneAnimation m_LevelAnimation;
-
 
         public event Action<bool> OnGamePaused;
 
@@ -45,11 +44,6 @@ namespace TowerDefense
         }
         
 
-        public void BackToMainMenu() // Только для кнопки в меню карты
-        {
-            //SceneManager.LoadScene(0);
-            m_MenuAnimator.Play(m_MapToMenuAnimationName);
-        }
 
         #region Animated
         public void LoadMainFromMapMenu()

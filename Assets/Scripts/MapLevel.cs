@@ -11,6 +11,8 @@ namespace TowerDefense
         private int m_StarsAmount;
         [SerializeField] private LevelVisualScores m_VisualScores;
         [SerializeField] private MapSceneAnimation m_MapAnimation;
+
+        [SerializeField] private bool m_IsLefted;
         
 
         public bool IsComplete { get { return gameObject.activeSelf && m_StarsAmount > 0; } }
@@ -26,11 +28,6 @@ namespace TowerDefense
             m_MapAnimation.AnimationOnLoad(m_Episode);
         }
 
-        /*public void LoadLevel()
-        {
-            LevelSequenceController.Instance.StartEpisode(m_Episode);
-        }*/
-
         public void Initialize()
         {
             m_StarsAmount = MapCompletion.Instance.GetEpisodeScore(m_Episode);
@@ -41,5 +38,10 @@ namespace TowerDefense
         {
             return m_StarsAmount;
         }
+
+        /*public void LoadLevel()
+{
+    LevelSequenceController.Instance.StartEpisode(m_Episode);
+}*/
     }
 }

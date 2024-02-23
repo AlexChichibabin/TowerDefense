@@ -974,8 +974,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Episode: {fileID: 0}
+  m_NameText: {fileID: 5031247717576339652}
   m_VisualScores: {fileID: 4228701861939928087}
   m_MapAnimation: {fileID: 0}
+  m_IsLefted: 0
 --- !u!1 &8345209627215536858
 GameObject:
   m_ObjectHideFlags: 0

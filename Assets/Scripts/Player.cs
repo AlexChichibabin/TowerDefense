@@ -13,15 +13,9 @@ namespace SpaceShip
         [SerializeField] protected int m_NumMana;
         public int NumMana { get { return m_NumMana; } }
         [SerializeField] private Ship m_Ship;
-        //[SerializeField] private GameObject m_PlayerShipPrefab;
         [HideInInspector] public Ship ActiveShip => m_Ship;
 
         public event Action OnPlayerDead;
-
-        //public static event Action<int> OnLifeUpdate;
-
-        //[SerializeField] private CameraController m_CameraController;
-        //[SerializeField] private MovementController m_MovementController;
 
         protected override void Awake()
         {
@@ -33,28 +27,6 @@ namespace SpaceShip
             }
         }
 
-        private void Start()
-        {
-            /*if (m_Ship != null)
-            {
-                m_Ship.EventOnDeath.AddListener(OnShipDeath);
-            }*/
-
-
-            //Respawn();
-        }
-        
-        /*private void OnShipDeath()
-        {
-            m_NumLives--;
-
-            if (m_NumLives > 0)
-            {
-                //Respawn();
-            }
-            else LevelSequenceController.Instance.FinishCurrentLevel(false);
-        }*/
-
         protected void ApplyDamage(int damage)
         {
             m_NumLives -= damage;
@@ -63,26 +35,8 @@ namespace SpaceShip
             {
                 m_NumLives = 0;
                 OnPlayerDead?.Invoke();
-                //LevelSequenceController.Instance.FinishCurrentLevel(false);
-                //LevelSequenceController.Instance.RestartLevel();
             }
         }
-
-
-        /*
-        private void Respawn()
-        {
-            if (LevelSequenceController.PlayerShip != null)
-            {
-                var newPlayerShip = Instantiate(LevelSequenceController.PlayerShip);
-
-                m_Ship = newPlayerShip.GetComponent<Ship>();
-                //m_CameraController.SetTarget(m_Ship.transform);
-                //m_MovementController.SetTargetShip(m_Ship);
-                m_Ship.EventOnDeath.AddListener(OnShipDeath);
-            }
-        }*/
-
 
         #region Score
         public int Score { get; private set; }
@@ -92,7 +46,6 @@ namespace SpaceShip
         {
             NumKills++;
         }
-
         public void AddScore(int num)
         {
             Score += num;

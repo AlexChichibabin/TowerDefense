@@ -1039,8 +1039,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Episode: {fileID: 0}
+  m_NameText: {fileID: 6419603288274460880}
   m_VisualScores: {fileID: 1934369558396764021}
   m_MapAnimation: {fileID: 0}
+  m_IsLefted: 0
 --- !u!114 &7577261494252329296
 MonoBehaviour:
   m_ObjectHideFlags: 0
