@@ -77,7 +77,7 @@ namespace SpaceShip
             }        
         }
 
-        private void CalculateLevelStatistic()
+        /*private void CalculateLevelStatistic()
         {
             LevelStatistics.NumKills = Player.Instance.NumKills;
             LevelStatistics.Scores = Player.Instance.Score;
@@ -88,7 +88,7 @@ namespace SpaceShip
             MainStatistics.TotalNumKills += Player.Instance.NumKills;
             MainStatistics.TotalScores += Player.Instance.Score;
             MainStatistics.TotalTime += (int)LevelController.Instance.LevelTime;
-        }
+        }*/
 
     }
 }

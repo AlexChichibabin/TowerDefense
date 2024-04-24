@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace TowerDefense
 {
-    public class CheckNewGamePanel : MonoBehaviour
+    /*public class CheckNewGamePanel : MonoBehaviour
     {
         [SerializeField] private Button yesButton;
         [SerializeField] private Button noButton;
@@ -27,5 +27,5 @@ namespace TowerDefense
             MainMenuPanel.Instance.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
-    }
+    }*/
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
+using Unity.VisualScripting;
 
 namespace TowerDefense
 {
@@ -43,6 +44,7 @@ namespace TowerDefense
         {
             FileHandler.Reset(MapCompletion.m_FileName);
             FileHandler.Reset(Upgrades.filename);
+            if (MapCompletion.Instance) Destroy(MapCompletion.Instance.gameObject);
             m_AnimatedMenuCanvas.Play(m_NewGameAnimationName);
         }
         public void OnNoButton()

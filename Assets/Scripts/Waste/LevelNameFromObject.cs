@@ -7,7 +7,7 @@ namespace TowerDefense
 {
     public class LevelNameFromObject : MonoBehaviour
     {
-        private void Awake()
+        /*private void Awake()
         {
             //GetComponent<Text>().text = GetComponentInParent<MapLevel>().gameObject.name;
         }
@@ -16,6 +16,6 @@ namespace TowerDefense
         {
             //GetComponent<Text>().text = GetComponentInParent<MapLevel>().gameObject.name;
         }
-#endif
+#endif*/
     }
 }

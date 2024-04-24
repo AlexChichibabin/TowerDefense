@@ -5,7 +5,7 @@ namespace TowerDefense
 {
     public class UpgradePanelChange : MonoBehaviour
     {
-        [SerializeField] private Animator m_PanelAnimator;
+        /*[SerializeField] private Animator m_PanelAnimator;
         [SerializeField] private Animator m_ButtonAnimator;
 
         [SerializeField] private GameObject m_NullUpgradePanel;
@@ -29,6 +29,6 @@ namespace TowerDefense
         {
             m_PanelAnimator.Play("UpgradesPanelAppearance");
             m_NullUpgradePanel.SetActive(true);
-        }
+        }*/
     }
 }
