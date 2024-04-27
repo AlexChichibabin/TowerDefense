@@ -1474,6 +1474,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnimatedCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5729973627902662245, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399598832383375173, guid: decb7ba096466b947b1081709cd99373, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7491527382021357052, guid: decb7ba096466b947b1081709cd99373, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
